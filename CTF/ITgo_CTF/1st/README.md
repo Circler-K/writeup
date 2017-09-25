@@ -1,1 +1,1 @@
-# Image for 1st
+# 1st writeup & image & python code
