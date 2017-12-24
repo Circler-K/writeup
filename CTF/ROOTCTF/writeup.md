@@ -51,14 +51,15 @@ if __name__ == "__main__":
 - PNG이미지 파일을 하나 준다.  
 처음에 많이 헤맸다. hint로 PNG height가 나온 것을 보고 금방 알 수 있었다.  
 바로 PNG hex format을 검색하여 높이를 담당하는 hex값을 변경했다.  
-![hex1](./미스크/Vocabulary/hex1.png)
-![hex2](./미스크/Vocabulary/hex2.png)  
+![hex1](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/MISC/Vocabulary/hex1.PNG)
+![hex2](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/MISC/Vocabulary/hex2.PNG)  
 
 - 답
-![hex2](./미스크/Vocabulary/pleas_find_ans.png)  
-이미지가 너무 커서 markdown파일에 올라가지 않는다.
+![hex2](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/MISC/Vocabulary/pleas_find_ans.png)  
+
 - FLAG : FLAG{_1vErticAl_2rEADiNg_3TAStlSb}
 - 도움받은 링크 : [Link](https://www.linkedin.com/pulse/hex-editing-width-height-png-files-ciaran-mc-ardle)  
+
 
 ### Do you know ㅁㅁㅁ? - 706점
 > Find the Flag!  
@@ -83,7 +84,11 @@ c 0 7 9 8 5 4 4
 
 
 ## REVERSING
-
+~~리버싱공부한지 조금밖에 안 돼서 풀었다고 좋아했는데 누구나 다푸는 문제였어,,~~
+### Stage Game - 229점
+- 바이너리를 실행하면 입력창이 나오고 1을 입력하면 게임이 시작된다.
+- sleep함수에 인자를 push eax로 전달하는 것 같은데 eax값을 0로 전달하고 실행시키다보면 플래그를 출력한다.  
+![stagegame](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/Reversing/StageGame/stage_flag.png)
 ## WEBHACKING
 ### Login - 50점
 ```php
@@ -193,9 +198,10 @@ for(a=0;a<=20;a++){
 	else if(a==3)b=71;
 	else if(a==4)b=123;
 	else if(a==20)b=125;
-	
+
 	document.write(String.fromCharCode(b));
 }
 ```
 - FLAG : FLAG{ˡᐭꅭ곚삍䘐䣇눛뵼ᩎꓨᶐㆰ}
-- ![]
+- ![flag](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/Web/Phishing/flag.PNG)
+- 옵션을 키더라도 <script>태그가 들어가있으면 제대로 작동하지 않는다.
