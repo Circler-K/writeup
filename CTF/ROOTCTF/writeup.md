@@ -204,4 +204,4 @@ for(a=0;a<=20;a++){
 ```
 - FLAG : FLAG{ˡᐭꅭ곚삍䘐䣇눛뵼ᩎꓨᶐㆰ}
 - ![flag](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/ROOTCTF/Web/Phishing/flag.PNG)
-- 옵션을 키더라도 <script>태그가 들어가있으면 제대로 작동하지 않는다.
+- 옵션을 키더라도 \<script>태그가 들어가있으면 제대로 작동하지 않는다.
