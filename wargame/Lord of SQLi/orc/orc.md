@@ -33,6 +33,7 @@ if(($result['pw']) && ($result['pw'] == $_GET['pw'])) solve("orc");
 - 이 조건문으로 봤을 때 admin의 pw도 알아내야 문제를 풀 수 있다.
 - 스크립트를 짜서 풀었다.
 
+### payload
 ```python
 # python 3.5.2
 import urllib.request
