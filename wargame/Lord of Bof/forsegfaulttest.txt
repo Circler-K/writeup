@@ -1,0 +1,462 @@
+Xshell 5 (Build 1055)
+Copyright (c) 2002-2016 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gremlin
+Password: 
+Last login: Fri Feb  9 01:44:19 from 192.168.56.1
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ ls tmp 
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ ls -a
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .emacs  .screenrc  cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ ls -al
+total 132
+drwx------    3 gremlin  gremlin      4096 Feb  9 02:05 .
+drwxr-xr-x   25 root     root         4096 Mar 30  2010 ..
+-rw-------    1 gremlin  gremlin      5682 Feb  9 02:24 .bash_history
+-rw-r--r--    1 gremlin  gremlin        24 Feb 26  2010 .bash_logout
+-rw-r--r--    1 gremlin  gremlin       230 Feb 26  2010 .bash_profile
+-rw-r--r--    1 gremlin  gremlin       124 Feb 26  2010 .bashrc
+-rwxr-xr-x    1 gremlin  gremlin       333 Feb 26  2010 .emacs
+-rw-r--r--    1 gremlin  gremlin      3394 Feb 26  2010 .screenrc
+-rwsr-sr-x    1 gremlin  gremlin     11970 Feb  9 02:05 cobalt
+-rwsr-sr-x    1 cobolt   cobolt      11970 Feb 26  2010 cobolt
+-rw-r--r--    1 gremlin  gremlin       291 Mar 29  2010 cobolt.c
+-rw-------    1 gremlin  gremlin     61440 Feb  9 02:13 core
+drwxrwxr-x    2 gremlin  gremlin      4096 Feb  7 17:22 tmp
+[gremlin@localhost gremlin]$ cp cobolt tmp/cobalt
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ ls tmp
+cobalt
+[gremlin@localhost gremlin]$ cd tmp
+[gremlin@localhost tmp]$ ls
+cobalt
+[gremlin@localhost tmp]$ ./cobalt `python -c 'print"A"*16'`
+AAAAAAAAAAAAAAAA
+[gremlin@localhost tmp]$ ./cobalt `python -c 'print"A"*17'`
+AAAAAAAAAAAAAAAAA
+[gremlin@localhost tmp]$ ./cobalt `python -c 'print"A"*18'`
+AAAAAAAAAAAAAAAAAA
+[gremlin@localhost tmp]$ ./cobalt `python -c 'print"A"*19'`
+AAAAAAAAAAAAAAAAAAA
+[gremlin@localhost tmp]$ ./cobalt `python -c 'print"A"*20'`
+AAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+[gremlin@localhost tmp]$ cat ../cobolt.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - cobolt
+        - small buffer
+*/
+
+int main(int argc, char *argv[])
+{
+    char buffer[16];
+    if(argc < 2){
+        printf("argv error\n");
+        exit(0);
+    }
+    strcpy(buffer, argv[1]);
+    printf("%s\n", buffer);
+}
+[gremlin@localhost tmp]$ gdb cobalt
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) disas main
+Dump of assembler code for function main:
+0x8048430 <main>:	push   %ebp
+0x8048431 <main+1>:	mov    %esp,%ebp
+0x8048433 <main+3>:	sub    $0x10,%esp
+0x8048436 <main+6>:	cmpl   $0x1,0x8(%ebp)
+0x804843a <main+10>:	jg     0x8048453 <main+35>
+0x804843c <main+12>:	push   $0x80484d0
+0x8048441 <main+17>:	call   0x8048350 <printf>
+0x8048446 <main+22>:	add    $0x4,%esp
+0x8048449 <main+25>:	push   $0x0
+0x804844b <main+27>:	call   0x8048360 <exit>
+0x8048450 <main+32>:	add    $0x4,%esp
+0x8048453 <main+35>:	mov    0xc(%ebp),%eax
+0x8048456 <main+38>:	add    $0x4,%eax
+0x8048459 <main+41>:	mov    (%eax),%edx
+0x804845b <main+43>:	push   %edx
+0x804845c <main+44>:	lea    0xfffffff0(%ebp),%eax
+0x804845f <main+47>:	push   %eax
+0x8048460 <main+48>:	call   0x8048370 <strcpy>
+0x8048465 <main+53>:	add    $0x8,%esp
+0x8048468 <main+56>:	lea    0xfffffff0(%ebp),%eax
+0x804846b <main+59>:	push   %eax
+0x804846c <main+60>:	push   $0x80484dc
+0x8048471 <main+65>:	call   0x8048350 <printf>
+0x8048476 <main+70>:	add    $0x8,%esp
+0x8048479 <main+73>:	leave  
+0x804847a <main+74>:	ret    
+0x804847b <main+75>:	nop    
+0x804847c <main+76>:	nop    
+0x804847d <main+77>:	nop    
+0x804847e <main+78>:	nop    
+0x804847f <main+79>:	nop    
+End of assembler dump.
+(gdb) r `python -c 'print "A"*16'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*16'`
+AAAAAAAAAAAAAAAA
+
+Program exited with code 021.
+(gdb) r `python -c 'print "A"*17'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*17'`
+AAAAAAAAAAAAAAAAA
+
+Program exited with code 022.
+(gdb) r `python -c 'print "A"*18'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*18'`
+AAAAAAAAAAAAAAAAAA
+
+Program exited with code 023.
+(gdb) r `python -c 'print "A"*19'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*19'`
+AAAAAAAAAAAAAAAAAAA
+
+Program exited with code 024.
+(gdb) r `python -c 'print "A"*20'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*20'`
+AAAAAAAAAAAAAAAAAAAA
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x41414149
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) b *main+56                  
+Cannot access memory at address 0x41414149
+(gdb) r `python -c 'print "A"*16'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) ^[[A^[[By
+Please answer y or n.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*16'`
+AAAAAAAAAAAAAAAA
+
+Program exited with code 021.
+(gdb) r `python -c 'print "A"*18'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*18'`
+AAAAAAAAAAAAAAAAAA
+
+Program exited with code 023.
+(gdb) r `python -c 'print "A"*20'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*20'`
+AAAAAAAAAAAAAAAAAAAA
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x41414149
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) info b
+No breakpoints or watchpoints.
+(gdb) b *main+53
+Cannot access memory at address 0x41414149
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*20'`
+AAAAAAAAAAAAAAAAAAAA
+
+Program received signal SIGSEGV, Segmentation fault.
+0x40030902 in __libc_start_main (main=Cannot access memory at address 0x41414149
+) at ../sysdeps/generic/libc-start.c:61
+61	../sysdeps/generic/libc-start.c: No such file or directory.
+(gdb) r `python -c 'print "A"*16'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*16'`
+AAAAAAAAAAAAAAAA
+
+Program exited with code 021.
+(gdb) b *main+56
+Breakpoint 1 at 0x8048468
+(gdb) r `python -c 'print "A"*20'`
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*20'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50s $esp
+0xbffffb08:	 'A' <repeats 20 times>
+0xbffffb1d:	 "\t\003@\002"
+0xbffffb22:	 ""
+0xbffffb23:	 ""
+0xbffffb24:	 "d󾱻ÿ¿h8\001@\002"
+0xbffffb32:	 ""
+0xbffffb33:	 ""
+0xbffffb34:	 "\200\203\004\b"
+0xbffffb39:	 ""
+0xbffffb3a:	 ""
+0xbffffb3b:	 ""
+0xbffffb3c:	 "¡\203\004\b0\204\004\b\002"
+0xbffffb46:	 ""
+0xbffffb47:	 ""
+0xbffffb48:	 "dߜ202\004\b¬\204\004\b`®"
+0xbffffb57:	 "@\\󾚲20>\001@\002"
+0xbffffb62:	 ""
+0xbffffb63:	 ""
+0xbffffb64:	 "[򵽿¿"
+0xbffffb6d:	 ""
+0xbffffb6e:	 ""
+0xbffffb6f:	 ""
+0xbffffb70:	 "\211󬽿¿µ使¿㽿¿󽿿\n񨾿¿2򁾿¿\203򚰲6󬾿¿»龿¿辿¿"
+0xbffffbb1:	 "þÿ¿\013þÿ¿\030þÿ¿ þÿ¿"
+0xbffffbc1:	 ""
+0xbffffbc2:	 ""
+0xbffffbc3:	 ""
+0xbffffbc4:	 "\003"
+0xbffffbc6:	 ""
+0xbffffbc7:	 ""
+0xbffffbc8:	 "4\200\004\b\004"
+0xbffffbce:	 ""
+0xbffffbcf:	 ""
+---Type <return> to continue, or q <return> to quit---r `python -c 'print "A"*20'`
+0xbffffbd0:	 " "
+0xbffffbd2:	 ""
+0xbffffbd3:	 ""
+0xbffffbd4:	 "\005"
+0xbffffbd6:	 ""
+0xbffffbd7:	 ""
+0xbffffbd8:	 "\006"
+0xbffffbda:	 ""
+0xbffffbdb:	 ""
+0xbffffbdc:	 "\006"
+0xbffffbde:	 ""
+0xbffffbdf:	 ""
+0xbffffbe0:	 ""
+0xbffffbe1:	 "\020"
+0xbffffbe3:	 ""
+0xbffffbe4:	 "\a"
+0xbffffbe6:	 ""
+(gdb) r `python -c 'print "A"*20'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*20'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) r `python -c 'print "A"*17'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*17'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50x $esp
+0xbffffb08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb18:	0xbfff0041	0x400309cb	0x00000002	0xbffffb64
+0xbffffb28:	0xbffffb70	0x40013868	0x00000002	0x08048380
+0xbffffb38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffb48:	0xbffffb64	0x080482e0	0x080484ac	0x4000ae60
+0xbffffb58:	0xbffffb5c	0x40013e90	0x00000002	0xbffffc5e
+0xbffffb68:	0xbffffc77	0x00000000	0xbffffc89	0xbffffcab
+0xbffffb78:	0xbffffcb5	0xbffffcc3	0xbffffce2	0xbffffcf2
+0xbffffb88:	0xbffffd0a	0xbffffd27	0xbffffd32	0xbffffd40
+0xbffffb98:	0xbffffd83	0xbffffd96	0xbffffdab	0xbffffdbb
+0xbffffba8:	0xbffffdc8	0xbffffde7	0xbffffe00	0xbffffe0b
+0xbffffbb8:	0xbffffe18	0xbffffe20	0x00000000	0x00000003
+0xbffffbc8:	0x08048034	0x00000004
+(gdb) r `python -c 'print "A"*18'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*18'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50x $esp
+0xbffffb08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb18:	0xbf004141	0x400309cb	0x00000002	0xbffffb64
+0xbffffb28:	0xbffffb70	0x40013868	0x00000002	0x08048380
+0xbffffb38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffb48:	0xbffffb64	0x080482e0	0x080484ac	0x4000ae60
+0xbffffb58:	0xbffffb5c	0x40013e90	0x00000002	0xbffffc5d
+0xbffffb68:	0xbffffc76	0x00000000	0xbffffc89	0xbffffcab
+0xbffffb78:	0xbffffcb5	0xbffffcc3	0xbffffce2	0xbffffcf2
+0xbffffb88:	0xbffffd0a	0xbffffd27	0xbffffd32	0xbffffd40
+0xbffffb98:	0xbffffd83	0xbffffd96	0xbffffdab	0xbffffdbb
+0xbffffba8:	0xbffffdc8	0xbffffde7	0xbffffe00	0xbffffe0b
+0xbffffbb8:	0xbffffe18	0xbffffe20	0x00000000	0x00000003
+0xbffffbc8:	0x08048034	0x00000004
+(gdb) r `python -c 'print "A"*19'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*19'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50x $esp
+0xbffffb08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb18:	0x00414141	0x400309cb	0x00000002	0xbffffb64
+0xbffffb28:	0xbffffb70	0x40013868	0x00000002	0x08048380
+0xbffffb38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffb48:	0xbffffb64	0x080482e0	0x080484ac	0x4000ae60
+0xbffffb58:	0xbffffb5c	0x40013e90	0x00000002	0xbffffc5c
+0xbffffb68:	0xbffffc75	0x00000000	0xbffffc89	0xbffffcab
+0xbffffb78:	0xbffffcb5	0xbffffcc3	0xbffffce2	0xbffffcf2
+0xbffffb88:	0xbffffd0a	0xbffffd27	0xbffffd32	0xbffffd40
+0xbffffb98:	0xbffffd83	0xbffffd96	0xbffffdab	0xbffffdbb
+0xbffffba8:	0xbffffdc8	0xbffffde7	0xbffffe00	0xbffffe0b
+0xbffffbb8:	0xbffffe18	0xbffffe20	0x00000000	0x00000003
+0xbffffbc8:	0x08048034	0x00000004
+(gdb) x 0x00414141
+0x414141:	Cannot access memory at address 0x414141
+(gdb) x 0xbf414141
+0xbf414141:	Cannot access memory at address 0xbf414141
+(gdb) x 0xbf004141
+0xbf004141:	Cannot access memory at address 0xbf004141
+(gdb) x 0xbfff41
+0xbfff41:	Cannot access memory at address 0xbfff41
+(gdb) x 0xbfff0041
+0xbfff0041:	0x00000000
+(gdb) r `python -c 'print "A"*18'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*18'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) r `python -c 'print "A"*16'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "A"*16'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50x $esp
+0xbffffb08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb18:	0xbffffb00	0x400309cb	0x00000002	0xbffffb64
+0xbffffb28:	0xbffffb70	0x40013868	0x00000002	0x08048380
+0xbffffb38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffb48:	0xbffffb64	0x080482e0	0x080484ac	0x4000ae60
+0xbffffb58:	0xbffffb5c	0x40013e90	0x00000002	0xbffffc5f
+0xbffffb68:	0xbffffc78	0x00000000	0xbffffc89	0xbffffcab
+0xbffffb78:	0xbffffcb5	0xbffffcc3	0xbffffce2	0xbffffcf2
+0xbffffb88:	0xbffffd0a	0xbffffd27	0xbffffd32	0xbffffd40
+0xbffffb98:	0xbffffd83	0xbffffd96	0xbffffdab	0xbffffdbb
+0xbffffba8:	0xbffffdc8	0xbffffde7	0xbffffe00	0xbffffe0b
+0xbffffbb8:	0xbffffe18	0xbffffe20	0x00000000	0x00000003
+0xbffffbc8:	0x08048034	0x00000004
+(gdb) r `python -c 'print "\x41"*16'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "\x41"*16'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) r `python -c 'print "\x41"*17'`
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/gremlin/tmp/cobalt `python -c 'print "\x41"*17'`
+
+Breakpoint 1, 0x8048468 in main ()
+(gdb) x/50x $esp
+0xbffffb08:	0x41414141	0x41414141	0x41414141	0x41414141
+0xbffffb18:	0xbfff0041	0x400309cb	0x00000002	0xbffffb64
+0xbffffb28:	0xbffffb70	0x40013868	0x00000002	0x08048380
+0xbffffb38:	0x00000000	0x080483a1	0x08048430	0x00000002
+0xbffffb48:	0xbffffb64	0x080482e0	0x080484ac	0x4000ae60
+0xbffffb58:	0xbffffb5c	0x40013e90	0x00000002	0xbffffc5e
+0xbffffb68:	0xbffffc77	0x00000000	0xbffffc89	0xbffffcab
+0xbffffb78:	0xbffffcb5	0xbffffcc3	0xbffffce2	0xbffffcf2
+0xbffffb88:	0xbffffd0a	0xbffffd27	0xbffffd32	0xbffffd40
+0xbffffb98:	0xbffffd83	0xbffffd96	0xbffffdab	0xbffffdbb
+0xbffffba8:	0xbffffdc8	0xbffffde7	0xbffffe00	0xbffffe0b
+0xbffffbb8:	0xbffffe18	0xbffffe20	0x00000000	0x00000003
+0xbffffbc8:	0x08048034	0x00000004
+(gdb) q
+The program is running.  Exit anyway? (y or n) ex^H^H^Hy^H^H
+Please answer y or n.
+The program is running.  Exit anyway? (y or n) y
+[gremlin@localhost tmp]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 02:18:39.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+[c:\~]$ 
+
+Connecting to 192.168.56.129:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: gremlin
+Password: 
+Last login: Wed Feb 14 01:34:06 from 192.168.56.1
+[gremlin@localhost gremlin]$ ls
+cobalt  cobolt  cobolt.c  core  tmp
+[gremlin@localhost gremlin]$ cd tmp
+[gremlin@localhost tmp]$ gdb cobalt
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux"...
+(gdb) q 
+[gremlin@localhost tmp]$ exi
+bash: exi: command not found
+[gremlin@localhost tmp]$ exit
+logout
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 03:36:34.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
