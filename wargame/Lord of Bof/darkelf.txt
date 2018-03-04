@@ -1013,7 +1013,6 @@ euid = 506
 kernel crashed
 
 
-
 bash$ exit
 exit
 [wolfman@localhost wolfman]$ ln -s ./dark
