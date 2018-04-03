@@ -1,0 +1,183 @@
+Xshell 5 (Build 1339)
+Copyright (c) 2002-2017 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.235.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: troll
+Password: 
+Login incorrect
+
+login: troll
+Password: 
+[troll@localhost troll]$ ls
+vampire  vampire.c
+[troll@localhost troll]$  
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ 
+[troll@localhost troll]$ ./vampire asdf
+stack is still your friend.
+[troll@localhost troll]$ cat vampire.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - vampire
+        - check 0xbfff
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main(int argc, char *argv[])
+{
+	char buffer[40];
+
+	if(argc < 2){
+		printf("argv error\n");
+		exit(0);
+	}
+
+	if(argv[1][47] != '\xbf')
+	{
+		printf("stack is still your friend.\n");
+		exit(0);
+	}
+
+        // here is changed!
+        if(argv[1][46] == '\xff')
+        {
+                printf("but it's not forever\n");
+                exit(0);
+        }
+
+	strcpy(buffer, argv[1]); 
+	printf("%s\n", buffer);
+}
+[troll@localhost troll]$ `python -c 'print"A"'`
+bash: A: command not found
+[troll@localhost troll]$ export shellcode`python -c 'print"A"'`
+[troll@localhost troll]$ export                                
+declare -x BASH_ENV="/home/troll/.bashrc"
+declare -x DISPLAY="192.168.235.1:0.0"
+declare -x HISTSIZE="1000"
+declare -x HOME="/home/troll"
+declare -x HOSTNAME="localhost.localdomain"
+declare -x HOSTTYPE="i386"
+declare -x INPUTRC="/etc/inputrc"
+declare -x LANG="en_US"
+declare -x LESSOPEN="|/usr/bin/lesspipe.sh %s"
+declare -x LOGNAME="troll"
+declare -x LS_COLORS="no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:"
+declare -x MAIL="/var/spool/mail/troll"
+declare -x OSTYPE="Linux"
+declare -x PATH="/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/troll/bin"
+declare -x REMOTEHOST="192.168.235.1"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="1"
+declare -x TERM="xterm"
+declare -x USER="troll"
+declare -x USERNAME=""
+[troll@localhost troll]$ export shellcode=`python -c 'print"A"'`
+[troll@localhost troll]$ shellcode
+bash: shellcode: command not found
+[troll@localhost troll]$ 
+[troll@localhost troll]$ $shellcode
+bash: A: command not found
+[troll@localhost troll]$ export shellcode=`python -c 'print"A"'`
+[troll@localhost troll]$ export shellcode=`python -c 'print"ABAB"'`
+[troll@localhost troll]$ $shellcode
+bash: ABAB: command not found
+[troll@localhost troll]$ ./getenv shellcode
+bash: ./getenv: No such file or directory
+[troll@localhost troll]$ ./getenv $shellcode
+bash: ./getenv: No such file or directory
+[troll@localhost troll]$ vi getenv.c
+[troll@localhost troll]$ gcc getenv.c -o getenv
+[troll@localhost troll]$ ./getenv $shellcode
+========= : (nil)
+[troll@localhost troll]$ ./getenv shellcode
+========= : 0xbffffd2e
+[troll@localhost troll]$ cat vampire.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - vampire
+        - check 0xbfff
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main(int argc, char *argv[])
+{
+	char buffer[40];
+
+	if(argc < 2){
+		printf("argv error\n");
+		exit(0);
+	}
+
+	if(argv[1][47] != '\xbf')
+	{
+		printf("stack is still your friend.\n");
+		exit(0);
+	}
+
+        // here is changed!
+        if(argv[1][46] == '\xff')
+        {
+                printf("but it's not forever\n");
+                exit(0);
+        }
+
+	strcpy(buffer, argv[1]); 
+	printf("%s\n", buffer);
+}
+[troll@localhost troll]$ 
+Socket error Event: 32 Error: 10053.
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 17:55:19.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
