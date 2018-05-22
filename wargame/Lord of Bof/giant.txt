@@ -1,0 +1,97 @@
+bugbear / new divide
+
+
+
+
+
+
+
+[c:\~]$ 
+
+Connecting to 192.168.235.128:23...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+                                            _______________________
+  _______________________-------------------                       `\
+ /:--__                                                              |
+||< > |                                   ___________________________/
+| \__/_________________-------------------                         |
+|                                                                  |
+ |        The Lord of the BOF : The Fellowship of the BOF, 2010    |
+ |                                                                  |
+ |                                                                  |
+  |       [enter to the dungeon]                                    |
+  |       gate : gate                                                |
+  |                                                                  |
+  |       [RULE]                                                     |
+   |      - do not use local root exploit                             |
+   |      - do not use LD_PRELOAD to my-pass                          |
+   |      - do not use single boot                    [h4ck3rsch001] |
+  |                                              ____________________|_
+  |  ___________________-------------------------                      `\
+  |/`--_                                                                 |
+  ||[ ]||                                            ___________________/
+   \===/___________________-------------------------- 
+
+
+login: bugbear
+Password: 
+[bugbear@localhost bugbear]$ ls
+giant  giant.c
+[bugbear@localhost bugbear]$ cat giant.c
+/*
+        The Lord of the BOF : The Fellowship of the BOF
+        - giant
+        - RTL2
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+main(int argc, char *argv[])
+{
+	char buffer[40];
+	FILE *fp;
+	char *lib_addr, *execve_offset, *execve_addr;
+	char *ret;
+
+	if(argc < 2){
+		printf("argv error\n");
+		exit(0);
+	}
+
+	// gain address of execve
+	fp = popen("/usr/bin/ldd /home/giant/assassin | /bin/grep libc | /bin/awk '{print $4}'", "r");
+	fgets(buffer, 255, fp);
+	sscanf(buffer, "(%x)", &lib_addr);
+	fclose(fp);
+
+	fp = popen("/usr/bin/nm /lib/libc.so.6 | /bin/grep __execve | /bin/awk '{print $1}'", "r");
+	fgets(buffer, 255, fp);
+	sscanf(buffer, "%x", &execve_offset);
+	fclose(fp);
+
+	execve_addr = lib_addr + (int)execve_offset;
+	// end
+
+	memcpy(&ret, &(argv[1][44]), 4);
+	if(ret != execve_addr)
+	{
+		printf("You must use execve!\n");
+		exit(0);
+	}
+
+	strcpy(buffer, argv[1]); 
+	printf("%s\n", buffer);
+}
+[bugbear@localhost bugbear]$ exit
+logout
+Connection closing...Socket close.
+
+Connection closed by foreign host.
+
+Disconnected from remote host(LOB) at 13:38:41.
+
+Type `help' to learn how to use Xshell prompt.
+[c:\~]$ 
