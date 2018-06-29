@@ -89,5 +89,85 @@ setTimeout(function() {
 <br>
 
 
-### Simple Login
+## Simple Login
+- 매우 심플한 로그인이다.
+
+
+![Alt text](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/1.PNG)  
+- 로그인 버튼 옆에 source라는 버튼을 누르면 페이지의 소스코드를 줄 것같이 생겼다.
+- 그래서 눌렀다.  
+
+![Alt text](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/2.PNG)  
+- single qoute를 \\\\\' 로 바꿔준다.
+- 백슬래시는 바로 뒤에있는 문자하나를 텍스트로 인식시킨다.
+- 그러면 실제도 코드상에서 동작할때는 \\’ 로 동작하기 때문에 내가 입력한 single qoute 가 백슬래시의 특성으로 인해 텍스트로 인식해 작동하지 않게 된다.  
+
+<br>
+<br>
+<br>
+
+- 그러나 우리는 double qoute를 사용할 것이다.
+
+- PHP 5.2.12 -> 5.3버전에서 기본 옵션인 magic_qoute_gpc가 사라지게 되었다.
+- 즉, PHP가 기본적으로 쿠기, REQUEST로 받아오는 값들에 대해 싱글,더블쿼더 + 백슬래시 필터링을 하지 않는다.
+- 그러므로 우리는 역슬래시를 이용하여 풀 수 있다.
+
+<br>
+
+```php
+$query  = "select username from users where ";  //변수에 쿼리 문자열을 저장하고
+$query .= "username='{$username}' and password='{$password}';";  // 받아온 변수와 함께 다시 이어 붙인다.
+```
+- 여기서 $username이란 변수의 마지막에 역슬래시가 들어가게 된다면
+
+```php
+"username='asdf\' and password='{$password}';"
+```
+- $password 변수의 앞까지 전부 문자열이 되어버린다.
+- $password 변수부터는 다른 쿼리문을 집어넣는게 가능하다!
+
+<br>
+
+- SQL 구문 중에서 union구문을 쓰게 되면 두가지 쿼리를 동시에 사용하는 것이 가능  
+$password 에 
+> union select id username=”admin”;#  
+
+또는
+
+> or username="admin";#  
+
+을 보내면!
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+![Alt text](https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/3.PNG)  
+- 안뜬다.
+
+- false sql injection 을 이용하여 테이블에 있는 모든 결과를 가져오기로 했다.
+
+<br>
+
+> or username=0 limit 0,1;#
+- guest계정으로 로그인이 된다.
+
+> or username=0 limit 1,1;#
+- js콘솔에서 500 error를 띄워준다.
+- 500 error를 띄워 주는 것을 보고 테이블에는 guest계정만 있다고 판단했다.
+
+<br>
+<br>
+<br>
+<br>
+- mysql에서는 select 1하면 결과로 1이 나오는 특성을 이용해 풀었다.
+
+#### 최종 payload
+> username=asdf\  
+> password= union select "admin" from users;#
+
+
 
