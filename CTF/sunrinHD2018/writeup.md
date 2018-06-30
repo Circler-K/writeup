@@ -8,6 +8,8 @@
 
 ## Click the button! (점수 기억안남)
 
+> [http://game.withphp.com/click_the_button/index.php](http://game.withphp.com/click_the_button/index.php)  
+> 문제는 위 링크에서 풀어볼 수 있다.
 - button 1부터 10, 총 10개가 있고 꼭 1부터 10까지 차례대로 눌러야 플래그가 나온다.
 
 ### payload
