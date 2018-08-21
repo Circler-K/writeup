@@ -74,6 +74,11 @@ main(int argc, char *argv[])
 
 	execve_addr = lib_addr + (int)execve_offset;
 	// end
+	printf("===============================\n");
+	printf("%x\n", lib_addr);
+	printf("%x\n", execve_addr);
+	printf("%x\n", execve_offset);
+	printf("===============================\n");
 
 	memcpy(&ret, &(argv[1][44]), 4);
 	if(ret != execve_addr)
@@ -87,11 +92,19 @@ main(int argc, char *argv[])
 }
 [bugbear@localhost bugbear]$ exit
 logout
-Connection closing...Socket close.
+Connection closing...Socket close. 
 
 Connection closed by foreign host.
 
 Disconnected from remote host(LOB) at 13:38:41.
 
-Type `help' to learn how to use Xshell prompt.
-[c:\~]$ 
+
+[bugbear@localhost bugbear]$ ldd gicnt 
+	libc.so.6 => /lib/libc.so.6 (0x40018000)
+	/lib/ld-linux.so.2 => /lib/ld-linux.so.2 (0x40000000)
+[bugbear@localhost bugbear]$ nm /lib/libc.so.6 | grep execve
+000f4860 ? __evoke_link_warning_fexecve
+00091d48 t __execve
+00091d48 W execve
+00091da0 T fexecve
+[bugbear@localhost bugbear]$ 

